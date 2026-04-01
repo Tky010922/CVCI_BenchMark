@@ -1,0 +1,809 @@
+<routes>
+    <!-- ========== level 1: init_speed=19.4, reverse_speed=4 ========== -->
+    <route id="0" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="19.4" />
+                <reverse_speed value="4" />
+                <trigger_distance value="40.0" />
+
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="1" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="19.4" />
+                <reverse_speed value="4" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="2" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="19.4" />
+                <reverse_speed value="4" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="3" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="19.4" />
+                <reverse_speed value="4" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- ========== level 2: init_speed=16.67, reverse_speed=3 ========== -->
+    <route id="4" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="16.67" />
+                <reverse_speed value="3" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="5" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="16.67" />
+                <reverse_speed value="3" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="6" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="16.67" />
+                <reverse_speed value="3" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="7" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="16.67" />
+                <reverse_speed value="3" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- ========== level 3: init_speed=13.88, reverse_speed=2.5 ========== -->
+    <route id="8" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="13.88" />
+                <reverse_speed value="2.5" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="9" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="13.88" />
+                <reverse_speed value="2.5" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- night&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="10" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="13.88" />
+                <reverse_speed value="2.5" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <route id="11" town="Town03">
+        <waypoints>
+            <position x="15.500000" y="134.423233" z="0.5" />
+            <position x="17.500000" y="134.423233" z="0.5" />
+            <position x="19.500000" y="134.423233" z="0.5" />
+            <position x="21.500000" y="134.423233" z="0.5" />
+            <position x="23.500000" y="134.423233" z="0.5" />
+            <position x="25.500000" y="134.423233" z="0.5" />
+            <position x="27.500000" y="134.423233" z="0.5" />
+            <position x="29.500000" y="134.423233" z="0.5" />
+            <position x="31.500000" y="134.423233" z="0.5" />
+            <position x="33.500000" y="134.423233" z="0.5" />
+            <position x="35.500000" y="134.423233" z="0.5" />
+            <position x="37.500000" y="134.423233" z="0.5" />
+            <position x="39.500000" y="134.423233" z="0.5" />
+            <position x="41.500000" y="134.423233" z="0.5" />
+            <position x="43.500000" y="134.423233" z="0.5" />
+            <position x="45.500000" y="134.423233" z="0.5" />
+            <position x="47.500000" y="134.423233" z="0.5" />
+            <position x="49.500000" y="134.423233" z="0.5" />
+            <position x="51.500000" y="134.423233" z="0.5" />
+            <position x="53.500000" y="134.423233" z="0.5" />
+            <position x="55.500000" y="134.423233" z="0.5" />
+            <position x="57.500000" y="134.423233" z="0.5" />
+            <position x="59.500000" y="134.423233" z="0.5" />
+            <position x="61.500000" y="134.423233" z="0.5" />
+            <position x="63.500000" y="134.423233" z="0.5" />
+            <position x="65.500000" y="134.423233" z="0.5" />
+            <position x="67.500000" y="134.423233" z="0.5" />
+            <position x="69.500000" y="134.423233" z="0.5" />
+            <position x="71.500000" y="134.423233" z="0.5" />
+            <position x="73.500000" y="134.423233" z="0.5" />
+            <position x="75.500000" y="134.423233" z="0.5" />
+            <position x="77.500000" y="134.423233" z="0.5" />
+            <position x="79.500000" y="134.423233" z="0.5" />
+            <position x="81.500000" y="134.423233" z="0.5" />
+            <position x="83.500000" y="134.423233" z="0.5" />
+            <position x="85.500000" y="134.423233" z="0.5" />
+            <position x="87.500000" y="134.423233" z="0.5" />
+            <position x="89.500000" y="134.423233" z="0.5" />
+            <position x="91.500000" y="134.423233" z="0.5" />
+            <position x="93.500000" y="134.423233" z="0.5" />
+            <position x="95.500000" y="134.423233" z="0.5" />
+            <position x="97.500000" y="134.423233" z="0.5" />
+            <position x="99.500000" y="134.423233" z="0.5" />
+            <position x="101.500000" y="134.423233" z="0.5" />
+            <position x="103.500000" y="134.423233" z="0.5" />
+            <position x="105.500000" y="134.423233" z="0.5" />
+            <position x="107.000000" y="134.423233" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrossTrafficInteraction_Town05_1" type="ReverseVehicle" town="Town03">
+                <trigger_point x="25.00000" y="134.423233" z="0.5" yaw="0.0"/>
+                <init_speed value="13.88" />
+                <reverse_speed value="2.5" />
+                <trigger_distance value="40.0" />
+                <other_actor x="73.820679" y="142.535721" z="1.0" yaw="90.0" model="vehicle.tesla.model3" />
+                <other_actor x="68.561050" y="129.572815" z="0.5" yaw="180.0" model="vehicle.bh.crossbike" />
+                <other_actor x="75.500000" y="129.572815" z="0.5" yaw="180.0" model="vehicle.tesla.model3" />
+            </scenario>
+        </scenarios>
+        <weathers>
+            <!-- day&rain -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
+        </weathers>
+    </route>
+</routes>
