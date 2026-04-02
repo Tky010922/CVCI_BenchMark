@@ -6,13 +6,3059 @@
     <!-- ========== scenario_class 3:High-speed reckless lane cutting ========== -->
 
     <!-- ========== scenario_class 4:Highway accident vehicle ========== -->
+    <route id="0" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
 
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level1_night_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="8.0"/>
+                <lateral_distance value="5.40"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="1" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level2_night_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="10.0"/>
+                <lateral_distance value="4.63"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="2" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level3_night_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="12.0"/>
+                <lateral_distance value="3.80"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="3" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level1_night_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="8.0"/>
+                <lateral_distance value="5.40"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="4" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level2_night_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="10.0"/>
+                <lateral_distance value="4.63"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="5" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level3_night_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="12.0"/>
+                <lateral_distance value="3.80"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="6" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level1_day_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="8.0"/>
+                <lateral_distance value="5.40"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="7" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level2_day_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="10.0"/>
+                <lateral_distance value="4.63"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="8" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level3_day_rain" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="12.0"/>
+                <lateral_distance value="3.80"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="9" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level1_day_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="8.0"/>
+                <lateral_distance value="5.40"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="10" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level2_day_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="10.0"/>
+                <lateral_distance value="4.63"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="11" town="Town04">
+        <weathers>
+            <weather route_percentage="0"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="166.32" y="206.90" z="0.5"/>
+            <position x="168.18" y="206.17" z="0.5"/>
+            <position x="170.04" y="205.44" z="0.5"/>
+            <position x="171.91" y="204.71" z="0.5"/>
+            <position x="173.77" y="203.98" z="0.5"/>
+            <position x="175.63" y="203.25" z="0.5"/>
+            <position x="177.49" y="202.52" z="0.5"/>
+            <position x="179.35" y="201.79" z="0.5"/>
+            <position x="181.22" y="201.06" z="0.5"/>
+            <position x="183.08" y="200.33" z="0.5"/>
+            <position x="184.94" y="199.60" z="0.5"/>
+            <position x="186.80" y="198.87" z="0.5"/>
+            <position x="188.67" y="198.14" z="0.5"/>
+            <position x="190.53" y="197.41" z="0.5"/>
+            <position x="192.39" y="196.68" z="0.5"/>
+            <position x="194.25" y="195.95" z="0.5"/>
+            <position x="196.11" y="195.22" z="0.5"/>
+            <position x="197.98" y="194.50" z="0.5"/>
+            <position x="199.84" y="193.77" z="0.5"/>
+            <position x="201.70" y="193.04" z="0.5"/>
+            <position x="203.56" y="192.31" z="0.5"/>
+            <position x="205.42" y="191.58" z="0.5"/>
+            <position x="207.29" y="190.85" z="0.5"/>
+            <position x="209.15" y="190.12" z="0.5"/>
+            <position x="211.01" y="189.39" z="0.5"/>
+            <position x="212.87" y="188.66" z="0.5"/>
+            <position x="214.74" y="187.93" z="0.5"/>
+            <position x="216.60" y="187.20" z="0.5"/>
+            <position x="218.46" y="186.47" z="0.5"/>
+            <position x="220.32" y="185.74" z="0.5"/>
+            <position x="222.18" y="185.01" z="0.5"/>
+            <position x="224.05" y="184.28" z="0.5"/>
+            <position x="225.91" y="183.55" z="0.5"/>
+            <position x="227.77" y="182.82" z="0.5"/>
+            <position x="229.63" y="182.09" z="0.5"/>
+            <position x="231.49" y="181.36" z="0.5"/>
+            <position x="233.36" y="180.63" z="0.5"/>
+            <position x="235.22" y="179.90" z="0.5"/>
+            <position x="237.08" y="179.17" z="0.5"/>
+            <position x="238.94" y="178.44" z="0.5"/>
+            <position x="240.81" y="177.71" z="0.5"/>
+            <position x="242.67" y="176.98" z="0.5"/>
+            <position x="244.53" y="176.25" z="0.5"/>
+            <position x="246.39" y="175.52" z="0.5"/>
+            <position x="248.25" y="174.79" z="0.5"/>
+            <position x="250.12" y="174.06" z="0.5"/>
+            <position x="251.98" y="173.33" z="0.5"/>
+            <position x="253.84" y="172.60" z="0.5"/>
+            <position x="255.70" y="171.87" z="0.5"/>
+            <position x="257.56" y="171.14" z="0.5"/>
+            <position x="259.43" y="170.41" z="0.5"/>
+            <position x="261.29" y="169.69" z="0.5"/>
+            <position x="263.15" y="168.96" z="0.5"/>
+            <position x="265.01" y="168.23" z="0.5"/>
+            <position x="266.88" y="167.50" z="0.5"/>
+            <position x="268.74" y="166.77" z="0.5"/>
+            <position x="270.60" y="166.04" z="0.5"/>
+            <position x="272.46" y="165.31" z="0.5"/>
+            <position x="274.32" y="164.58" z="0.5"/>
+            <position x="276.19" y="163.85" z="0.5"/>
+            <position x="278.05" y="163.12" z="0.5"/>
+            <position x="279.91" y="162.39" z="0.5"/>
+            <position x="281.77" y="161.66" z="0.5"/>
+            <position x="283.63" y="160.93" z="0.5"/>
+            <position x="285.50" y="160.20" z="0.5"/>
+            <position x="287.36" y="159.47" z="0.5"/>
+            <position x="289.22" y="158.74" z="0.5"/>
+            <position x="291.08" y="158.01" z="0.5"/>
+            <position x="292.95" y="157.28" z="0.5"/>
+            <position x="294.81" y="156.55" z="0.5"/>
+            <position x="296.34" y="155.95" z="0.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="HighSpeedAccident_level3_day_sunny" type="HighSpeedAccident">
+                <trigger_point x="175.0" y="204.0" z="0.5" yaw="-17.81"/>
+                <init_speed value="12.0"/>
+                <lateral_distance value="3.80"/>
+            </scenario>
+        </scenarios>
+    </route>
     <!-- ========== scenario_class 5:Trucks encountered during construction ========== -->
 
     <!-- ========== scenario_class 6:Drive into the roundabout ========== -->
 
     <!-- ========== scenario_class 7:Four students crossing the road ========== -->
+    <route id="0" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
 
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level1_night_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="7.0"/>
+                <trigger_distance value="24.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="1" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level2_night_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="9.0"/>
+                <trigger_distance value="18.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="2" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="90.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="80.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="10.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level3_night_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="11.0"/>
+                <trigger_distance value="12.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="3" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level1_night_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="7.0"/>
+                <trigger_distance value="24.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="4" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level2_night_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="9.0"/>
+                <trigger_distance value="18.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="5" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="15.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="0.5"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level3_night_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="11.0"/>
+                <trigger_distance value="12.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="6" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level1_day_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="7.0"/>
+                <trigger_distance value="24.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="7" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level2_day_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="9.0"/>
+                <trigger_distance value="18.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="8" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="85.0"
+                     precipitation="60.0"
+                     precipitation_deposits="50.0"
+                     wetness="70.0"
+                     wind_intensity="60.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="4.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level3_day_rain" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="11.0"/>
+                <trigger_distance value="12.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="9" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level1_day_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="7.0"/>
+                <trigger_distance value="24.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="10" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level2_day_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="9.0"/>
+                <trigger_distance value="18.0"/>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="11" town="Town05">
+        <weathers>
+            <weather route_percentage="100"
+                     cloudiness="10.0"
+                     precipitation="0.0"
+                     precipitation_deposits="0.0"
+                     wetness="0.0"
+                     wind_intensity="10.0"
+                     sun_azimuth_angle="-1.0"
+                     sun_altitude_angle="60.0"
+                     fog_density="2.0"/>
+        </weathers>
+
+        <waypoints>
+            <position x="-100.0" y="2.7" z="1.5"/>
+            <position x="-98.0" y="2.7" z="1.5"/>
+            <position x="-96.0" y="2.7" z="1.5"/>
+            <position x="-94.0" y="2.7" z="1.5"/>
+            <position x="-92.0" y="2.7" z="1.5"/>
+            <position x="-90.0" y="2.7" z="1.5"/>
+            <position x="-88.0" y="2.7" z="1.5"/>
+            <position x="-86.0" y="2.7" z="1.5"/>
+            <position x="-84.0" y="2.7" z="1.5"/>
+            <position x="-82.0" y="2.7" z="1.5"/>
+            <position x="-80.0" y="2.7" z="1.5"/>
+            <position x="-78.0" y="2.7" z="1.5"/>
+            <position x="-76.0" y="2.7" z="1.5"/>
+            <position x="-74.0" y="2.7" z="1.5"/>
+            <position x="-72.0" y="2.7" z="1.5"/>
+            <position x="-70.0" y="2.7" z="1.5"/>
+            <position x="-68.0" y="2.7" z="1.5"/>
+            <position x="-66.0" y="2.7" z="1.5"/>
+            <position x="-64.0" y="2.7" z="1.5"/>
+            <position x="-62.0" y="2.7" z="1.5"/>
+            <position x="-60.0" y="2.7" z="1.5"/>
+            <position x="-58.0" y="2.7" z="1.5"/>
+            <position x="-56.0" y="2.7" z="1.5"/>
+            <position x="-54.0" y="2.7" z="1.5"/>
+            <position x="-52.0" y="2.7" z="1.5"/>
+            <position x="-50.0" y="2.7" z="1.5"/>
+            <position x="-48.0" y="2.7" z="1.5"/>
+            <position x="-46.0" y="2.7" z="1.5"/>
+            <position x="-44.0" y="2.7" z="1.5"/>
+            <position x="-42.0" y="2.7" z="1.5"/>
+            <position x="-40.0" y="2.7" z="1.5"/>
+            <position x="-38.0" y="2.7" z="1.5"/>
+            <position x="-36.0" y="2.7" z="1.5"/>
+            <position x="-34.0" y="2.7" z="1.5"/>
+            <position x="-32.0" y="2.7" z="1.5"/>
+            <position x="-30.0" y="2.7" z="1.5"/>
+            <position x="-28.0" y="2.7" z="1.5"/>
+            <position x="-26.0" y="2.7" z="1.5"/>
+            <position x="-24.0" y="2.7" z="1.5"/>
+            <position x="-22.0" y="2.7" z="1.5"/>
+            <position x="-20.0" y="2.7" z="1.5"/>
+            <position x="-18.0" y="2.7" z="1.5"/>
+            <position x="-16.0" y="2.7" z="1.5"/>
+            <position x="-14.0" y="2.7" z="1.5"/>
+            <position x="-12.0" y="2.7" z="1.5"/>
+            <position x="-10.0" y="2.7" z="1.5"/>
+            <position x="-8.0" y="2.7" z="1.5"/>
+            <position x="-6.0" y="2.7" z="1.5"/>
+            <position x="-4.0" y="2.7" z="1.5"/>
+            <position x="-2.0" y="2.7" z="1.5"/>
+            <position x="0.0" y="2.7" z="1.5"/>
+            <position x="2.0" y="2.7" z="1.5"/>
+            <position x="4.0" y="2.7" z="1.5"/>
+            <position x="6.0" y="2.7" z="1.5"/>
+            <position x="8.0" y="2.7" z="1.5"/>
+            <position x="10.0" y="2.7" z="1.5"/>
+            <position x="12.0" y="2.7" z="1.5"/>
+            <position x="14.0" y="2.7" z="1.5"/>
+            <position x="16.0" y="2.7" z="1.5"/>
+            <position x="18.0" y="2.7" z="1.5"/>
+            <position x="20.0" y="2.7" z="1.5"/>
+            <position x="22.0" y="2.7" z="1.5"/>
+            <position x="24.0" y="2.7" z="1.5"/>
+            <position x="26.0" y="2.7" z="1.5"/>
+            <position x="28.0" y="2.7" z="1.5"/>
+            <position x="30.0" y="2.7" z="1.5"/>
+            <position x="32.0" y="2.7" z="1.5"/>
+            <position x="34.0" y="2.7" z="1.5"/>
+            <position x="36.0" y="2.7" z="1.5"/>
+            <position x="38.0" y="2.7" z="1.5"/>
+            <position x="40.0" y="2.7" z="1.5"/>
+            <position x="42.0" y="2.7" z="1.5"/>
+            <position x="44.0" y="2.7" z="1.5"/>
+            <position x="46.0" y="2.7" z="1.5"/>
+            <position x="48.0" y="2.7" z="1.5"/>
+            <position x="50.0" y="2.7" z="1.5"/>
+            <position x="52.0" y="2.7" z="1.5"/>
+            <position x="54.0" y="2.7" z="1.5"/>
+            <position x="56.0" y="2.7" z="1.5"/>
+            <position x="58.0" y="2.7" z="1.5"/>
+            <position x="60.0" y="2.7" z="1.5"/>
+            <position x="62.0" y="2.7" z="1.5"/>
+            <position x="64.0" y="2.7" z="1.5"/>
+            <position x="66.0" y="2.7" z="1.5"/>
+            <position x="68.0" y="2.7" z="1.5"/>
+            <position x="70.0" y="2.7" z="1.5"/>
+            <position x="72.0" y="2.7" z="1.5"/>
+            <position x="74.0" y="2.7" z="1.5"/>
+            <position x="76.0" y="2.7" z="1.5"/>
+            <position x="78.0" y="2.7" z="1.5"/>
+            <position x="80.0" y="2.7" z="1.5"/>
+            <position x="82.0" y="2.7" z="1.5"/>
+            <position x="84.0" y="2.7" z="1.5"/>
+            <position x="86.0" y="2.7" z="1.5"/>
+            <position x="88.0" y="2.7" z="1.5"/>
+            <position x="90.0" y="2.7" z="1.5"/>
+            <position x="92.0" y="2.7" z="1.5"/>
+            <position x="94.0" y="2.7" z="1.5"/>
+            <position x="96.0" y="2.7" z="1.5"/>
+            <position x="98.0" y="2.7" z="1.5"/>
+            <position x="100.0" y="2.7" z="1.5"/>
+            <position x="102.0" y="2.7" z="1.5"/>
+            <position x="104.0" y="2.7" z="1.5"/>
+            <position x="106.0" y="2.7" z="1.5"/>
+            <position x="108.0" y="2.7" z="1.5"/>
+            <position x="110.0" y="2.7" z="1.5"/>
+            <position x="112.0" y="2.7" z="1.5"/>
+            <position x="114.0" y="2.7" z="1.5"/>
+            <position x="116.0" y="2.7" z="1.5"/>
+            <position x="118.0" y="2.7" z="1.5"/>
+            <position x="120.0" y="2.7" z="1.5"/>
+            <position x="122.0" y="2.7" z="1.5"/>
+            <position x="124.0" y="2.7" z="1.5"/>
+            <position x="126.0" y="2.7" z="1.5"/>
+            <position x="128.0" y="2.7" z="1.5"/>
+            <position x="130.0" y="2.7" z="1.5"/>
+            <position x="132.0" y="2.7" z="1.5"/>
+            <position x="134.0" y="2.7" z="1.5"/>
+            <position x="136.0" y="2.7" z="1.5"/>
+            <position x="138.0" y="2.7" z="1.5"/>
+            <position x="140.0" y="2.7" z="1.5"/>
+            <position x="142.0" y="2.7" z="1.5"/>
+            <position x="144.0" y="2.7" z="1.5"/>
+            <position x="146.0" y="2.7" z="1.5"/>
+            <position x="148.0" y="2.7" z="1.5"/>
+            <position x="150.0" y="2.7" z="1.5"/>
+        </waypoints>
+
+        <scenarios>
+            <scenario name="GhostProbe_level3_day_sunny" type="GhostProbeScenario">
+                <trigger_point x="-35.0" y="2.7" z="1.5" yaw="0.0"/>
+                <init_speed value="11.0"/>
+                <trigger_distance value="12.0"/>
+            </scenario>
+        </scenarios>
+    </route>
     <!-- ========== scenario_class 8:avoid a disabled vehicle ========== -->
 
     <!-- ========== scenario_class 9:Slanted motor and children ========== -->

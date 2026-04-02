@@ -2398,12 +2398,632 @@ class MinTTCAutoCriterion(Criterion):
 # High-speed reckless lane cutting criterion
 
 # Highway accident vehicle criterion
+def _normalize_vector_2d(x_value, y_value):
+    """Return a normalized 2D vector, with a stable fallback."""
+    magnitude = math.hypot(x_value, y_value)
+    if magnitude < 1e-6:
+        return 1.0, 0.0
+    return x_value / magnitude, y_value / magnitude
 
+
+def _build_route_frame(route_start_location, route_end_location, fallback_transform=None):
+    """Create a forward/right 2D frame aligned with the scenario route."""
+    if route_start_location is not None and route_end_location is not None:
+        forward_xy = _normalize_vector_2d(
+            route_end_location.x - route_start_location.x,
+            route_end_location.y - route_start_location.y
+        )
+    elif fallback_transform is not None:
+        fallback_forward = fallback_transform.get_forward_vector()
+        forward_xy = _normalize_vector_2d(fallback_forward.x, fallback_forward.y)
+    else:
+        forward_xy = (1.0, 0.0)
+
+    right_xy = (-forward_xy[1], forward_xy[0])
+    return forward_xy, right_xy
+
+
+def _project_to_axis(origin_location, target_location, forward_xy, right_xy):
+    """Project a world-space offset to the route-aligned frame."""
+    dx = target_location.x - origin_location.x
+    dy = target_location.y - origin_location.y
+    longitudinal = dx * forward_xy[0] + dy * forward_xy[1]
+    lateral = dx * right_xy[0] + dy * right_xy[1]
+    return longitudinal, lateral
+
+
+def _get_actor_speed_mps(actor):
+    """Return the actor speed in m/s."""
+    velocity = actor.get_velocity()
+    return math.sqrt(velocity.x ** 2 + velocity.y ** 2 + velocity.z ** 2)
+
+
+class HighSpeedBrakeCriterion(Criterion):
+    """Check whether the ego reacts to the blocked vehicle with braking or a clear speed drop."""
+
+    def __init__(self, actor, hazard_actor, name="HighSpeedBrakeCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=50.0, brake_threshold=0.3, min_speed_drop=2.0,
+                 min_brake_duration=0.5, max_response_time=4.0, collision_distance=3.0,
+                 latest_reaction_distance=None, min_speed_drop_ratio=0.18,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.hazard_actor = hazard_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.brake_threshold = brake_threshold
+        self.min_speed_drop = min_speed_drop
+        self.min_brake_duration = min_brake_duration
+        self.max_response_time = max_response_time
+        self.collision_distance = collision_distance
+        self.latest_reaction_distance = latest_reaction_distance
+        self.min_speed_drop_ratio = min_speed_drop_ratio
+
+        fallback_transform = hazard_actor.get_transform() if hazard_actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+
+        self._activated = False
+        self._start_time = None
+        self._brake_start_time = None
+        self._initial_speed = None
+        self._required_speed_drop = min_speed_drop
+        self._effective_latest_reaction_distance = None
+        self._first_meaningful_slowdown_distance = None
+
+        self.actual_value = 0.0
+        self.success_value = min_speed_drop
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.hazard_actor:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        hazard_loc = self.hazard_actor.get_location()
+        longitudinal_to_hazard, _ = _project_to_axis(
+            ego_loc, hazard_loc, self._forward_xy, self._right_xy)
+        current_distance = ego_loc.distance(hazard_loc)
+        ego_speed = _get_actor_speed_mps(self.actor)
+
+        if not self._activated and 0.0 <= longitudinal_to_hazard <= self.trigger_distance:
+            self._activated = True
+            self._start_time = GameTime.get_time()
+            self._initial_speed = ego_speed
+            self._brake_start_time = None
+            self._required_speed_drop = max(self.min_speed_drop, self._initial_speed * self.min_speed_drop_ratio)
+            if self.latest_reaction_distance is not None:
+                self._effective_latest_reaction_distance = self.latest_reaction_distance
+            else:
+                self._effective_latest_reaction_distance = max(
+                    self.collision_distance + 8.0,
+                    min(self.trigger_distance * 0.4, self.trigger_distance - 8.0)
+                )
+            self._first_meaningful_slowdown_distance = None
+
+        if not self._activated:
+            return new_status
+
+        current_time = GameTime.get_time()
+        speed_drop = max(0.0, self._initial_speed - ego_speed)
+        self.actual_value = max(self.actual_value, speed_drop)
+
+        control = self.actor.get_control()
+        brake_applied = control.brake >= self.brake_threshold
+        meaningful_slowdown = (
+            speed_drop >= max(1.0, self._required_speed_drop * 0.5) or
+            (brake_applied and speed_drop >= max(0.5, self._required_speed_drop * 0.25))
+        )
+        if meaningful_slowdown and self._first_meaningful_slowdown_distance is None:
+            self._first_meaningful_slowdown_distance = longitudinal_to_hazard
+
+        failure_detected = False
+        if current_distance < self.collision_distance or longitudinal_to_hazard < -2.0:
+            failure_detected = True
+        elif (
+            self._first_meaningful_slowdown_distance is None and
+            longitudinal_to_hazard <= self._effective_latest_reaction_distance
+        ):
+            failure_detected = True
+        elif (
+            self._first_meaningful_slowdown_distance is not None and
+            self._first_meaningful_slowdown_distance <= self._effective_latest_reaction_distance
+        ):
+            failure_detected = True
+        elif (
+            self._first_meaningful_slowdown_distance is None and
+            current_time - self._start_time > self.max_response_time
+        ):
+            failure_detected = True
+
+        if failure_detected:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        brake_detected = brake_applied or speed_drop >= self._required_speed_drop
+        if brake_detected:
+            if self._brake_start_time is None:
+                self._brake_start_time = current_time
+            if current_time - self._brake_start_time >= self.min_brake_duration:
+                if (
+                    self._first_meaningful_slowdown_distance is not None and
+                    self._first_meaningful_slowdown_distance > self._effective_latest_reaction_distance
+                ):
+                    self.test_status = "SUCCESS"
+        else:
+            self._brake_start_time = None
+
+        return new_status
+
+
+class HighSpeedBypassCriterion(Criterion):
+    """Check whether the ego passes the stopped vehicle with enough lateral clearance."""
+
+    def __init__(self, actor, hazard_actor, name="HighSpeedBypassCriterion",
+                 route_start_location=None, route_end_location=None,
+                 safe_lateral_margin=2.8, danger_lateral_margin=2.2,
+                 passing_longitudinal_zone=6.0, min_route_offset=1.1,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.hazard_actor = hazard_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.safe_lateral_margin = safe_lateral_margin
+        self.danger_lateral_margin = danger_lateral_margin
+        self.passing_longitudinal_zone = passing_longitudinal_zone
+        self.min_route_offset = min_route_offset
+
+        fallback_transform = hazard_actor.get_transform() if hazard_actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            actor.get_location() if actor is not None else None)
+
+        self._min_lateral_during_pass = float('inf')
+        self._has_entered_passing_zone = False
+        self._max_route_offset_during_pass = 0.0
+
+        self.actual_value = 0.0
+        self.success_value = safe_lateral_margin
+        self.units = "m"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.hazard_actor or self._route_origin is None:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        hazard_loc = self.hazard_actor.get_location()
+        longitudinal_dist, lateral_dist = _project_to_axis(
+            hazard_loc, ego_loc, self._forward_xy, self._right_xy)
+        lateral_dist = abs(lateral_dist)
+        _, route_lateral_error = _project_to_axis(
+            self._route_origin, ego_loc, self._forward_xy, self._right_xy)
+        route_lateral_error = abs(route_lateral_error)
+
+        if abs(longitudinal_dist) <= self.passing_longitudinal_zone:
+            self._has_entered_passing_zone = True
+            self._min_lateral_during_pass = min(self._min_lateral_during_pass, lateral_dist)
+            self._max_route_offset_during_pass = max(self._max_route_offset_during_pass, route_lateral_error)
+            self.actual_value = self._min_lateral_during_pass
+
+            if lateral_dist < self.danger_lateral_margin:
+                self.test_status = "FAILURE"
+                if self._terminate_on_failure:
+                    return py_trees.common.Status.FAILURE
+
+        elif longitudinal_dist > self.passing_longitudinal_zone and self._has_entered_passing_zone:
+            self.actual_value = 0.0 if math.isinf(self._min_lateral_during_pass) else self._min_lateral_during_pass
+            if (
+                self._min_lateral_during_pass >= self.safe_lateral_margin and
+                self._max_route_offset_during_pass >= self.min_route_offset
+            ):
+                self.test_status = "SUCCESS"
+            else:
+                self.test_status = "FAILURE"
+                if self._terminate_on_failure:
+                    return py_trees.common.Status.FAILURE
+
+        return new_status
+
+
+class HighSpeedResumeCriterion(Criterion):
+    """Check whether the ego returns to the route lane and resumes a safe cruising speed."""
+
+    def __init__(self, actor, hazard_actor, name="HighSpeedResumeCriterion",
+                 route_start_location=None, route_end_location=None,
+                 escape_distance=15.0, min_resume_speed=5.0,
+                 lane_tolerance=1.2, min_resume_duration=1.0,
+                 required_departure_offset=1.0,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.hazard_actor = hazard_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.escape_distance = escape_distance
+        self.min_resume_speed = min_resume_speed
+        self.lane_tolerance = lane_tolerance
+        self.min_resume_duration = min_resume_duration
+        self.required_departure_offset = required_departure_offset
+
+        fallback_transform = hazard_actor.get_transform() if hazard_actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            hazard_actor.get_location() if hazard_actor is not None else None)
+        self._resume_start_time = None
+        self._has_left_route_lane = False
+
+        self.actual_value = 0.0
+        self.success_value = min_resume_speed
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.hazard_actor or self._route_origin is None:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        hazard_loc = self.hazard_actor.get_location()
+        longitudinal_from_hazard, _ = _project_to_axis(
+            hazard_loc, ego_loc, self._forward_xy, self._right_xy)
+        _, route_lateral_error = _project_to_axis(
+            self._route_origin, ego_loc, self._forward_xy, self._right_xy)
+
+        ego_speed = _get_actor_speed_mps(self.actor)
+        self.actual_value = ego_speed
+        route_lateral_error = abs(route_lateral_error)
+
+        if route_lateral_error >= self.required_departure_offset:
+            self._has_left_route_lane = True
+
+        if longitudinal_from_hazard <= self.escape_distance:
+            self._resume_start_time = None
+            return new_status
+
+        on_route_lane = route_lateral_error <= self.lane_tolerance
+        if self._has_left_route_lane and on_route_lane and ego_speed >= self.min_resume_speed:
+            current_time = GameTime.get_time()
+            if self._resume_start_time is None:
+                self._resume_start_time = current_time
+            elif current_time - self._resume_start_time >= self.min_resume_duration:
+                self.test_status = "SUCCESS"
+        else:
+            self._resume_start_time = None
+
+        return new_status
 # Trucks encountered during construction criterion
 
 # Drive into the roundabout criterion
 
 # Four students crossing the road criterion
+class ScooterDecelerateCriterion(Criterion):
+    """Check whether the ego starts a stable slowdown when approaching the occluding scooter."""
+
+    def __init__(self, actor, scooter_actor, name="ScooterDecelerateCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=35.0, min_speed_drop=3.0, brake_threshold=0.2,
+                 min_brake_duration=0.4, pass_buffer=2.0, latest_reaction_distance=8.0,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.scooter_actor = scooter_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.min_speed_drop = min_speed_drop
+        self.brake_threshold = brake_threshold
+        self.min_brake_duration = min_brake_duration
+        self.pass_buffer = pass_buffer
+        self.latest_reaction_distance = latest_reaction_distance
+
+        fallback_transform = scooter_actor.get_transform() if scooter_actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+
+        self._activated = False
+        self._initial_speed = None
+        self._reaction_start_time = None
+        self._has_valid_slowdown = False
+        self._first_meaningful_slowdown_distance = None
+        self._slowdown_confirmation_drop = max(0.8, self.min_speed_drop * 0.5)
+
+        self.actual_value = 0.0
+        self.success_value = min_speed_drop
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.scooter_actor:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        scooter_loc = self.scooter_actor.get_location()
+        longitudinal_dist, _ = _project_to_axis(
+            ego_loc, scooter_loc, self._forward_xy, self._right_xy)
+        ego_speed = _get_actor_speed_mps(self.actor)
+        ego_control = self.actor.get_control()
+
+        if not self._activated and 0.0 <= longitudinal_dist <= self.trigger_distance:
+            self._activated = True
+            self._initial_speed = ego_speed
+            self._reaction_start_time = None
+            self._first_meaningful_slowdown_distance = None
+
+        if not self._activated:
+            return new_status
+
+        speed_drop = max(0.0, self._initial_speed - ego_speed)
+        self.actual_value = max(self.actual_value, speed_drop)
+
+        brake_applied = ego_control.brake >= self.brake_threshold
+        meaningful_slowdown = (
+            speed_drop >= self._slowdown_confirmation_drop or
+            (brake_applied and speed_drop >= max(0.4, self.min_speed_drop * 0.2))
+        )
+        if meaningful_slowdown and self._first_meaningful_slowdown_distance is None:
+            self._first_meaningful_slowdown_distance = longitudinal_dist
+
+        slowdown_started_too_late = (
+            self._first_meaningful_slowdown_distance is not None and
+            self._first_meaningful_slowdown_distance <= self.latest_reaction_distance
+        )
+
+        if slowdown_started_too_late:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if longitudinal_dist <= self.latest_reaction_distance and self._first_meaningful_slowdown_distance is None:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if longitudinal_dist <= self.latest_reaction_distance and speed_drop < self.min_speed_drop:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        reaction_detected = speed_drop >= self.min_speed_drop
+        if reaction_detected:
+            current_time = GameTime.get_time()
+            if self._reaction_start_time is None:
+                self._reaction_start_time = current_time
+            elif current_time - self._reaction_start_time >= self.min_brake_duration:
+                self._has_valid_slowdown = True
+                if self._first_meaningful_slowdown_distance is not None and \
+                        self._first_meaningful_slowdown_distance > self.latest_reaction_distance:
+                    self.test_status = "SUCCESS"
+                else:
+                    self.test_status = "FAILURE"
+        else:
+            self._reaction_start_time = None
+
+        if longitudinal_dist < -self.pass_buffer and not self._has_valid_slowdown:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+
+        return new_status
+
+
+class PedestrianStopCriterion(Criterion):
+    """Check whether the ego slows to a safe low speed for the first emerging child."""
+
+    def __init__(self, actor, pedestrian_actor, name="PedestrianStopCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=25.0, stop_speed_threshold=1.5,
+                 activation_lateral_margin=2.8, pass_buffer=1.0, minimum_stop_distance=4.5,
+                 min_speed_drop=1.0, min_stop_duration=0.3, clear_lateral_margin=0.6,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.pedestrian_actor = pedestrian_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.stop_speed_threshold = stop_speed_threshold
+        self.activation_lateral_margin = activation_lateral_margin
+        self.pass_buffer = pass_buffer
+        self.minimum_stop_distance = minimum_stop_distance
+        self.min_speed_drop = min_speed_drop
+        self.min_stop_duration = min_stop_duration
+        self.clear_lateral_margin = clear_lateral_margin
+
+        fallback_transform = actor.get_transform() if actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            actor.get_location() if actor is not None else None)
+
+        self._activated = False
+        self._has_valid_stop = False
+        self._activation_speed = None
+        self._stop_start_time = None
+        self._first_meaningful_slowdown_distance = None
+        self.actual_value = float("inf")
+        self.success_value = stop_speed_threshold
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.pedestrian_actor or self._route_origin is None:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        ped_loc = self.pedestrian_actor.get_location()
+        longitudinal_dist, _ = _project_to_axis(
+            ego_loc, ped_loc, self._forward_xy, self._right_xy)
+        _, ped_lateral_error = _project_to_axis(
+            self._route_origin, ped_loc, self._forward_xy, self._right_xy)
+
+        ego_speed = _get_actor_speed_mps(self.actor)
+        self.actual_value = min(self.actual_value, ego_speed)
+
+        pedestrian_in_conflict_zone = ped_lateral_error <= self.activation_lateral_margin
+        if not self._activated and 0.0 <= longitudinal_dist <= self.trigger_distance and pedestrian_in_conflict_zone:
+            self._activated = True
+            self._activation_speed = ego_speed
+            self._stop_start_time = None
+            self._first_meaningful_slowdown_distance = None
+
+        if not self._activated:
+            return new_status
+
+        speed_drop = max(0.0, (self._activation_speed or ego_speed) - ego_speed)
+        if speed_drop >= self.min_speed_drop and self._first_meaningful_slowdown_distance is None:
+            self._first_meaningful_slowdown_distance = longitudinal_dist
+
+        latest_slowdown_start_distance = max(
+            self.minimum_stop_distance + 2.0,
+            min(self.trigger_distance * 0.5, self.trigger_distance - 2.0)
+        )
+        if longitudinal_dist <= latest_slowdown_start_distance and self._first_meaningful_slowdown_distance is None:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        valid_low_speed = (
+            ego_speed <= self.stop_speed_threshold and
+            speed_drop >= self.min_speed_drop and
+            longitudinal_dist > self.minimum_stop_distance
+        )
+        if valid_low_speed:
+            current_time = GameTime.get_time()
+            if self._stop_start_time is None:
+                self._stop_start_time = current_time
+            elif current_time - self._stop_start_time >= self.min_stop_duration:
+                self._has_valid_stop = True
+        else:
+            self._stop_start_time = None
+
+        if self._has_valid_stop and ped_lateral_error <= -self.clear_lateral_margin:
+            self.test_status = "SUCCESS"
+            return new_status
+
+        if longitudinal_dist < -self.pass_buffer:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+
+        return new_status
+
+
+class PedestrianResumeCriterion(Criterion):
+    """Check whether the ego restarts only after all children have safely crossed."""
+
+    def __init__(self, actor, pedestrian_actor, name="PedestrianResumeCriterion",
+                 route_start_location=None, route_end_location=None,
+                 pedestrian_actors=None, resume_speed=3.0, stop_speed_threshold=0.5,
+                 safe_lateral_margin=1.5, min_resume_duration=1.0,
+                 unsafe_resume_speed=1.0, collision_buffer=1.2,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.pedestrian_actor = pedestrian_actor
+        self.pedestrian_actors = pedestrian_actors if pedestrian_actors is not None else [pedestrian_actor]
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.resume_speed = resume_speed
+        self.stop_speed_threshold = stop_speed_threshold
+        self.safe_lateral_margin = safe_lateral_margin
+        self.min_resume_duration = min_resume_duration
+        self.unsafe_resume_speed = unsafe_resume_speed
+        self.collision_buffer = collision_buffer
+
+        fallback_transform = actor.get_transform() if actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            actor.get_location() if actor is not None else None)
+
+        self._has_stopped = False
+        self._resume_start_time = None
+
+        self.actual_value = 0.0
+        self.success_value = resume_speed
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or self._route_origin is None:
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        ego_speed = _get_actor_speed_mps(self.actor)
+        self.actual_value = ego_speed
+
+        pedestrian_states = []
+        min_distance_to_any = float("inf")
+        for pedestrian in self.pedestrian_actors:
+            if pedestrian is None:
+                continue
+            ped_loc = pedestrian.get_location()
+            _, ped_lateral_error = _project_to_axis(
+                self._route_origin, ped_loc, self._forward_xy, self._right_xy)
+            pedestrian_states.append(ped_lateral_error <= -self.safe_lateral_margin)
+            min_distance_to_any = min(min_distance_to_any, ego_loc.distance(ped_loc))
+
+        all_pedestrians_safe = len(pedestrian_states) > 0 and all(pedestrian_states)
+
+        if ego_speed <= self.stop_speed_threshold and not all_pedestrians_safe:
+            self._has_stopped = True
+
+        unsafe_resume = self._has_stopped and not all_pedestrians_safe and ego_speed >= self.unsafe_resume_speed
+        unsafe_clearance = ego_speed >= self.unsafe_resume_speed and min_distance_to_any <= self.collision_buffer
+        if unsafe_resume or unsafe_clearance:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if all_pedestrians_safe and not self._has_stopped:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if self._has_stopped and all_pedestrians_safe and ego_speed >= self.resume_speed \
+                and min_distance_to_any > self.collision_buffer:
+            current_time = GameTime.get_time()
+            if self._resume_start_time is None:
+                self._resume_start_time = current_time
+            elif current_time - self._resume_start_time >= self.min_resume_duration:
+                self.test_status = "SUCCESS"
+        else:
+            self._resume_start_time = None
+
+        return new_status
+
 
 # avoid a disabled vehicle criterion
 
