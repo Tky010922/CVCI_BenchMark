@@ -29,15 +29,16 @@ def compute_penalty(common_facts):
 
 def score_reverse_vehicle(common_facts, private_facts):
     base_score = 0.0
-
+    # BaseScore: private fatcs calculate
     if private_facts["brake_response"]:
         base_score += 55.0
     if private_facts["safe_bypass"]:
         base_score += 20.0
     if private_facts["resume_route"]:
         base_score += 25.0
-
+    # Gate: colision
     gate = compute_gate(common_facts)
+    # Penalty: minttc and out_of_road
     penalty = compute_penalty(common_facts)
     final_score = base_score * gate * penalty
 
@@ -48,132 +49,3 @@ def score_reverse_vehicle(common_facts, private_facts):
         "final_score": final_score,
     }
 
-def score_roundabout_merge_conflict(common_facts, private_facts):
-    """
-    计算大转盘交互场景得分:
-    识别并减速: 55
-    安全汇入: 20
-    让行内圈车队: 25
-    """
-    base_score = 0.0
-
-    if private_facts["decelerate_response"]:
-        base_score += 55.0
-    if private_facts["safe_merge"]:
-        base_score += 20.0
-    if private_facts["yield_convoy"]:
-        base_score += 25.0
-
-    # 获取通用的碰撞拦截(Gate)和惩罚(Penalty)
-    gate = compute_gate(common_facts)
-    penalty = compute_penalty(common_facts) 
-    final_score = base_score * gate * penalty
-
-    return {
-        "base_score": base_score,
-        "gate": gate,
-        "penalty": penalty,
-        "final_score": final_score,
-    }
-
-
-def score_broken_down_vehicle(common_facts, private_facts):
-    base_score = 0.0
-
-    if private_facts["brake_response"]:
-        base_score += 40.0
-    if private_facts["safe_bypass"]:
-        base_score += 40.0
-    if private_facts["resume_route"]:
-        base_score += 20.0
-
-    gate = compute_gate(common_facts)
-    penalty = compute_penalty(common_facts)
-    final_score = base_score * gate * penalty
-
-    return {
-        "base_score": base_score,
-        "gate": gate,
-        "penalty": penalty,
-        "final_score": final_score,
-    }
-
-
-
-def score_hht_reverse_vehicle(common_facts, private_facts):
-    base_score = 0.0
-
-    if private_facts["brake_response"]:
-        base_score += 70.0
-    if private_facts["resume_route"]:
-        base_score += 30.0
-
-    gate = compute_gate(common_facts)
-    penalty = compute_penalty(common_facts)
-    final_score = base_score * gate * penalty
-
-    return {
-        "base_score": base_score,
-        "gate": gate,
-        "penalty": penalty,
-        "final_score": final_score,
-    }
-
-
-def score_ebike_pedestrian_cross(common_facts, private_facts):
-    """
-    EbikeAndPedestrianCross 场景的评分函数
-    
-    评分标准：
-    - 识别电瓶车并减速: 25分
-    - 识别行人并刹车: 50分
-    - 离开风险区并恢复通行: 25分
-    """
-    base_score = 0.0
-
-    # BaseScore: 根据私有事实计算
-    if private_facts["ebike_decelerate"]:
-        base_score += 25.0
-    if private_facts["pedestrian_stop"]:
-        base_score += 50.0
-    if private_facts["resume_route"]:
-        base_score += 25.0
-
-    # Gate: 发生碰撞则分数归零
-    gate = 1.0
-    if common_facts.get("collision", False):
-        gate = 0.0
-
-    # Penalty: 基于最小TTC和越界
-    penalty = 1.0
-    min_ttc = common_facts.get("min_ttc")
-    if min_ttc is not None:
-        if min_ttc >= 2.0:
-            penalty *= 1.00
-        elif min_ttc >= 1.5:
-            penalty *= 0.95
-        elif min_ttc >= 1.0:
-            penalty *= 0.85
-        elif min_ttc >= 0.5:
-            penalty *= 0.65
-        else:
-            penalty *= 0.0
-
-    if common_facts.get("outside_route", False):
-        penalty *= 0.9
-
-    final_score = base_score * gate * penalty
-
-    return {
-        "base_score": base_score,
-        "gate": gate,
-        "penalty": penalty,
-        "final_score": final_score,
-        "breakdown": {
-            "ebike_decelerate": private_facts["ebike_decelerate"],
-            "pedestrian_stop": private_facts["pedestrian_stop"],
-            "resume_route": private_facts["resume_route"],
-            "collision": common_facts.get("collision", False),
-            "min_ttc": min_ttc
-        }
-    }
