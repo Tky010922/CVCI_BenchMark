@@ -127,3 +127,18 @@ def extract_private_facts_reverse_vehicle(criteria_list):
 # crazy motor_private_facats extracts
 
 # Blind spot hidden car_private_facats extracts
+def extract_private_facts_left_turn(criteria_list):
+    facts = {
+        "brake_response": False,
+        "safe_bypass": False,
+        "resume_route": False,
+    }
+
+    for criterion in criteria_list:
+        if criterion.name == "IntersectionCollisionLeftTurnBrakeCriterion":
+            facts["brake_response"] = (criterion.test_status == "SUCCESS")
+
+        elif criterion.name == "IntersectionCollisionLeftTurnResumeCriterion":
+            facts["resume_route"] = (criterion.test_status == "SUCCESS")
+
+    return facts

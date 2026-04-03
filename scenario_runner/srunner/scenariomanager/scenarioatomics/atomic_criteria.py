@@ -3333,3 +3333,122 @@ class ReverseVehicleResumeCriterion(Criterion):
 # crazy motor criterion
 
 # Blind spot hidden car criterion
+class IntersectionCollisionLeftTurnBrakeCriterion(Criterion):
+    """
+    识别并减速：
+    当障碍车开始侵入风险区后，ego 是否输出明确制动信号
+    """
+    def __init__(
+        self,
+        actor,
+        hazard_actor,
+        name="IntersectionCollisionLeftTurnBrakeCriterion",
+        trigger_x=5.0,
+        brake_threshold=0.2,
+        min_brake_duration=0.3,
+        max_response_time=5.0,
+        terminate_on_failure=False
+    ):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+
+        self.hazard_actor = hazard_actor
+        self.trigger_x = trigger_x
+        self.brake_threshold = brake_threshold
+        self.min_brake_duration = min_brake_duration
+        self.max_response_time = max_response_time
+
+        self._activated = False
+        self._start_time = None
+        self._brake_start_time = None
+
+        self.test_status = "INIT"
+        self.actual_value = 0
+        self.success_value = 1
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+
+        if not self.actor:
+            return new_status
+
+        self_loc = self.actor.get_location()
+
+        # 障碍车进入主车道/风险区后开始检测
+        if not self._activated and self_loc.x >= self.trigger_x:
+            self._activated = True
+            self._start_time = GameTime.get_time()
+
+        if not self._activated:
+            return new_status
+
+        control = self.actor.get_control()
+        current_time = GameTime.get_time()
+
+        # brake 达到阈值，开始累计持续时间
+        if control.brake >= self.brake_threshold:
+            if self._brake_start_time is None:
+                self._brake_start_time = current_time
+
+            brake_duration = current_time - self._brake_start_time
+            if brake_duration >= self.min_brake_duration:
+                self.test_status = "SUCCESS"
+                self.actual_value = 1
+                return py_trees.common.Status.SUCCESS
+        else:
+            # brake 中断则重新计时
+            self._brake_start_time = None
+
+        # 响应超时还没踩刹车，则失败
+        if current_time - self._start_time > self.max_response_time:
+            self.test_status = "FAILURE"
+            self.actual_value = 0
+            return py_trees.common.Status.FAILURE
+
+        return new_status
+
+class IntersectionCollisionLeftTurnResumeCriterion(Criterion):
+    """
+    离开风险区并恢复通行：
+    自车减速后回归路线，并到达终点附近
+    """
+    def __init__(
+        self,
+        actor,
+        goal_location,
+        route_center_x=40.0,
+        name="IntersectionCollisionLeftTurnResumeCriterion",
+        goal_dist_threshold=5.0,
+        center_recover_threshold=2.0,
+        min_resume_speed=1.0,
+        terminate_on_failure=False
+    ):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.goal_location = goal_location
+        self.route_center_x = route_center_x
+        self.goal_dist_threshold = goal_dist_threshold
+        self.center_recover_threshold = center_recover_threshold
+        self.min_resume_speed = min_resume_speed
+
+        self.test_status = "INIT"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+
+        if not self.actor:
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        ego_speed = get_speed(self.actor)
+
+        dist_to_goal = ego_loc.distance(self.goal_location)
+        center_offset = abs(ego_loc.x - self.route_center_x)
+
+        if (
+            dist_to_goal <= self.goal_dist_threshold
+            and center_offset <= self.center_recover_threshold
+            and ego_speed >= self.min_resume_speed
+        ):
+            self.test_status = "SUCCESS"
+            return py_trees.common.Status.SUCCESS
+
+        return new_status

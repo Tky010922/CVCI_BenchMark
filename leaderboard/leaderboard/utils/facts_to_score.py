@@ -132,3 +132,21 @@ def score_reverse_vehicle(common_facts, private_facts):
 # crazy motor
 
 # Blind spot hidden car
+def score_left_turn(common_facts, private_facts):
+    base_score = 0.0
+
+    if private_facts["brake_response"]:
+        base_score += 70.0
+    if private_facts["resume_route"]:
+        base_score += 30.0
+
+    gate = compute_gate(common_facts)
+    penalty = compute_penalty(common_facts)
+    final_score = base_score * gate * penalty
+
+    return {
+        "base_score": base_score,
+        "gate": gate,
+        "penalty": penalty,
+        "final_score": final_score,
+    }
