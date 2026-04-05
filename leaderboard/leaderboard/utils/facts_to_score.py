@@ -57,7 +57,26 @@ def score_high_speed_accident(common_facts, private_facts):
         "final_score": final_score,
     }
 # Trucks encountered during construction
+def compute_lane_closure_score(common_facts, private_facts):
+    base_score = 0.0
 
+    if private_facts.get("deceleration_detected", False) and not common_facts.get("collision", False):
+        base_score += 90.0  
+
+    if common_facts.get("route_completed", False):
+        base_score += 10.0 
+
+    gate = compute_gate(common_facts)
+    penalty = compute_penalty(common_facts)
+
+    final_score = base_score * gate * penalty
+
+    return {
+        "base_score": base_score,
+        "gate": gate,
+        "penalty": penalty,
+        "final_score": final_score,
+    }
 # Drive into the roundabout
 
 # Four students crossing the road
