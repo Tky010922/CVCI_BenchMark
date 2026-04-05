@@ -19,6 +19,7 @@ from srunner.scenariomanager.traffic_events import TrafficEventType
 from leaderboard.utils.checkpoint_tools import fetch_dict, save_dict
 from leaderboard.utils.facts_creator import (
     extract_common_facts,
+    extract_private_facts_lane_closure,
     extract_private_facts_reverse_vehicle,
     extract_private_facts_high_speed_accident,
     extract_private_facts_ghost_probe,
@@ -26,6 +27,7 @@ from leaderboard.utils.facts_creator import (
 )
 from leaderboard.utils.facts_to_score import (
     score_reverse_vehicle,
+    compute_lane_closure_score,
     score_high_speed_accident,
     score_ghost_probe,
     score_left_turn
@@ -33,6 +35,7 @@ from leaderboard.utils.facts_to_score import (
 
 # 通过 PRIVATE_FACT_EXTRACTORS 和 SCENARIO_SCORERS 动态获取不同场景的 facts extractor 和 scorer
 PRIVATE_FACT_EXTRACTORS = {
+    "LaneClosureWithTruck": extract_private_facts_lane_closure,
     "ReverseVehicle": extract_private_facts_reverse_vehicle,
     "HighSpeedAccident": extract_private_facts_high_speed_accident,
     "GhostProbeScenario": extract_private_facts_ghost_probe,
@@ -40,6 +43,7 @@ PRIVATE_FACT_EXTRACTORS = {
 }
 
 SCENARIO_SCORERS = {
+    "LaneClosureWithTruck": compute_lane_closure_score,
     "ReverseVehicle": score_reverse_vehicle,
     "HighSpeedAccident": score_high_speed_accident,
     "GhostProbeScenario": score_ghost_probe,
