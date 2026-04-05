@@ -182,6 +182,29 @@ def extract_private_facts_left_turn(criteria_list):
             facts["resume_route"] = (criterion.test_status == "SUCCESS")
 
     return facts
+    # ========== 以下是cpz添加的 EbikeAndPedestrianCross 场景的私有事实提取函数 ==========
+
+def extract_private_facts_ebike_pedestrian_cross(criteria_list):
+    """
+    提取 EbikeAndPedestrianCross 场景的私有事实
+    """
+    facts = {
+        "ebike_decelerate": False,      # 识别电瓶车并减速
+        "pedestrian_stop": False,       # 识别行人并刹车
+        "resume_route": False,          # 离开风险区并恢复通行
+    }
+
+    for criterion in criteria_list:
+        if criterion.name == "EbikeDetectionAndDecelerateCriterion":
+            facts["ebike_decelerate"] = (criterion.test_status == "SUCCESS")
+
+        elif criterion.name == "PedestrianDetectionAndStopCriterion":
+            facts["pedestrian_stop"] = (criterion.test_status == "SUCCESS")
+
+        elif criterion.name == "ResumeAfterPedestrianCriterion":
+            facts["resume_route"] = (criterion.test_status == "SUCCESS")
+
+    return facts
 
 def extract_private_facts_static_barrier(criteria_list):
     facts = {

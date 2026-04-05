@@ -22,6 +22,7 @@ from leaderboard.utils.facts_creator import (
     extract_private_facts_reverse_vehicle,
     extract_private_facts_high_speed_accident,
     extract_private_facts_ghost_probe,
+    extract_private_facts_ebike_pedestrian_cross,  # 新增：cpz 添加
     extract_private_facts_broken_down_vehicle,
     extract_private_facts_left_turn
     extract_private_facts_static_barrier,
@@ -31,6 +32,7 @@ from leaderboard.utils.facts_to_score import (
     score_reverse_vehicle,
     score_high_speed_accident,
     score_ghost_probe,
+    score_ebike_pedestrian_cross,  # 新增：cpz 添加
     score_broken_down_vehicle,
     score_left_turn
     score_static_barrier,
@@ -42,6 +44,7 @@ PRIVATE_FACT_EXTRACTORS = {
     "ReverseVehicle": extract_private_facts_reverse_vehicle,
     "HighSpeedAccident": extract_private_facts_high_speed_accident,
     "GhostProbeScenario": extract_private_facts_ghost_probe,
+    "EbikeAndPedestrianCross": extract_private_facts_ebike_pedestrian_cross, 
     "BrokenDownVehicle": extract_private_facts_broken_down_vehicle,
     "IntersectionCollisionLeftTurn": extract_private_facts_left_turn,
     "StaticBarrier": extract_private_facts_static_barrier,
@@ -52,6 +55,7 @@ SCENARIO_SCORERS = {
     "ReverseVehicle": score_reverse_vehicle,
     "HighSpeedAccident": score_high_speed_accident,
     "GhostProbeScenario": score_ghost_probe,
+    "EbikeAndPedestrianCross": score_ebike_pedestrian_cross,  
     "BrokenDownVehicle": score_broken_down_vehicle,
     "IntersectionCollisionLeftTurn": score_left_turn,
     "StaticBarrier": score_static_barrier,
@@ -524,6 +528,27 @@ class StatisticsManager(object):
             route_record.scores['score_challenge_gate'] = round(score_detail.get('gate', 0.0), ROUND_DIGITS_SCORE)
             route_record.scores['score_challenge_penalty'] = round(score_detail.get('penalty', 0.0), ROUND_DIGITS_SCORE)
             route_record.scores['score_challenge'] = round(score_detail.get('final_score', 0.0), ROUND_DIGITS_SCORE)
+
+            # ========== cpz 添加：得分打印 ==========
+            print("\n" + "=" * 60)
+            print("【场景得分详情】")
+            print("=" * 60)
+            
+            ebike_success = private_facts.get('ebike_decelerate', False) or private_facts.get('brake_response', False)
+            pedestrian_success = private_facts.get('pedestrian_stop', False)
+            resume_success = private_facts.get('resume_route', False)
+            
+            print(f"电瓶车减速 (25分): {'✓ 成功' if ebike_success else '✗ 失败'}")
+            print(f"行人刹车 (50分): {'✓ 成功' if pedestrian_success else '✗ 失败'}")
+            print(f"恢复通行 (25分): {'✓ 成功' if resume_success else '✗ 失败'}")
+            print("-" * 60)
+            print(f"BaseScore: {score_detail.get('base_score', 0)} 分")
+            print(f"Gate (碰撞): {score_detail.get('gate', 1)}")
+            print(f"Penalty (TTC/偏离): {score_detail.get('penalty', 1)}")
+            print("-" * 60)
+            print(f"【最终得分】: {score_detail.get('final_score', 0)} / 100 分")
+            print("=" * 60 + "\n")
+            # =========================================
 
             print(common_facts, "\n", private_facts, "\n", score_detail)
 

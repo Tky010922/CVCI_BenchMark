@@ -7178,7 +7178,542 @@
 
 
     <!-- ========== scenario_class 9:Slanted motor and children ========== -->
+<routes>
+    <!-- ========== level 1: init_speed=20 km/h ========== -->
+    
+    <!-- 变体1: day&sunny + level1（最简单） -->
+    <route id="1" town="Town10HD_Opt" initial_speed="20.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="20.0" />
+                <difficulty value="level1" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="0.0" fog_density="0.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="0.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
 
+    <!-- 变体2: day&rain + level1 -->
+    <route id="2" town="Town10HD_Opt" initial_speed="20.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="20.0" />
+                <difficulty value="level1" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体3: night&sunny + level1 -->
+    <route id="3" town="Town10HD_Opt" initial_speed="20.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="20.0" />
+                <difficulty value="level1" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体4: night&rain + level1 -->
+    <route id="4" town="Town10HD_Opt" initial_speed="20.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="20.0" />
+                <difficulty value="level1" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- ========== level 2: init_speed=30 km/h ========== -->
+
+    <!-- 变体5: day&sunny + level2 -->
+    <route id="5" town="Town10HD_Opt" initial_speed="30.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="30.0" />
+                <difficulty value="level2" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="0.0" fog_density="0.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="0.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体6: day&rain + level2 -->
+    <route id="6" town="Town10HD_Opt" initial_speed="30.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="30.0" />
+                <difficulty value="level2" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体7: night&sunny + level2 -->
+    <route id="7" town="Town10HD_Opt" initial_speed="30.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="30.0" />
+                <difficulty value="level2" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体8: night&rain + level2 -->
+    <route id="8" town="Town10HD_Opt" initial_speed="30.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="30.0" />
+                <difficulty value="level2" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- ========== level 3: init_speed=40 km/h ========== -->
+
+    <!-- 变体9: day&sunny + level3 -->
+    <route id="9" town="Town10HD_Opt" initial_speed="40.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="40.0" />
+                <difficulty value="level3" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="0.0" fog_density="0.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="0.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体10: day&rain + level3 -->
+    <route id="10" town="Town10HD_Opt" initial_speed="40.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="40.0" />
+                <difficulty value="level3" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="70.0" sun_azimuth_angle="0.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体11: night&sunny + level3 -->
+    <route id="11" town="Town10HD_Opt" initial_speed="40.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="40.0" />
+                <difficulty value="level3" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+    <!-- 变体12: night&rain + level3（最难） -->
+    <route id="12" town="Town10HD_Opt" initial_speed="40.0">
+        <waypoints>
+            <position x="-0.0" y="-65.01" z="0.5"/>
+            <position x="-2.0" y="-65.01" z="0.5"/>
+            <position x="-4.0" y="-65.01" z="0.5"/>
+            <position x="-6.0" y="-65.01" z="0.5"/>
+            <position x="-8.0" y="-65.01" z="0.5"/>
+            <position x="-10.0" y="-65.01" z="0.5"/>
+            <position x="-12.0" y="-65.01" z="0.5"/>
+            <position x="-14.0" y="-65.01" z="0.5"/>
+            <position x="-16.0" y="-65.01" z="0.5"/>
+            <position x="-18.0" y="-65.01" z="0.5"/>
+            <position x="-20.0" y="-65.01" z="0.5"/>
+            <position x="-22.0" y="-65.01" z="0.5"/>
+            <position x="-24.0" y="-65.01" z="0.5"/>
+            <position x="-26.0" y="-65.01" z="0.5"/>
+            <position x="-28.0" y="-65.01" z="0.5"/>
+            <position x="-30.0" y="-65.01" z="0.5"/>
+            <position x="-32.0" y="-65.01" z="0.5"/>
+            <position x="-34.0" y="-65.01" z="0.5"/>
+            <position x="-36.0" y="-65.01" z="0.5"/>
+            <position x="-38.0" y="-65.01" z="0.5"/>
+            <position x="-40.0" y="-65.01" z="0.5"/>
+            <position x="-42.0" y="-65.01" z="0.5"/>
+            <position x="-44.0" y="-65.01" z="0.5"/>
+            <position x="-46.0" y="-65.01" z="0.5"/>
+            <position x="-48.0" y="-65.01" z="0.5"/>
+            <position x="-49.379311" y="-34.194073" z="0.5"/>
+        </waypoints>
+        <scenarios>
+            <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
+                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0"/>
+                <init_speed value="40.0" />
+                <difficulty value="level3" />
+                <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike"/>
+                <other_actor x="-37.02" y="-47.73" z="0.5" yaw="180.0" model="walker.pedestrian.0010"/>
+            </scenario>
+        </scenarios>
+        <weathers>
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+    </route>
+
+</routes>
     <!-- ========== scenario_class 10:reverse_vehicle ========== -->
     <!-- ========== level 3: init_speed=19.4, reverse_speed=4 ========== -->
     <route id="0" town="Town03">
