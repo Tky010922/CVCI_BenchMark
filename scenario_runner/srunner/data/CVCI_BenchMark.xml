@@ -1,7 +1,7 @@
 <routes>
     <!-- ========== scenario_class 1:missing car ========== -->
     <route id="0" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -108,13 +108,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -125,7 +125,7 @@
     </route>
     
     <route id="1" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -232,13 +232,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -249,7 +249,7 @@
     </route>
     
     <route id="2" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -356,13 +356,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -373,7 +373,7 @@
     </route>
     
     <route id="3" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -480,13 +480,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -497,7 +497,7 @@
     </route>
     
     <route id="4" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -604,13 +604,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="30" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -621,7 +621,7 @@
     </route>
     
     <route id="5" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -728,13 +728,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="30" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -745,7 +745,7 @@
     </route>
     
     <route id="6" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -852,13 +852,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="30" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -869,7 +869,7 @@
     </route>
     
     <route id="7" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -976,13 +976,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="30" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -993,7 +993,7 @@
     </route>
     
     <route id="8" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -1100,13 +1100,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="50" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -1117,7 +1117,7 @@
     </route>
     
     <route id="9" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -1224,13 +1224,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="50" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -1241,7 +1241,7 @@
     </route>
     
     <route id="9" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -1348,13 +1348,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="50" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -1365,7 +1365,7 @@
     </route>
     
     <route id="10" town="Town06">
-        <!-- 移除所有天气配置，主车waypoint Y=46.1 -->
+        <!-- 缁夊娅庨幍鈧張澶娿亯濮樻棃鍘ょ純顕嗙礉娑撴槒婧厀aypoint Y=46.1 -->
         <waypoints>
             <position x="180.2" y="45.1" z="0.0"/>
             <position x="182.2" y="45.1" z="0.0"/>
@@ -1472,13 +1472,13 @@
 
         <scenarios>
             <scenario name="CarDisappearAccident" type="CarDisappearDiagonalAccident">
-                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 触发点Y=46.1 -->
+                <trigger_point x="250.2" y="45.1" z="1.0" yaw="0.0"/>  <!-- 鐟欙箑褰傞悙绛?46.1 -->
                 <init_speed value="50" />
                 <reverse_speed value="4" />
                 <trigger_distance value="40.0" />
-                <!-- 故障车：X=300.2，Y=45.1，偏角0° -->
+                <!-- 閺佸懘娈版潪锔肩窗X=300.2閿涘=45.1閿涘苯浜哥憴?鎺?-->
                 <other_actor model="vehicle.nissan.patrol" x="300.2" y="45.1" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
-                <!-- 前车仅配置车型，初始位置由代码固定（Y=46.1） -->
+                <!-- 閸撳秷婧呮禒鍛村帳缂冾喛婧呴崹瀣剁礉閸掓繂顫愭担宥囩枂閻㈠彉鍞惍浣告祼鐎规熬绱橸=46.1閿?-->
                 <other_actor model="vehicle.nissan.patrol" x="0.0" y="0.0" z="0.5" pitch="0.0" yaw="0.0" roll="0.0"/>
             </scenario>
         </scenarios>
@@ -1490,7 +1490,7 @@
     <!-- ========== scenario_class 2:High speed temporary construction ========== -->
     <route id="0" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -1624,10 +1624,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
@@ -1642,7 +1642,7 @@
 
     <route id="1" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -1776,10 +1776,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
@@ -1794,7 +1794,7 @@
     
     <route id="2" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -1928,10 +1928,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
@@ -1946,7 +1946,7 @@
     
     <route id="3" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2080,10 +2080,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="19.4" />
                 <reverse_speed value="4" />
@@ -2098,7 +2098,7 @@
     
     <route id="4" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2232,10 +2232,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="35" />
                 <reverse_speed value="4" />
@@ -2250,7 +2250,7 @@
 
     <route id="5" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2384,10 +2384,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="35" />
                 <reverse_speed value="4" />
@@ -2402,7 +2402,7 @@
     
     <route id="6" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2536,10 +2536,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="35" />
                 <reverse_speed value="4" />
@@ -2554,7 +2554,7 @@
     
     <route id="7" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2688,10 +2688,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="35" />
                 <reverse_speed value="4" />
@@ -2706,7 +2706,7 @@
     
     <route id="8" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2840,10 +2840,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="50" />
                 <reverse_speed value="4" />
@@ -2858,7 +2858,7 @@
 
     <route id="9" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -2992,10 +2992,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="50" />
                 <reverse_speed value="4" />
@@ -3010,7 +3010,7 @@
     
     <route id="10" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -3144,10 +3144,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="50" />
                 <reverse_speed value="4" />
@@ -3162,7 +3162,7 @@
     
     <route id="11" town="Town04">
         <waypoints>
-            <!-- 主车生成位置、行驶路线完全保持不变 -->
+            <!-- 娑撴槒婧呴悽鐔稿灇娴ｅ秶鐤嗛妴浣筋攽妞规儼鐭剧痪鍨暚閸忋劋绻氶幐浣风瑝閸?-->
             <position x="100.22" y="244.91" z="0.0" />
             <position x="102.22" y="242.85" z="0.0" />
             <position x="104.22" y="240.83" z="0.0" />
@@ -3296,10 +3296,10 @@
         </waypoints>
 	
         <scenarios>
-            <!-- 场景名称、类型与Python代码类名完全匹配 -->
+            <!-- 閸︾儤娅欓崥宥囆為妴浣鸿閸ㄥ绗孭ython娴狅絿鐖滅猾璇叉倳鐎瑰苯鍙忛崠褰掑帳 -->
             <scenario name="StaticBarrier" type="StaticBarrier">
             	
-                <!-- 触发点与代码中基准坐标完全匹配，保持原位置不变 -->
+                <!-- 鐟欙箑褰傞悙閫涚瑢娴狅絿鐖滄稉顓炵唨閸戝棗娼楅弽鍥х暚閸忋劌灏柊宥忕礉娣囨繃瀵旈崢鐔剁秴缂冾喕绗夐崣?-->
                 <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 <init_speed value="50" />
                 <reverse_speed value="4" />
@@ -3337,11 +3337,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3373,41 +3368,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3441,11 +3401,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3477,41 +3432,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3545,11 +3465,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3581,41 +3496,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3649,11 +3529,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3685,41 +3560,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3753,11 +3593,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3789,41 +3624,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3857,11 +3657,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3893,41 +3688,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -3961,11 +3721,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -3997,41 +3752,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -4065,11 +3785,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -4101,41 +3816,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -4169,11 +3849,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -4205,41 +3880,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -4273,11 +3913,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -4309,41 +3944,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -4377,11 +3977,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -4413,41 +4008,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -4481,11 +4041,6 @@
         </weathers>
 
         <waypoints>
-            <position x="166.32" y="206.90" z="0.5"/>
-            <position x="168.18" y="206.17" z="0.5"/>
-            <position x="170.04" y="205.44" z="0.5"/>
-            <position x="171.91" y="204.71" z="0.5"/>
-            <position x="173.77" y="203.98" z="0.5"/>
             <position x="175.63" y="203.25" z="0.5"/>
             <position x="177.49" y="202.52" z="0.5"/>
             <position x="179.35" y="201.79" z="0.5"/>
@@ -4517,41 +4072,6 @@
             <position x="227.77" y="182.82" z="0.5"/>
             <position x="229.63" y="182.09" z="0.5"/>
             <position x="231.49" y="181.36" z="0.5"/>
-            <position x="233.36" y="180.63" z="0.5"/>
-            <position x="235.22" y="179.90" z="0.5"/>
-            <position x="237.08" y="179.17" z="0.5"/>
-            <position x="238.94" y="178.44" z="0.5"/>
-            <position x="240.81" y="177.71" z="0.5"/>
-            <position x="242.67" y="176.98" z="0.5"/>
-            <position x="244.53" y="176.25" z="0.5"/>
-            <position x="246.39" y="175.52" z="0.5"/>
-            <position x="248.25" y="174.79" z="0.5"/>
-            <position x="250.12" y="174.06" z="0.5"/>
-            <position x="251.98" y="173.33" z="0.5"/>
-            <position x="253.84" y="172.60" z="0.5"/>
-            <position x="255.70" y="171.87" z="0.5"/>
-            <position x="257.56" y="171.14" z="0.5"/>
-            <position x="259.43" y="170.41" z="0.5"/>
-            <position x="261.29" y="169.69" z="0.5"/>
-            <position x="263.15" y="168.96" z="0.5"/>
-            <position x="265.01" y="168.23" z="0.5"/>
-            <position x="266.88" y="167.50" z="0.5"/>
-            <position x="268.74" y="166.77" z="0.5"/>
-            <position x="270.60" y="166.04" z="0.5"/>
-            <position x="272.46" y="165.31" z="0.5"/>
-            <position x="274.32" y="164.58" z="0.5"/>
-            <position x="276.19" y="163.85" z="0.5"/>
-            <position x="278.05" y="163.12" z="0.5"/>
-            <position x="279.91" y="162.39" z="0.5"/>
-            <position x="281.77" y="161.66" z="0.5"/>
-            <position x="283.63" y="160.93" z="0.5"/>
-            <position x="285.50" y="160.20" z="0.5"/>
-            <position x="287.36" y="159.47" z="0.5"/>
-            <position x="289.22" y="158.74" z="0.5"/>
-            <position x="291.08" y="158.01" z="0.5"/>
-            <position x="292.95" y="157.28" z="0.5"/>
-            <position x="294.81" y="156.55" z="0.5"/>
-            <position x="296.34" y="155.95" z="0.5"/>
         </waypoints>
 
         <scenarios>
@@ -7375,35 +6895,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -7435,72 +6926,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -7525,35 +6950,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -7585,72 +6981,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -7675,35 +7005,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -7735,72 +7036,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -7825,35 +7060,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -7885,72 +7091,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -7975,35 +7115,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8035,72 +7146,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8125,35 +7170,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8185,72 +7201,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8275,35 +7225,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8335,72 +7256,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8425,35 +7280,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8485,72 +7311,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8575,35 +7335,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8635,72 +7366,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8725,35 +7390,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8785,72 +7421,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -8875,35 +7445,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -8935,72 +7476,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -9025,35 +7500,6 @@
         </weathers>
 
         <waypoints>
-            <position x="-100.0" y="2.7" z="1.5"/>
-            <position x="-98.0" y="2.7" z="1.5"/>
-            <position x="-96.0" y="2.7" z="1.5"/>
-            <position x="-94.0" y="2.7" z="1.5"/>
-            <position x="-92.0" y="2.7" z="1.5"/>
-            <position x="-90.0" y="2.7" z="1.5"/>
-            <position x="-88.0" y="2.7" z="1.5"/>
-            <position x="-86.0" y="2.7" z="1.5"/>
-            <position x="-84.0" y="2.7" z="1.5"/>
-            <position x="-82.0" y="2.7" z="1.5"/>
-            <position x="-80.0" y="2.7" z="1.5"/>
-            <position x="-78.0" y="2.7" z="1.5"/>
-            <position x="-76.0" y="2.7" z="1.5"/>
-            <position x="-74.0" y="2.7" z="1.5"/>
-            <position x="-72.0" y="2.7" z="1.5"/>
-            <position x="-70.0" y="2.7" z="1.5"/>
-            <position x="-68.0" y="2.7" z="1.5"/>
-            <position x="-66.0" y="2.7" z="1.5"/>
-            <position x="-64.0" y="2.7" z="1.5"/>
-            <position x="-62.0" y="2.7" z="1.5"/>
-            <position x="-60.0" y="2.7" z="1.5"/>
-            <position x="-58.0" y="2.7" z="1.5"/>
-            <position x="-56.0" y="2.7" z="1.5"/>
-            <position x="-54.0" y="2.7" z="1.5"/>
-            <position x="-52.0" y="2.7" z="1.5"/>
-            <position x="-50.0" y="2.7" z="1.5"/>
-            <position x="-48.0" y="2.7" z="1.5"/>
-            <position x="-46.0" y="2.7" z="1.5"/>
-            <position x="-44.0" y="2.7" z="1.5"/>
             <position x="-42.0" y="2.7" z="1.5"/>
             <position x="-40.0" y="2.7" z="1.5"/>
             <position x="-38.0" y="2.7" z="1.5"/>
@@ -9085,72 +7531,6 @@
             <position x="14.0" y="2.7" z="1.5"/>
             <position x="16.0" y="2.7" z="1.5"/>
             <position x="18.0" y="2.7" z="1.5"/>
-            <position x="20.0" y="2.7" z="1.5"/>
-            <position x="22.0" y="2.7" z="1.5"/>
-            <position x="24.0" y="2.7" z="1.5"/>
-            <position x="26.0" y="2.7" z="1.5"/>
-            <position x="28.0" y="2.7" z="1.5"/>
-            <position x="30.0" y="2.7" z="1.5"/>
-            <position x="32.0" y="2.7" z="1.5"/>
-            <position x="34.0" y="2.7" z="1.5"/>
-            <position x="36.0" y="2.7" z="1.5"/>
-            <position x="38.0" y="2.7" z="1.5"/>
-            <position x="40.0" y="2.7" z="1.5"/>
-            <position x="42.0" y="2.7" z="1.5"/>
-            <position x="44.0" y="2.7" z="1.5"/>
-            <position x="46.0" y="2.7" z="1.5"/>
-            <position x="48.0" y="2.7" z="1.5"/>
-            <position x="50.0" y="2.7" z="1.5"/>
-            <position x="52.0" y="2.7" z="1.5"/>
-            <position x="54.0" y="2.7" z="1.5"/>
-            <position x="56.0" y="2.7" z="1.5"/>
-            <position x="58.0" y="2.7" z="1.5"/>
-            <position x="60.0" y="2.7" z="1.5"/>
-            <position x="62.0" y="2.7" z="1.5"/>
-            <position x="64.0" y="2.7" z="1.5"/>
-            <position x="66.0" y="2.7" z="1.5"/>
-            <position x="68.0" y="2.7" z="1.5"/>
-            <position x="70.0" y="2.7" z="1.5"/>
-            <position x="72.0" y="2.7" z="1.5"/>
-            <position x="74.0" y="2.7" z="1.5"/>
-            <position x="76.0" y="2.7" z="1.5"/>
-            <position x="78.0" y="2.7" z="1.5"/>
-            <position x="80.0" y="2.7" z="1.5"/>
-            <position x="82.0" y="2.7" z="1.5"/>
-            <position x="84.0" y="2.7" z="1.5"/>
-            <position x="86.0" y="2.7" z="1.5"/>
-            <position x="88.0" y="2.7" z="1.5"/>
-            <position x="90.0" y="2.7" z="1.5"/>
-            <position x="92.0" y="2.7" z="1.5"/>
-            <position x="94.0" y="2.7" z="1.5"/>
-            <position x="96.0" y="2.7" z="1.5"/>
-            <position x="98.0" y="2.7" z="1.5"/>
-            <position x="100.0" y="2.7" z="1.5"/>
-            <position x="102.0" y="2.7" z="1.5"/>
-            <position x="104.0" y="2.7" z="1.5"/>
-            <position x="106.0" y="2.7" z="1.5"/>
-            <position x="108.0" y="2.7" z="1.5"/>
-            <position x="110.0" y="2.7" z="1.5"/>
-            <position x="112.0" y="2.7" z="1.5"/>
-            <position x="114.0" y="2.7" z="1.5"/>
-            <position x="116.0" y="2.7" z="1.5"/>
-            <position x="118.0" y="2.7" z="1.5"/>
-            <position x="120.0" y="2.7" z="1.5"/>
-            <position x="122.0" y="2.7" z="1.5"/>
-            <position x="124.0" y="2.7" z="1.5"/>
-            <position x="126.0" y="2.7" z="1.5"/>
-            <position x="128.0" y="2.7" z="1.5"/>
-            <position x="130.0" y="2.7" z="1.5"/>
-            <position x="132.0" y="2.7" z="1.5"/>
-            <position x="134.0" y="2.7" z="1.5"/>
-            <position x="136.0" y="2.7" z="1.5"/>
-            <position x="138.0" y="2.7" z="1.5"/>
-            <position x="140.0" y="2.7" z="1.5"/>
-            <position x="142.0" y="2.7" z="1.5"/>
-            <position x="144.0" y="2.7" z="1.5"/>
-            <position x="146.0" y="2.7" z="1.5"/>
-            <position x="148.0" y="2.7" z="1.5"/>
-            <position x="150.0" y="2.7" z="1.5"/>
         </waypoints>
 
         <scenarios>
@@ -9973,7 +8353,7 @@
 
     <!-- ========== scenario_class 9:Slanted motor and children ========== -->
     <!-- ========== level 1: init_speed=20 km/h ========== -->
-    <!-- 变体1: day&sunny + level1（最简单） -->
+    <!-- 閸欐ü缍?: day&sunny + level1閿涘牊娓剁粻鈧崡鏇礆 -->
     <route id="1" town="Town10HD_Opt" initial_speed="20.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10017,7 +8397,7 @@
         </weathers>
     </route>
 
-    <!-- 变体2: day&rain + level1 -->
+    <!-- 閸欐ü缍?: day&rain + level1 -->
     <route id="2" town="Town10HD_Opt" initial_speed="20.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10061,7 +8441,7 @@
         </weathers>
     </route>
 
-    <!-- 变体3: night&sunny + level1 -->
+    <!-- 閸欐ü缍?: night&sunny + level1 -->
     <route id="3" town="Town10HD_Opt" initial_speed="20.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10105,7 +8485,7 @@
         </weathers>
     </route>
 
-    <!-- 变体4: night&rain + level1 -->
+    <!-- 閸欐ü缍?: night&rain + level1 -->
     <route id="4" town="Town10HD_Opt" initial_speed="20.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10151,7 +8531,7 @@
 
     <!-- ========== level 2: init_speed=30 km/h ========== -->
 
-    <!-- 变体5: day&sunny + level2 -->
+    <!-- 閸欐ü缍?: day&sunny + level2 -->
     <route id="5" town="Town10HD_Opt" initial_speed="30.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10195,7 +8575,7 @@
         </weathers>
     </route>
 
-    <!-- 变体6: day&rain + level2 -->
+    <!-- 閸欐ü缍?: day&rain + level2 -->
     <route id="6" town="Town10HD_Opt" initial_speed="30.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10239,7 +8619,7 @@
         </weathers>
     </route>
 
-    <!-- 变体7: night&sunny + level2 -->
+    <!-- 閸欐ü缍?: night&sunny + level2 -->
     <route id="7" town="Town10HD_Opt" initial_speed="30.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10283,7 +8663,7 @@
         </weathers>
     </route>
 
-    <!-- 变体8: night&rain + level2 -->
+    <!-- 閸欐ü缍?: night&rain + level2 -->
     <route id="8" town="Town10HD_Opt" initial_speed="30.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10329,7 +8709,7 @@
 
     <!-- ========== level 3: init_speed=40 km/h ========== -->
 
-    <!-- 变体9: day&sunny + level3 -->
+    <!-- 閸欐ü缍?: day&sunny + level3 -->
     <route id="9" town="Town10HD_Opt" initial_speed="40.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10373,7 +8753,7 @@
         </weathers>
     </route>
 
-    <!-- 变体10: day&rain + level3 -->
+    <!-- 閸欐ü缍?0: day&rain + level3 -->
     <route id="10" town="Town10HD_Opt" initial_speed="40.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10417,7 +8797,7 @@
         </weathers>
     </route>
 
-    <!-- 变体11: night&sunny + level3 -->
+    <!-- 閸欐ü缍?1: night&sunny + level3 -->
     <route id="11" town="Town10HD_Opt" initial_speed="40.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>
@@ -10461,7 +8841,7 @@
         </weathers>
     </route>
 
-    <!-- 变体12: night&rain + level3（最难） -->
+    <!-- 閸欐ü缍?2: night&rain + level3閿涘牊娓堕梾鎾呯礆 -->
     <route id="12" town="Town10HD_Opt" initial_speed="40.0">
         <waypoints>
             <position x="-0.0" y="-65.01" z="0.5"/>

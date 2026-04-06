@@ -75,7 +75,7 @@ class GhostProbeScenario(BasicScenario):
 
     def _get_route_anchor_locations(self):
         route_start_loc = self.config.trigger_points[0].location
-        route_end_loc = carla.Location(x=150.0, y=2.7, z=1.5)
+        route_end_loc = carla.Location(x=18.0, y=2.7, z=1.5)
 
         if self.config.route:
             route_start_loc = self.config.route[0][0].location
@@ -184,7 +184,7 @@ class GhostProbeScenario(BasicScenario):
         scenario_flow.add_child(pedestrian_sequence)
 
         root.add_child(scenario_flow)
-        root.add_child(DriveDistance(self.ego_vehicles[0], distance=150))
+        root.add_child(DriveDistance(self.ego_vehicles[0], distance=60))
 
         return root
 

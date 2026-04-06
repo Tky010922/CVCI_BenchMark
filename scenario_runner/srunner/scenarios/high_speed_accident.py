@@ -19,7 +19,7 @@ class HighSpeedAccident(BasicScenario):
                  debug_mode=False, criteria_enable=True, timeout=120):
         self._init_speed = get_value_parameter(config, "init_speed", float, 10.0)
         self._accident_lateral_distance = get_value_parameter(config, "lateral_distance", float, 4.63)
-        self._accident_longitudinal_distance = 47.95
+        self._accident_longitudinal_distance = 30.0
         self._accident_yaw = -135.0
 
         super(HighSpeedAccident, self).__init__(
@@ -34,7 +34,7 @@ class HighSpeedAccident(BasicScenario):
     def _get_route_anchor_locations(self):
         """Use the route XML endpoints when they are available."""
         route_start_loc = self.config.trigger_points[0].location
-        route_end_loc = carla.Location(x=296.34, y=155.95, z=0.5)
+        route_end_loc = carla.Location(x=287.36, y=159.47, z=0.5)
 
         if self.config.route:
             route_start_loc = self.config.route[0][0].location
@@ -92,7 +92,7 @@ class HighSpeedAccident(BasicScenario):
             "NightBehavior",
             policy=py_trees.common.ParallelPolicy.SUCCESS_ON_ONE
         )
-        root.add_child(DriveDistance(self.ego_vehicles[0], 140))
+        root.add_child(DriveDistance(self.ego_vehicles[0], 60))
         return root
 
     def _create_test_criteria(self):
