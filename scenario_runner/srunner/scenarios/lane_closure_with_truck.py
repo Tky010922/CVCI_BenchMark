@@ -1,6 +1,9 @@
 import math
 import py_trees
 import carla
+import inspect
+
+from agents.navigation.local_planner import RoadOption
 
 from srunner.scenariomanager.carla_data_provider import CarlaDataProvider
 from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
@@ -12,6 +15,50 @@ from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
 from srunner.scenariomanager.scenarioatomics.atomic_trigger_conditions import DriveDistance
 from srunner.scenariomanager.scenarioatomics.atomic_behaviors import Idle
 from srunner.scenarios.basic_scenario import BasicScenario
+
+# Helper function to convert location to GPS coordinates (copied from route_manipulation)
+def _location_to_gps(lat_ref, lon_ref, location):
+    """Convert from world coordinates to GPS coordinates"""
+    EARTH_RADIUS_EQUA = 6378137.0
+    scale = math.cos(lat_ref * math.pi / 180.0)
+    mx = scale * location.x * math.pi / 180.0
+    my = location.y * math.pi / 180.0
+
+    lat = lat_ref + mx
+    lon = lon_ref + my / scale
+    z = location.z  # height
+
+    return {'lat': lat, 'lon': lon, 'z': z}
+
+# Helper function to get GPS reference (copied from route_manipulation)
+def _get_latlon_ref(world):
+    """Get GPS reference from world"""
+    import xml.etree.ElementTree as ET
+
+    xodr = world.get_map().to_opendrive()
+    tree = ET.ElementTree(ET.fromstring(xodr))
+
+    # default reference
+    lat_ref = 42.0
+    lon_ref = 2.0
+
+    for opendrive in tree.iter("OpenDRIVE"):
+        for header in opendrive.iter("header"):
+            for georef in header.iter("geoReference"):
+                if georef.text:
+                    geo_ref = georef.text
+                    # Extract lat and lon from the geo reference string
+                    # Format: +42.0+2.0/
+                    if '+' in geo_ref:
+                        parts = geo_ref.split('+')
+                        if len(parts) >= 3:
+                            try:
+                                lat_ref = float(parts[1])
+                                lon_ref = float(parts[2])
+                            except (ValueError, IndexError):
+                                pass
+
+    return lat_ref, lon_ref
 
 
 class LaneClosureWithTruck(BasicScenario):
@@ -61,10 +108,14 @@ class LaneClosureWithTruck(BasicScenario):
 
         # =======================================================
         # 2. 将车辆往后移动50米，给更多加速时间（障碍物位置不变）
+        #    同时扩展route范围，包含车辆新位置
         # =======================================================
         carla_map = CarlaDataProvider.get_map()
         ego_location = self.ego_vehicles[0].get_location()
         ego_wp = carla_map.get_waypoint(ego_location)
+
+        # 保存原始位置，用于后续生成route
+        original_location = ego_location
 
         if ego_wp:
             # 往后找50米的waypoint
@@ -84,6 +135,115 @@ class LaneClosureWithTruck(BasicScenario):
                 new_transform = carla.Transform(new_location, right_turned_rotation)
                 self.ego_vehicles[0].set_transform(new_transform)
                 print(f"[DEBUG] Vehicle moved 50m back to: {new_location}, yaw rotated 6.5° right", flush=True)
+
+                # =======================================================
+                # 扩展route，添加从新位置回溯到原位置的waypoints
+                # =======================================================
+                if hasattr(config, 'route') and config.route:
+                    print(f"[DEBUG] Extending route to include vehicle's new position", flush=True)
+                    print(f"[DEBUG] Original route length: {len(config.route)}", flush=True)
+
+                    # 获取GPS reference
+                    world = CarlaDataProvider.get_world()
+                    lat_ref, lon_ref = _get_latlon_ref(world)
+
+                    # 先找到RouteScenario实例，以便后续获取原始gps_route
+                    route_scenario_instance = None
+                    for frame_info in inspect.stack():
+                        frame = frame_info.frame
+                        if 'self' in frame.f_locals:
+                            frame_self = frame.f_locals['self']
+                            if frame_self.__class__.__name__ == 'RouteScenario':
+                                route_scenario_instance = frame_self
+                                break
+
+                    if not route_scenario_instance:
+                        print("[DEBUG] WARNING: Could not find RouteScenario instance!", flush=True)
+                    else:
+                        print(f"[DEBUG] Found RouteScenario with gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
+
+                    # 生成从新位置向前到原位置的waypoints
+                    extended_waypoints = []
+                    extended_gps_waypoints = []  # 同时生成GPS waypoints
+                    current_wp = new_wp
+
+                    # 向前追踪，直到到达或超过原始位置
+                    while current_wp:
+                        extended_waypoints.append((current_wp.transform, RoadOption.STRAIGHT))
+
+                        # 生成对应的GPS坐标
+                        gps_coord = _location_to_gps(lat_ref, lon_ref, current_wp.transform.location)
+                        extended_gps_waypoints.append((gps_coord, RoadOption.STRAIGHT))
+
+                        # 检查是否已经到达或超过原始位置
+                        dist_to_original = current_wp.transform.location.distance(original_location)
+                        print(f"[DEBUG] Added waypoint at distance {dist_to_original:.2f}m from original location", flush=True)
+                        if dist_to_original < 5.0:  # 接近原始位置
+                            break
+
+                        # 向前移动一段距离
+                        next_wps = current_wp.next(10.0)  # 每次前进10米
+                        if next_wps:
+                            current_wp = next_wps[0]
+                        else:
+                            break
+
+                    # 将扩展的waypoints插入到route开头
+                    if extended_waypoints:
+                        # 获取route的其余部分
+                        original_route = config.route[1:]  # 跳过第一个waypoint（起点）
+
+                        # 从RouteScenario实例获取原始gps_route
+                        if route_scenario_instance and hasattr(route_scenario_instance, 'gps_route'):
+                            original_gps_route = route_scenario_instance.gps_route[1:]
+                            print(f"[DEBUG] Original gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
+                        else:
+                            original_gps_route = []
+
+                        # 组合新route：扩展部分 + 原始route
+                        config.route = extended_waypoints + original_route
+                        new_gps_route = extended_gps_waypoints + original_gps_route
+                        print(f"[DEBUG] Route extended: added {len(extended_waypoints)} waypoints from vehicle position", flush=True)
+                        print(f"[DEBUG] New route length: {len(config.route)}", flush=True)
+                        print(f"[DEBUG] New GPS route length: {len(new_gps_route)}", flush=True)
+
+                        # 更新RouteScenario实例的route和gps_route
+                        if route_scenario_instance:
+                            print(f"[DEBUG] Updating RouteScenario route and gps_route", flush=True)
+                            route_scenario_instance.route = config.route
+                            route_scenario_instance.gps_route = new_gps_route
+                            print(f"[DEBUG] RouteScenario.route updated to length {len(route_scenario_instance.route)}", flush=True)
+                            print(f"[DEBUG] RouteScenario.gps_route updated to length {len(route_scenario_instance.gps_route)}", flush=True)
+
+                            # =======================================================
+                            # 关键：更新RouteScenario中可能已经创建的InRouteTest实例
+                            # =======================================================
+                            # 检查RouteScenario是否已经有criteria_tree
+                            if hasattr(route_scenario_instance, 'criteria_tree') and route_scenario_instance.criteria_tree:
+                                print(f"[DEBUG] Searching for InRouteTest instances in criteria_tree", flush=True)
+                                # 遍历criteria_tree找到所有InRouteTest实例
+                                import py_trees
+                                for child in route_scenario_instance.criteria_tree.iterate():
+                                    if hasattr(child, '__class__') and child.__class__.__name__ == 'InRouteTest':
+                                        print(f"[DEBUG] Found InRouteTest instance, updating its route data", flush=True)
+                                        # 更新InRouteTest的内部数据
+                                        child._route = config.route
+                                        child._route_transforms, _ = zip(*config.route)
+                                        child._route_length = len(config.route)
+                                        # 重新计算accum_meters
+                                        child._accum_meters = []
+                                        prev_loc = child._route_transforms[0].location
+                                        for i, tran in enumerate(child._route_transforms):
+                                            loc = tran.location
+                                            d = loc.distance(prev_loc)
+                                            accum = 0 if i == 0 else child._accum_meters[i - 1]
+                                            child._accum_meters.append(d + accum)
+                                            prev_loc = loc
+                                        print(f"[DEBUG] InRouteTest updated: route_length={child._route_length}, accum_meters={len(child._accum_meters)}", flush=True)
+                    else:
+                        print(f"[DEBUG] No extended waypoints generated!", flush=True)
+                else:
+                    print(f"[DEBUG] No route found in config! hasattr={hasattr(config, 'route')}", flush=True)
 
         # =======================================================
         # 3. 获取地图与基准 Waypoint（障碍物位置保持不变）
