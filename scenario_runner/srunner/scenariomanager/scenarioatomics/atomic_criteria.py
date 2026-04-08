@@ -3681,14 +3681,52 @@ class PedestrianStopCriterion(Criterion):
         self._activation_speed = None
         self._stop_start_time = None
         self._first_meaningful_slowdown_distance = None
+        self._collision_sensor = None
+        self._pedestrian_collision = False
         self.actual_value = float("inf")
         self.success_value = stop_speed_threshold
         self.units = "m/s"
         self.test_status = "FAILURE"
 
+    def initialise(self):
+        world = CarlaDataProvider.get_world()
+        if world is not None and self.actor is not None:
+            blueprint = world.get_blueprint_library().find('sensor.other.collision')
+            self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
+            self._collision_sensor.listen(lambda event: self._on_collision(event))
+        super().initialise()
+
+    def terminate(self, new_status):
+        if self._collision_sensor is not None:
+            try:
+                if getattr(self._collision_sensor, "is_listening", False):
+                    self._collision_sensor.stop()
+            except (RuntimeError, AttributeError):
+                pass
+            try:
+                self._collision_sensor.destroy()
+            except RuntimeError:
+                pass
+        self._collision_sensor = None
+        super().terminate(new_status)
+
+    def _on_collision(self, event):
+        if event is None or event.other_actor is None:
+            return
+        if 'walker.pedestrian' not in event.other_actor.type_id:
+            return
+        self._pedestrian_collision = True
+        self.test_status = "FAILURE"
+
     def update(self):
         new_status = py_trees.common.Status.RUNNING
         if not self.actor or not self.pedestrian_actor or self._route_origin is None:
+            return new_status
+
+        if self._pedestrian_collision:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
             return new_status
 
         if self.test_status == "SUCCESS":
@@ -3742,7 +3780,7 @@ class PedestrianStopCriterion(Criterion):
         else:
             self._stop_start_time = None
 
-        if self._has_valid_stop and ped_lateral_error <= -self.clear_lateral_margin:
+        if self._has_valid_stop and ped_lateral_error <= -self.clear_lateral_margin and not self._pedestrian_collision:
             self.test_status = "SUCCESS"
             return new_status
 
@@ -3752,6 +3790,7 @@ class PedestrianStopCriterion(Criterion):
                 return py_trees.common.Status.FAILURE
 
         return new_status
+
 
 class PedestrianResumeCriterion(Criterion):
     """Check whether the ego restarts only after all children have safely crossed."""
@@ -3799,19 +3838,24 @@ class PedestrianResumeCriterion(Criterion):
         ego_loc = self.actor.get_location()
         ego_speed = _get_actor_speed_mps(self.actor)
         self.actual_value = ego_speed
+        ego_longitudinal, _ = _project_to_axis(
+            self._route_origin, ego_loc, self._forward_xy, self._right_xy)
 
         pedestrian_states = []
+        pedestrian_behind_states = []
         min_distance_to_any = float("inf")
         for pedestrian in self.pedestrian_actors:
             if pedestrian is None:
                 continue
             ped_loc = pedestrian.get_location()
-            _, ped_lateral_error = _project_to_axis(
+            ped_longitudinal, ped_lateral_error = _project_to_axis(
                 self._route_origin, ped_loc, self._forward_xy, self._right_xy)
             pedestrian_states.append(ped_lateral_error <= -self.safe_lateral_margin)
+            pedestrian_behind_states.append(ped_longitudinal < ego_longitudinal - self.collision_buffer)
             min_distance_to_any = min(min_distance_to_any, ego_loc.distance(ped_loc))
 
         all_pedestrians_safe = len(pedestrian_states) > 0 and all(pedestrian_states)
+        all_pedestrians_behind = len(pedestrian_behind_states) > 0 and all(pedestrian_behind_states)
 
         if ego_speed <= self.stop_speed_threshold and not all_pedestrians_safe:
             self._has_stopped = True
@@ -3825,9 +3869,15 @@ class PedestrianResumeCriterion(Criterion):
             return new_status
 
         if all_pedestrians_safe and not self._has_stopped:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
+            # If the ego has already passed all children with safe clearance, allow success.
+            if all_pedestrians_behind and ego_speed >= self.resume_speed and min_distance_to_any > self.collision_buffer:
+                current_time = GameTime.get_time()
+                if self._resume_start_time is None:
+                    self._resume_start_time = current_time
+                elif current_time - self._resume_start_time >= self.min_resume_duration:
+                    self.test_status = "SUCCESS"
+            else:
+                self._resume_start_time = None
             return new_status
 
         if self._has_stopped and all_pedestrians_safe and ego_speed >= self.resume_speed \
@@ -3841,8 +3891,6 @@ class PedestrianResumeCriterion(Criterion):
             self._resume_start_time = None
 
         return new_status
-
-
 # ==========================avoid a disabled vehicle criterion==========================
 class BrokenDownVehicleBrakeCriterion(Criterion):
 
