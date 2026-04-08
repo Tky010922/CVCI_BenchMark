@@ -3984,19 +3984,21 @@ class BrokenDownVehicleBypassCriterion(Criterion):
 class BrokenDownVehicleResumeCriterion(Criterion):
     """
     判定自车是否回归中心并到达终点：
-    道路中心线：y = -12.0
+    支持多个道路中心线：y = -12.0 或 y = -15.5
     行驶方向：沿 x 轴负方向
     """
-    def __init__(self, actor, goal_location, name="ResumeCriterion", route_center_y=-12.0, goal_dist_threshold=5.0, 
-                 center_recover_threshold=2.0, min_resume_speed=1.0):
+    def __init__(self, actor, goal_location, name="ResumeCriterion", 
+                 route_centers=[-12.0, -15.5],  # 修改为列表，支持多个中心线
+                 goal_dist_threshold=5.0, 
+                 center_recover_threshold=2.0, 
+                 min_resume_speed=1.0):
         super(BrokenDownVehicleResumeCriterion, self).__init__(name, actor)
         self.goal_location = goal_location
-        self.route_center_y = route_center_y  # 修改为 y 中心线
+        self.route_centers = route_centers  # 存储所有合法的中心线
         self.goal_dist_threshold = goal_dist_threshold
         self.center_recover_threshold = center_recover_threshold
         self.min_resume_speed = min_resume_speed
         
-        # 初始设为失败
         self.test_status = "FAILURE"
 
     def update(self):
@@ -4008,14 +4010,16 @@ class BrokenDownVehicleResumeCriterion(Criterion):
         
         # 实时监控进度
         dist_to_goal = ego_loc.distance(self.goal_location)
-        # 横向偏移现在计算 y 轴差值
-        center_offset = abs(ego_loc.y - self.route_center_y)
 
-        # 判定逻辑：只有进入终点范围内才进行最终判定
+        # 【核心逻辑修改】：判断当前 y 坐标是否靠近任何一个预设的中心线
+        # 只要有一个中心线的偏移量小于阈值，is_on_center 就会为 True
+        is_on_center = any(abs(ego_loc.y - target_y) <= self.center_recover_threshold 
+                           for target_y in self.route_centers)
+
+        # 判定逻辑
         if dist_to_goal <= self.goal_dist_threshold:
-            # 必须同时满足：1. 回到 y=-12 中心线附近 2. 还有速度
-            if center_offset <= self.center_recover_threshold and ego_speed >= self.min_resume_speed:
-                
+            # 必须同时满足：1. 在任意一条中心线附近 2. 还有速度
+            if is_on_center and ego_speed >= self.min_resume_speed:
                 self.test_status = "SUCCESS" 
                 return py_trees.common.Status.SUCCESS
             else:
