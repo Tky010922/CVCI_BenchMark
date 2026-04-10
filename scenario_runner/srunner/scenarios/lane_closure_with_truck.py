@@ -87,16 +87,16 @@ class LaneClosureWithTruck(BasicScenario):
         self._initial_speed_kph = 130.0
         if hasattr(config, 'other_parameters') and 'init_speed' in config.other_parameters:
             self._initial_speed_kph = float(config.other_parameters['init_speed'].get('value', 130))
-            print(f"[DEBUG] Initial speed loaded from XML: {self._initial_speed_kph} km/h", flush=True)
+            # print(f"[DEBUG] Initial speed loaded from XML: {self._initial_speed_kph} km/h", flush=True)
 
-        print(f"[DEBUG] LaneClosureWithTruck.__init__ called, initial_speed={self._initial_speed_kph} km/h", flush=True)
+        # print(f"[DEBUG] LaneClosureWithTruck.__init__ called, initial_speed={self._initial_speed_kph} km/h", flush=True)
         super(LaneClosureWithTruck, self).__init__("LaneClosureWithTruck",
                                                    ego_vehicles,
                                                    config,
                                                    world,
                                                    debug_mode,
                                                    criteria_enable=criteria_enable)
-        print(f"[DEBUG] LaneClosureWithTruck.__init__ completed", flush=True)
+        # print(f"[DEBUG] LaneClosureWithTruck.__init__ completed", flush=True)
 
     def _initialize_actors(self, config):
         # =======================================================
@@ -104,7 +104,7 @@ class LaneClosureWithTruck(BasicScenario):
         # =======================================================
         ego_velocity = carla.Vector3D(0, 0, 0)
         self.ego_vehicles[0].set_target_velocity(ego_velocity)
-        print(f"[DEBUG] Vehicle spawned at 0 km/h, will set to {self._initial_speed_kph} km/h after actors spawn", flush=True)
+        # print(f"[DEBUG] Vehicle spawned at 0 km/h, will set to {self._initial_speed_kph} km/h after actors spawn", flush=True)
 
         # =======================================================
         # 2. 将车辆往后移动50米，给更多加速时间（障碍物位置不变）
@@ -134,14 +134,14 @@ class LaneClosureWithTruck(BasicScenario):
                 )
                 new_transform = carla.Transform(new_location, right_turned_rotation)
                 self.ego_vehicles[0].set_transform(new_transform)
-                print(f"[DEBUG] Vehicle moved 50m back to: {new_location}, yaw rotated 6.5° right", flush=True)
+                # print(f"[DEBUG] Vehicle moved 50m back to: {new_location}, yaw rotated 6.5° right", flush=True)
 
                 # =======================================================
                 # 扩展route，添加从新位置回溯到原位置的waypoints
                 # =======================================================
                 if hasattr(config, 'route') and config.route:
-                    print(f"[DEBUG] Extending route to include vehicle's new position", flush=True)
-                    print(f"[DEBUG] Original route length: {len(config.route)}", flush=True)
+                    # print(f"[DEBUG] Extending route to include vehicle's new position", flush=True)
+                    # print(f"[DEBUG] Original route length: {len(config.route)}", flush=True)
 
                     # 获取GPS reference
                     world = CarlaDataProvider.get_world()
@@ -158,9 +158,11 @@ class LaneClosureWithTruck(BasicScenario):
                                 break
 
                     if not route_scenario_instance:
-                        print("[DEBUG] WARNING: Could not find RouteScenario instance!", flush=True)
+                        # print("[DEBUG] WARNING: Could not find RouteScenario instance!", flush=True)
+                        pass
                     else:
-                        print(f"[DEBUG] Found RouteScenario with gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
+                        # print(f"[DEBUG] Found RouteScenario with gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
+                        pass
 
                     # 生成从新位置向前到原位置的waypoints
                     extended_waypoints = []
@@ -177,7 +179,7 @@ class LaneClosureWithTruck(BasicScenario):
 
                         # 检查是否已经到达或超过原始位置
                         dist_to_original = current_wp.transform.location.distance(original_location)
-                        print(f"[DEBUG] Added waypoint at distance {dist_to_original:.2f}m from original location", flush=True)
+                        # print(f"[DEBUG] Added waypoint at distance {dist_to_original:.2f}m from original location", flush=True)
                         if dist_to_original < 5.0:  # 接近原始位置
                             break
 
@@ -196,37 +198,64 @@ class LaneClosureWithTruck(BasicScenario):
                         # 从RouteScenario实例获取原始gps_route
                         if route_scenario_instance and hasattr(route_scenario_instance, 'gps_route'):
                             original_gps_route = route_scenario_instance.gps_route[1:]
-                            print(f"[DEBUG] Original gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
+                            # print(f"[DEBUG] Original gps_route length: {len(route_scenario_instance.gps_route)}", flush=True)
                         else:
                             original_gps_route = []
 
                         # 组合新route：扩展部分 + 原始route
                         config.route = extended_waypoints + original_route
                         new_gps_route = extended_gps_waypoints + original_gps_route
-                        print(f"[DEBUG] Route extended: added {len(extended_waypoints)} waypoints from vehicle position", flush=True)
-                        print(f"[DEBUG] New route length: {len(config.route)}", flush=True)
-                        print(f"[DEBUG] New GPS route length: {len(new_gps_route)}", flush=True)
+                        # print(f"[DEBUG] Route extended: added {len(extended_waypoints)} waypoints from vehicle position", flush=True)
+                        # print(f"[DEBUG] New route length: {len(config.route)}", flush=True)
+                        # print(f"[DEBUG] New GPS route length: {len(new_gps_route)}", flush=True)
+
+                        # =======================================================
+                        # 关键修复：截断route到合理长度
+                        # =======================================================
+                        # 场景要求：车辆从spawn位置行驶95m（过卡车40m）
+                        # 车辆后退了50m，所以route需要：50 + 95 + 余量 = 200m
+                        # 注意：interpolated waypoints 现在是每2米一个点
+                        # 增加余量以确保RouteCompletionTest不会在到达95m之前触发
+                        target_distance = 200.0  # meters (50后退 + 95场景要求 + 55余量)
+                        hop_resolution = 2.0  # interpolated waypoints的密度（每2米一个）
+                        target_waypoints_count = int(target_distance / hop_resolution) + 10  # 多留一点余量
+
+                        # print(f"[DEBUG] Route truncation check: current={len(config.route)}, target={target_waypoints_count}", flush=True)
+                        # print(f"[DEBUG] Current route length: {len(config.route)} waypoints (~{len(config.route) * hop_resolution:.1f}m)", flush=True)
+
+                        if len(config.route) > target_waypoints_count:
+                            # print(f"[DEBUG] Truncating route from {len(config.route)} to {target_waypoints_count} waypoints (~{target_distance}m)", flush=True)
+                            config.route = config.route[:target_waypoints_count]
+                            new_gps_route = new_gps_route[:target_waypoints_count]
+                            # print(f"[DEBUG] Truncated route length: {len(config.route)}", flush=True)
+                            # print(f"[DEBUG] Truncated GPS route length: {len(new_gps_route)}", flush=True)
+                        else:
+                            # print(f"[DEBUG] Route is shorter than target, no truncation needed", flush=True)
+                            # print(f"[DEBUG] Keeping route length: {len(config.route)} waypoints", flush=True)
+                            pass
 
                         # 更新RouteScenario实例的route和gps_route
                         if route_scenario_instance:
-                            print(f"[DEBUG] Updating RouteScenario route and gps_route", flush=True)
+                            # print(f"[DEBUG] Updating RouteScenario route and gps_route", flush=True)
                             route_scenario_instance.route = config.route
                             route_scenario_instance.gps_route = new_gps_route
-                            print(f"[DEBUG] RouteScenario.route updated to length {len(route_scenario_instance.route)}", flush=True)
-                            print(f"[DEBUG] RouteScenario.gps_route updated to length {len(route_scenario_instance.gps_route)}", flush=True)
+                            # print(f"[DEBUG] RouteScenario.route updated to length {len(route_scenario_instance.route)}", flush=True)
+                            # print(f"[DEBUG] RouteScenario.gps_route updated to length {len(route_scenario_instance.gps_route)}", flush=True)
 
                             # =======================================================
-                            # 关键：更新RouteScenario中可能已经创建的InRouteTest实例
+                            # 关键：更新RouteScenario中可能已经创建的criteria实例
                             # =======================================================
                             # 检查RouteScenario是否已经有criteria_tree
                             if hasattr(route_scenario_instance, 'criteria_tree') and route_scenario_instance.criteria_tree:
-                                print(f"[DEBUG] Searching for InRouteTest instances in criteria_tree", flush=True)
-                                # 遍历criteria_tree找到所有InRouteTest实例
+                                # print(f"[DEBUG] Searching for criteria instances to update", flush=True)
+                                # 遍历criteria_tree找到所有需要更新route的criteria
                                 import py_trees
                                 for child in route_scenario_instance.criteria_tree.iterate():
-                                    if hasattr(child, '__class__') and child.__class__.__name__ == 'InRouteTest':
-                                        print(f"[DEBUG] Found InRouteTest instance, updating its route data", flush=True)
-                                        # 更新InRouteTest的内部数据
+                                    class_name = child.__class__.__name__ if hasattr(child, '__class__') else ""
+
+                                    # 更新InRouteTest
+                                    if class_name == 'InRouteTest':
+                                        # print(f"[DEBUG] Found InRouteTest instance, updating its route data", flush=True)
                                         child._route = config.route
                                         child._route_transforms, _ = zip(*config.route)
                                         child._route_length = len(config.route)
@@ -239,11 +268,32 @@ class LaneClosureWithTruck(BasicScenario):
                                             accum = 0 if i == 0 else child._accum_meters[i - 1]
                                             child._accum_meters.append(d + accum)
                                             prev_loc = loc
-                                        print(f"[DEBUG] InRouteTest updated: route_length={child._route_length}, accum_meters={len(child._accum_meters)}", flush=True)
+                                        # print(f"[DEBUG] InRouteTest updated: route_length={child._route_length}", flush=True)
+
+                                    # 更新RouteCompletionTest
+                                    elif class_name == 'RouteCompletionTest':
+                                        # print(f"[DEBUG] Found RouteCompletionTest instance, updating its route data", flush=True)
+                                        child._route = config.route
+                                        child._route_length = len(config.route)
+                                        child._route_transforms, _ = zip(*config.route)
+                                        # 重新计算accumulated percentages
+                                        child._route_accum_perc = child._get_acummulated_percentages()
+                                        child.target_location = child._route_transforms[-1].location
+                                        # print(f"[DEBUG] RouteCompletionTest updated: route_length={child._route_length}, target_location={child.target_location}", flush=True)
+
+                                    # 更新OutsideRouteLanesTest（如果它也缓存了route）
+                                    elif class_name == 'OutsideRouteLanesTest':
+                                        # print(f"[DEBUG] Found OutsideRouteLanesTest instance, updating its route data", flush=True)
+                                        child._route = config.route
+                                        child._route_length = len(config.route)
+                                        child._route_transforms, _ = zip(*config.route)
+                                        # print(f"[DEBUG] OutsideRouteLanesTest updated: route_length={child._route_length}", flush=True)
                     else:
-                        print(f"[DEBUG] No extended waypoints generated!", flush=True)
+                        # print(f"[DEBUG] No extended waypoints generated!", flush=True)
+                        pass
                 else:
-                    print(f"[DEBUG] No route found in config! hasattr={hasattr(config, 'route')}", flush=True)
+                    # print(f"[DEBUG] No route found in config! hasattr={hasattr(config, 'route')}", flush=True)
+                    pass
 
         # =======================================================
         # 3. 获取地图与基准 Waypoint（障碍物位置保持不变）
@@ -357,21 +407,21 @@ class LaneClosureWithTruck(BasicScenario):
                 direction = direction_vector / (direction_vector.length() + 1e-6)
 
                 distance = direction_vector.length()
-                print(f"[DEBUG] Using {distance:.1f}m waypoint lookahead direction", flush=True)
-                print(f"[DEBUG] From {ego_wp.transform.location} to {next_wp.transform.location}", flush=True)
+                # print(f"[DEBUG] Using {distance:.1f}m waypoint lookahead direction", flush=True)
+                # print(f"[DEBUG] From {ego_wp.transform.location} to {next_wp.transform.location}", flush=True)
             else:
                 # 如果无法获取前向waypoint，使用当前waypoint的forward向量
                 direction = ego_wp.transform.get_forward_vector()
                 direction.z = 0
                 direction = direction / (direction.length() + 1e-6)
-                print(f"[DEBUG] Using current waypoint forward direction", flush=True)
+                # print(f"[DEBUG] Using current waypoint forward direction", flush=True)
         else:
             # 回退方案：使用车辆当前的transform
             ego_transform = self.ego_vehicles[0].get_transform()
             direction = ego_transform.get_forward_vector()
             direction.z = 0
             direction = direction / (direction.length() + 1e-6)
-            print(f"[DEBUG] Using vehicle transform forward direction", flush=True)
+            # print(f"[DEBUG] Using vehicle transform forward direction", flush=True)
 
         target_speed_mps = self._initial_speed_kph / 3.6
         ego_velocity = carla.Vector3D(
@@ -383,8 +433,8 @@ class LaneClosureWithTruck(BasicScenario):
         # 设置目标速度到 130 km/h
         self.ego_vehicles[0].set_target_velocity(ego_velocity)
 
-        print(f"[DEBUG] Initial velocity set to {self._initial_speed_kph} km/h", flush=True)
-        print(f"[DEBUG] Velocity direction: ({direction.x:.3f}, {direction.y:.3f}, {direction.z:.3f})", flush=True)
+        # print(f"[DEBUG] Initial velocity set to {self._initial_speed_kph} km/h", flush=True)
+        # print(f"[DEBUG] Velocity direction: ({direction.x:.3f}, {direction.y:.3f}, {direction.z:.3f})", flush=True)
 
     def _create_behavior(self):
         """
@@ -392,7 +442,7 @@ class LaneClosureWithTruck(BasicScenario):
         1. 持续控制车辆沿着waypoint行驶，直到距离卡车30米
         2. 然后让agent接管
         """
-        print("[DEBUG] _create_behavior called, building behavior tree", flush=True)
+        # print("[DEBUG] _create_behavior called, building behavior tree", flush=True)
         root = py_trees.composites.Sequence("LaneClosureBehavior")
 
         # 1. 持续控制车辆沿着waypoint行驶
@@ -487,11 +537,11 @@ class LaneClosureWithTruck(BasicScenario):
                     print("Lane Closure with Truck - Test Information")
                     print("="*60)
                     print(f"Target Speed: {self.target_speed_kph} km/h")
-                    print(f"Test Area: 30-125m (Cone zone at 30-80m, Truck at 55m)")
+                    print(f"Test Area: 30-95m (Cone zone at 30-45m, Truck at 55m)")
                     print(f"Scoring:")
-                    print(f"  - Deceleration (40 pts): Reduce speed by 40+ km/h in 30-55m zone")
-                    print(f"  - Collision Free (50 pts): No collisions")
-                    print(f"  - Route Pass (10 pts): Complete 125m route")
+                    print(f"  - Deceleration (90 pts): Reduce speed by 30+ km/h in 30-55m zone")
+                    print(f"  - Collision Free (Gate): No collisions")
+                    print(f"  - Route Pass (10 pts): Complete 95m route (pass truck + 40m)")
                     print("="*60 + "\n", flush=True)
                     self._shown = True
 
@@ -501,11 +551,14 @@ class LaneClosureWithTruck(BasicScenario):
         root.add_child(show_info)
 
         # 3. 运行测试直到完成
-        print("[DEBUG] Adding end_condition behavior (DriveDistance)", flush=True)
-        end_condition = DriveDistance(self.ego_vehicles[0], self._truck_distance + 30.0 + 70.0)
+        # print("[DEBUG] Adding end_condition behavior (DriveDistance)", flush=True)
+        # 场景在过卡车40m后结束：55m (truck) + 40m (buffer) = 95m
+        end_distance = self._truck_distance + 40.0
+        end_condition = DriveDistance(self.ego_vehicles[0], end_distance)
         root.add_child(end_condition)
+        # print(f"[DEBUG] Scene will end at {end_distance}m (truck position + 40m)", flush=True)
 
-        print(f"[DEBUG] Behavior tree built successfully", flush=True)
+        # print(f"[DEBUG] Behavior tree built successfully", flush=True)
         return root
 
     def _create_test_criteria(self):
@@ -549,12 +602,13 @@ class LaneClosureWithTruck(BasicScenario):
         )
         criteria.append(deceleration_criterion)
 
-        # 4. 路段通过检测 - 检测是否通过125米
+        # 4. 路段通过检测 - 检测是否通过卡车并再行驶40米
         pass_completion_criterion = RoutePassCompletionTest(
             self.ego_vehicles[0],
-            pass_distance=self._truck_distance + 70.0  # 55 + 70 = 125米
+            pass_distance=self._truck_distance + 40.0  # 55 + 40 = 95米
         )
         criteria.append(pass_completion_criterion)
+        # print(f"[DEBUG] Route pass will be checked at {self._truck_distance + 40.0}m", flush=True)
 
         return criteria
 
