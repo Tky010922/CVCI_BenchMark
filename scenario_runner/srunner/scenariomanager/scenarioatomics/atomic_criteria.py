@@ -3410,7 +3410,6 @@ class RoutePassCompletionTest(Criterion):
             self.test_status = "FAILURE"
 
         super(RoutePassCompletionTest, self).terminate(new_status)
-        
 # ==========================Drive into the roundabout criterion==========================
 class RoundaboutDecelerateCriterion(Criterion):
     """
