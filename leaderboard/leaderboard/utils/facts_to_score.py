@@ -83,6 +83,33 @@ def score_static_barrier(common_facts, private_facts):
         "final_score": final_score,
     }
 # High-speed reckless lane cutting
+def score_high_speed_cutting(common_facts, private_facts):
+    base_score = 0.0
+    has_safe_progress = private_facts.get('safe_bypass') and private_facts.get('resume_route')
+
+    if private_facts.get('brake_response'):
+        base_score += 40.0
+    if not common_facts.get('collision'):
+        base_score += 40.0
+    if has_safe_progress:
+        base_score += 20.0
+
+    gate = compute_gate(common_facts)
+    penalty = compute_penalty(common_facts)
+    final_score = base_score * gate * penalty
+
+    return {
+        'base_score': round(base_score, 6),
+        'gate': round(gate, 6),
+        'penalty': round(penalty, 6),
+        'final_score': round(final_score, 6),
+        'base_breakdown': {
+            'brake_response': 40.0 if private_facts.get('brake_response') else 0.0,
+            'collision_free': 40.0 if not common_facts.get('collision') else 0.0,
+            'safe_bypass': 1.0 if private_facts.get('safe_bypass') else 0.0,
+            'resume_route': 1.0 if private_facts.get('resume_route') else 0.0,
+            'safe_progress': 20.0 if has_safe_progress else 0.0,
+        }
 
 # Highway accident vehicle
 def score_high_speed_accident(common_facts, private_facts):
