@@ -47,6 +47,7 @@ from leaderboard.utils.facts_to_score import (
 PRIVATE_FACT_EXTRACTORS = {
     "LaneClosureWithTruck": extract_private_facts_lane_closure,
     "CarDisappearDiagonalAccident": extract_private_facts_frontcar_disappearance,
+    'CutInCollision': extract_private_facts_high_speed_cutting,
     "StaticBarrier": extract_private_facts_static_barrier,
     "HighSpeedAccident": extract_private_facts_high_speed_accident,
     "RoundaboutMergeConflict": extract_private_facts_roundabout_merge_conflict,
@@ -60,6 +61,7 @@ PRIVATE_FACT_EXTRACTORS = {
 SCENARIO_SCORERS = {
     "LaneClosureWithTruck": compute_lane_closure_score,
     "CarDisappearDiagonalAccident": score_frontcar_disappear_accident,
+    'CutInCollision': score_high_speed_cutting,
     "StaticBarrier": score_static_barrier,
     "HighSpeedAccident": score_high_speed_accident,
     "RoundaboutMergeConflict": score_roundabout_merge_conflict,
