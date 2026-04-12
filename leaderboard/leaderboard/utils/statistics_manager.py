@@ -29,6 +29,7 @@ from leaderboard.utils.facts_creator import (
     extract_private_facts_ebike_pedestrian_cross,
     extract_private_facts_left_turn,
     extract_private_facts_roundabout_merge_conflict,
+    extract_private_facts_crazy_bike,
 )
 from leaderboard.utils.facts_to_score import (
     score_frontcar_disappear_accident,
@@ -40,7 +41,8 @@ from leaderboard.utils.facts_to_score import (
     score_broken_down_vehicle,
     score_ebike_pedestrian_cross,
     score_left_turn,
-    score_roundabout_merge_conflict, 
+    score_roundabout_merge_conflict,
+    score_crazy_bike,
 )
 
 # 通过 PRIVATE_FACT_EXTRACTORS 和 SCENARIO_SCORERS 动态获取不同场景的 facts extractor 和 scorer
@@ -55,6 +57,7 @@ PRIVATE_FACT_EXTRACTORS = {
     "EbikeAndPedestrianCross": extract_private_facts_ebike_pedestrian_cross,
     "ReverseVehicle": extract_private_facts_reverse_vehicle,
     "IntersectionCollisionLeftTurn": extract_private_facts_left_turn,
+    "CrazyBikeScenario": extract_private_facts_crazy_bike,
 }
 
 SCENARIO_SCORERS = {
@@ -68,6 +71,7 @@ SCENARIO_SCORERS = {
     "EbikeAndPedestrianCross": score_ebike_pedestrian_cross,
     "ReverseVehicle": score_reverse_vehicle,
     "IntersectionCollisionLeftTurn": score_left_turn,
+    "CrazyBikeScenario": score_crazy_bike,
 }
 
 

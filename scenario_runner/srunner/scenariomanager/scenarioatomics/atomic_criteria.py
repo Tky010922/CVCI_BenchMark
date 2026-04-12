@@ -20,17 +20,14 @@ import numpy as np
 import py_trees
 import shapely.geometry
 
-import sys
-
 import carla
-def get_speed(actor):
-    vel = actor.get_velocity()
-    return math.sqrt(vel.x ** 2 + vel.y ** 2 + vel.z ** 2)
+from agents.tools.misc import get_speed
 
 from srunner.scenariomanager.carla_data_provider import CarlaDataProvider
 from srunner.scenariomanager.timer import GameTime
 from srunner.scenariomanager.traffic_events import TrafficEvent, TrafficEventType
-from srunner.scenariomanager.timer import GameTime
+
+
 
 class Criterion(py_trees.behaviour.Behaviour):
 
@@ -2008,7 +2005,6 @@ class MinimumSpeedRouteTest(Criterion):
         """
         Check if the actor location is within trigger region
         """
-        
         new_status = py_trees.common.Status.RUNNING
 
         if self._terminate_on_failure and (self.test_status == "FAILURE"):
@@ -2196,613 +2192,58 @@ class ScenarioTimeoutTest(Criterion):
 
         super().terminate(new_status)
 
-#--------------------新增Criterion类---------------------------
-# minTTC criterion
-class MinTTCAutoCriterion(Criterion):
 
-    def __init__(self,
-                 actor,
-                 other_actors,
-                 name="MinTTCAutoCriterion",
-                 distance_threshold=50.0,
-                 forward_angle_deg=120.0,
-                 optional=False,
+
+
+    def __init__(self, actor, hazard_actor, name="HighSpeedResumeCriterion",
+                 escape_distance=15.0,  # 驶离事故车前方 15 米就算成功
+                 min_resume_speed=5.0,  # 速度恢复到 18km/h 以上
                  terminate_on_failure=False):
-        super(MinTTCAutoCriterion, self).__init__(
-            name=name,
-            actor=actor,
-            optional=optional,
-            terminate_on_failure=terminate_on_failure
-        )
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.hazard_actor = hazard_actor
+        self.escape_distance = escape_distance
+        self.min_resume_speed = min_resume_speed
 
-        self.other_actors = other_actors if other_actors is not None else []
-
-        # 只考虑一定距离内的目标，避免太远的 actor 干扰
-        self.distance_threshold = distance_threshold
-
-        # 只考虑 ego 前方一定视角内的目标
-        self.forward_angle_deg = forward_angle_deg
-
-        # 输出：全程最小 TTC
-        self.actual_value = float("inf")
-        self.units = "s"
-
-        # 记录是谁造成了最小 TTC
-        self.closest_actor = None
-
-        # 记录当前 tick 的最危险 actor
-        self.current_target = None
-        self.current_ttc = float("inf")
-
-    def initialise(self):
-        super(MinTTCAutoCriterion, self).initialise()
-        self.actual_value = float("inf")
-        self.closest_actor = None
-        self.current_target = None
-        self.current_ttc = float("inf")
-        self.test_status = "RUNNING"
-
-    @staticmethod
-    def _dot(v1, v2):
-        return v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2]
-
-    @staticmethod
-    def _norm(v):
-        return math.sqrt(v[0] ** 2 + v[1] ** 2 + v[2] ** 2)
-
-    @staticmethod
-    def _get_location(actor):
-        loc = actor.get_transform().location
-        return (loc.x, loc.y, loc.z)
-
-    @staticmethod
-    def _get_velocity(actor):
-        vel = actor.get_velocity()
-        return (vel.x, vel.y, vel.z)
-
-    @staticmethod
-    def _get_forward_vector(actor):
-        fv = actor.get_transform().get_forward_vector()
-        return (fv.x, fv.y, fv.z)
-
-    def _is_candidate_valid(self, candidate):
-        """
-        过滤无效候选目标：
-        1. 不是自己
-        2. actor 存活
-        3. 在距离阈值内
-        4. 大致在 ego 前方视野内
-        """
-        if candidate is None:
-            return False
-
-        if candidate.id == self.actor.id:
-            return False
-
-        if not candidate.is_alive:
-            return False
-
-        ego_pos = self._get_location(self.actor)
-        tgt_pos = self._get_location(candidate)
-
-        rel_pos = (
-            tgt_pos[0] - ego_pos[0],
-            tgt_pos[1] - ego_pos[1],
-            tgt_pos[2] - ego_pos[2]
-        )
-
-        dist = self._norm(rel_pos)
-        if dist < 1e-6 or dist > self.distance_threshold:
-            return False
-
-        ego_forward = self._get_forward_vector(self.actor)
-        ego_forward_norm = self._norm(ego_forward)
-        if ego_forward_norm < 1e-6:
-            return True
-
-        rel_dir = (rel_pos[0] / dist, rel_pos[1] / dist, rel_pos[2] / dist)
-        cos_theta = self._dot(ego_forward, rel_dir) / ego_forward_norm
-
-        # 数值截断
-        cos_theta = max(-1.0, min(1.0, cos_theta))
-        theta_deg = math.degrees(math.acos(cos_theta))
-
-        if theta_deg > self.forward_angle_deg / 2.0:
-            return False
-
-        return True
-
-    def _compute_pair_ttc(self, target_actor):
-        """
-        计算 ego 与单个 target_actor 的 TTC。
-        """
-        ego_pos = self._get_location(self.actor)
-        tgt_pos = self._get_location(target_actor)
-
-        rel_pos = (
-            tgt_pos[0] - ego_pos[0],
-            tgt_pos[1] - ego_pos[1],
-            tgt_pos[2] - ego_pos[2]
-        )
-        distance = self._norm(rel_pos)
-
-        if distance < 1e-6:
-            return 0.0
-
-        los_dir = (
-            rel_pos[0] / distance,
-            rel_pos[1] / distance,
-            rel_pos[2] / distance
-        )
-
-        ego_vel = self._get_velocity(self.actor)
-        tgt_vel = self._get_velocity(target_actor)
-
-        rel_vel = (
-            tgt_vel[0] - ego_vel[0],
-            tgt_vel[1] - ego_vel[1],
-            tgt_vel[2] - ego_vel[2]
-        )
-
-        distance_rate = self._dot(rel_vel, los_dir)
-        closing_speed = -distance_rate
-
-        if closing_speed <= 1e-6:
-            return float("inf")
-
-        return distance / closing_speed
-
-    def _find_most_dangerous_target(self):
-        """
-        在候选列表中寻找当前 TTC 最小的目标。
-        """
-        best_actor = None
-        best_ttc = float("inf")
-
-        for candidate in self.other_actors:
-            if not self._is_candidate_valid(candidate):
-                continue
-
-            ttc = self._compute_pair_ttc(candidate)
-            if ttc < best_ttc:
-                best_ttc = ttc
-                best_actor = candidate
-
-        return best_actor, best_ttc
+        # 默认状态设为 FAILURE，没开出危险区就算失败
+        self.test_status = "FAILURE"
 
     def update(self):
         new_status = py_trees.common.Status.RUNNING
-        if self.actor is None or not self.actor.is_alive:
+        if not self.actor or not self.hazard_actor:
             return new_status
-        self.current_target, self.current_ttc = self._find_most_dangerous_target()
-        if self.current_ttc < self.actual_value:
-            self.actual_value = self.current_ttc
-            self.closest_actor = self.current_target
 
-        # 这个类主要用于“记录 min_ttc”，不承担失败判定
-        self.test_status = "SUCCESS"
+        ego_loc = self.actor.get_location()
+        hazard_transform = self.hazard_actor.get_transform()
+        hazard_loc = hazard_transform.location
 
-        return new_status
+        # 1. 计算相对纵向距离 (复用 bypass 的向量投影逻辑)
+        dx = ego_loc.x - hazard_loc.x
+        dy = ego_loc.y - hazard_loc.y
+        fw = hazard_transform.get_forward_vector()
 
-    def terminate(self, new_status):
-        if self.test_status in ('RUNNING', 'INIT'):
+        # 纵向距离：正数表示在事故车前方
+        longitudinal_dist = dx * fw.x + dy * fw.y
+
+        # 2. 获取当前车速
+        import math
+        ego_vel = self.actor.get_velocity()
+        ego_speed = math.sqrt(ego_vel.x ** 2 + ego_vel.y ** 2 + ego_vel.z ** 2)
+
+        # 3. 判定：只要纵向驶出 15 米，且速度达标，立刻判定成功！
+        if longitudinal_dist > self.escape_distance and ego_speed >= self.min_resume_speed:
             self.test_status = "SUCCESS"
-
-        self.logger.debug("%s.terminate()[%s->%s]" % (
-            self.__class__.__name__, self.status, new_status))
-
-# ==========================missing car criterion==========================
-class StaticObstacleSlowDownCriterion(Criterion):
-    """
-    条件1：自车靠近静态障碍车时 必须明显减速
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        trigger_distance=15.0,
-        decel_threshold=3.0,
-        min_speed_after=5.0,
-        name="StaticObstacleSlowDownCriterion",
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.hazard_actor = hazard_actor
-        self.trigger_distance = trigger_distance
-        self.decel_threshold = decel_threshold
-        self.min_speed_after = min_speed_after
-
-        self._activated = False
-        self._initial_speed = None
-
-    def get_speed(self, actor):
-        if not actor:
-            return 0
-        v = actor.get_velocity()
-        return math.sqrt(v.x**2 + v.y**2 + v.z**2)
-
-    def update(self):
-        if not self.actor or not self.hazard_actor:
-            return py_trees.common.Status.RUNNING
-
-        try:
-            ego_loc = self.actor.get_location()
-            hz_loc = self.hazard_actor.get_location()
-            distance = ego_loc.distance(hz_loc)
-            ego_speed = self.get_speed(self.actor)
-        except:
-            return py_trees.common.Status.RUNNING
-
-        if distance <= self.trigger_distance and not self._activated:
-            self._activated = True
-            self._initial_speed = ego_speed
-
-        if self._activated:
-            if ego_speed <= self.min_speed_after:
-                return py_trees.common.Status.SUCCESS
-            if self._initial_speed is not None and (self._initial_speed - ego_speed) >= self.decel_threshold:
-                return py_trees.common.Status.SUCCESS
-
-        return py_trees.common.Status.RUNNING
-
-class StaticObstacleNoCollisionCriterion(Criterion):
-    """
-    条件2：自车与障碍车无任何碰撞（安全版，不删除车辆）
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        name="StaticObstacleNoCollisionCriterion",
-        terminate_on_failure=True
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.hazard_actor = hazard_actor
-        self.collision_distance = 1.0  # 小于1米判定为碰撞风险
-
-    def update(self):
-        if not self.actor or not self.hazard_actor:
-            return py_trees.common.Status.RUNNING
-
-        try:
-            ego_loc = self.actor.get_location()
-            obs_loc = self.hazard_actor.get_location()
-            dist = ego_loc.distance(obs_loc)
-
-            # 距离过近 → 判定失败
-            if dist < self.collision_distance:
-                return py_trees.common.Status.FAILURE
-        except:
-            pass
-
-        return py_trees.common.Status.RUNNING
-
-    def get_result(self):
-        return True
-
-class StaticObstacleSafePassCriterion(Criterion):
-    """
-    条件3：无碰撞、安全变道通过障碍车
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        pass_margin=5.0,
-        lateral_safe_threshold=1.5,
-        route_center_y=45.1,
-        name="StaticObstacleSafePassCriterion",
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.hazard_actor = hazard_actor
-        self.pass_margin = pass_margin
-        self.lateral_safe_threshold = lateral_safe_threshold
-        self.route_center_y = route_center_y
-
-    def update(self):
-        if not self.actor or not self.hazard_actor:
-            return py_trees.common.Status.RUNNING
-
-        try:
-            ego_loc = self.actor.get_location()
-            hz_loc = self.hazard_actor.get_location()
-        except:
-            return py_trees.common.Status.RUNNING
-
-        if ego_loc.x < hz_loc.x:
-            return py_trees.common.Status.RUNNING
-
-        lateral_offset = abs(ego_loc.y - self.route_center_y)
-        if lateral_offset < self.lateral_safe_threshold:
-            return py_trees.common.Status.RUNNING
-
-        if ego_loc.x > hz_loc.x + self.pass_margin:
             return py_trees.common.Status.SUCCESS
 
-        return py_trees.common.Status.RUNNING
-# ==========================High speed temporary construction criterion==========================
-class BarrierSlowDownCriterion(Criterion):
-    """Check whether the ego slows safely before entering the blocked work zone."""
-
-    def __init__(self, actor, barrier_location, name="BarrierSlowDownCriterion",
-                 obstacle_actors=None,
-                 route_start_location=None, route_end_location=None,
-                 target_lane_location=None, trigger_distance=70.0,
-                 required_speed_drop=4.0, safe_speed=5.0, danger_distance=15.0,
-                 min_hold_duration=0.5, lane_tolerance=1.5, collision_buffer=1.6,
-                 pass_buffer=2.0, terminate_on_failure=False):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.barrier_loc = barrier_location
-        self.obstacle_actors = obstacle_actors if obstacle_actors is not None else []
-        self.target_lane_location = target_lane_location
-        self.trigger_distance = trigger_distance
-        self.required_speed_drop = required_speed_drop
-        self.safe_speed = safe_speed
-        self.danger_distance = danger_distance
-        self.min_hold_duration = min_hold_duration
-        self.lane_tolerance = lane_tolerance
-        self.collision_buffer = collision_buffer
-        self.pass_buffer = pass_buffer
-
-        fallback_transform = actor.get_transform() if actor is not None else None
-        self._forward_xy, self._right_xy = _build_route_frame(
-            route_start_location, route_end_location, fallback_transform=fallback_transform)
-        self._route_origin = route_start_location or (
-            actor.get_location() if actor is not None else None)
-
-        self._activated = False
-        self._entry_speed = None
-        self._slowdown_start_time = None
-        self._has_valid_slowdown = False
-        self._target_lane_lateral = None
-        self._collision_sensor = None
-        self._collided_with_obstacle = False
-
-        self.actual_value = 0.0
-        self.success_value = required_speed_drop
-        self.units = "m/s"
-        self.test_status = "FAILURE"
-
-        if self._route_origin is not None and target_lane_location is not None:
-            _, self._target_lane_lateral = _project_to_axis(
-                self._route_origin, target_lane_location, self._forward_xy, self._right_xy)
-
-    def initialise(self):
-        world = CarlaDataProvider.get_world()
-        blueprint = world.get_blueprint_library().find('sensor.other.collision')
-        self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
-        self._collision_sensor.listen(lambda event: self._on_collision(event))
-        super().initialise()
-
-    def terminate(self, new_status):
-        if self._collision_sensor is not None:
-            self._collision_sensor.stop()
-            self._collision_sensor.destroy()
-            self._collision_sensor = None
-        super().terminate(new_status)
-
-    def _in_target_lane(self, ego_location):
-        if self._route_origin is None or self._target_lane_lateral is None:
-            return False
-
-        _, ego_lateral = _project_to_axis(
-            self._route_origin, ego_location, self._forward_xy, self._right_xy)
-        return abs(ego_lateral - self._target_lane_lateral) <= self.lane_tolerance
-
-    def _is_workzone_obstacle(self, other_actor):
-        if other_actor is None:
-            return False
-
-        obstacle_ids = {actor.id for actor in self.obstacle_actors if actor is not None}
-        if other_actor.id in obstacle_ids:
-            return True
-
-        type_id = getattr(other_actor, "type_id", "")
-        return (
-            "constructioncone" in type_id or
-            "trafficwarning" in type_id or
-            "warningconstruction" in type_id or
-            ("static" in type_id and "sidewalk" not in type_id)
-        )
-
-    def _on_collision(self, event):
-        if self._is_workzone_obstacle(event.other_actor):
-            self._collided_with_obstacle = True
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-        if not self.actor or self.barrier_loc is None:
-            return new_status
-
-        if self.test_status == "SUCCESS":
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        longitudinal_dist, _ = _project_to_axis(
-            ego_loc, self.barrier_loc, self._forward_xy, self._right_xy)
-        ego_speed = _get_actor_speed_mps(self.actor)
-        in_target_lane = self._in_target_lane(ego_loc)
-
-        if self._collided_with_obstacle:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
-            return new_status
-
-        if not self._activated and 0.0 <= longitudinal_dist <= self.trigger_distance:
-            self._activated = True
-            self._entry_speed = ego_speed
-            self._slowdown_start_time = None
-
-        if not self._activated:
-            return new_status
-
-        speed_drop = max(0.0, (self._entry_speed or ego_speed) - ego_speed)
-        self.actual_value = max(self.actual_value, speed_drop)
-
-        valid_slowdown = speed_drop >= self.required_speed_drop and ego_speed <= self.safe_speed
-        if valid_slowdown:
-            current_time = GameTime.get_time()
-            if self._slowdown_start_time is None:
-                self._slowdown_start_time = current_time
-            elif current_time - self._slowdown_start_time >= self.min_hold_duration:
-                self._has_valid_slowdown = True
-                self.test_status = "SUCCESS"
-                return new_status
-        else:
-            self._slowdown_start_time = None
-
-        if longitudinal_dist <= self.danger_distance and not self._has_valid_slowdown and not in_target_lane:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
-            return new_status
-
-        if longitudinal_dist < -self.pass_buffer and not self._has_valid_slowdown:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
-
         return new_status
 
-class BarrierPassByCriterion(Criterion):
-    """Check whether the ego completes a valid left lane change without colliding with other vehicles."""
 
-    def __init__(self, actor, barrier_start_location, name="BarrierPassByCriterion",
-                 obstacle_actors=None,
-                 route_start_location=None, route_end_location=None,
-                 target_lane_location=None, barrier_length=50.0,
-                 lane_tolerance=1.5, min_hold_duration=0.6,
-                 success_buffer=8.0, latest_merge_distance=5.0,
-                 collision_buffer=1.6, terminate_on_failure=False):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.barrier_start_location = barrier_start_location
-        self.obstacle_actors = obstacle_actors if obstacle_actors is not None else []
-        self.target_lane_location = target_lane_location
-        self.barrier_length = barrier_length
-        self.lane_tolerance = lane_tolerance
-        self.min_hold_duration = min_hold_duration
-        self.success_buffer = success_buffer
-        self.latest_merge_distance = latest_merge_distance
-        self.collision_buffer = collision_buffer
-
-        fallback_transform = actor.get_transform() if actor is not None else None
-        self._forward_xy, self._right_xy = _build_route_frame(
-            route_start_location, route_end_location, fallback_transform=fallback_transform)
-        self._route_origin = route_start_location or (
-            actor.get_location() if actor is not None else None)
-
-        self._target_lane_lateral = None
-        if self._route_origin is not None and target_lane_location is not None:
-            _, self._target_lane_lateral = _project_to_axis(
-                self._route_origin, target_lane_location, self._forward_xy, self._right_xy)
-
-        self._merge_start_time = None
-        self._has_valid_merge = False
-        self._collision_sensor = None
-        self._collided_with_obstacle = False
-
-        self.actual_value = float("inf")
-        self.success_value = lane_tolerance
-        self.units = "m"
-        self.test_status = "FAILURE"
-
-    def initialise(self):
-        world = CarlaDataProvider.get_world()
-        blueprint = world.get_blueprint_library().find('sensor.other.collision')
-        self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
-        self._collision_sensor.listen(lambda event: self._on_collision(event))
-        super().initialise()
-
-    def terminate(self, new_status):
-        if self._collision_sensor is not None:
-            self._collision_sensor.stop()
-            self._collision_sensor.destroy()
-            self._collision_sensor = None
-        super().terminate(new_status)
-
-    def _get_lateral_error(self, ego_location):
-        if self._route_origin is None or self._target_lane_lateral is None:
-            return None
-
-        _, ego_lateral = _project_to_axis(
-            self._route_origin, ego_location, self._forward_xy, self._right_xy)
-        return abs(ego_lateral - self._target_lane_lateral)
-
-    def _is_relevant_collision(self, other_actor):
-        if other_actor is None:
-            return False
-        type_id = getattr(other_actor, "type_id", "")
-        return "vehicle" in type_id
-
-    def _on_collision(self, event):
-        if self._is_relevant_collision(event.other_actor):
-            self._collided_with_obstacle = True
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-        if not self.actor or self.barrier_start_location is None or self._target_lane_lateral is None:
-            return new_status
-
-        if self.test_status == "SUCCESS":
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        if self._collided_with_obstacle:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
-            return new_status
-
-        ego_longitudinal, _ = _project_to_axis(
-            self._route_origin, ego_loc, self._forward_xy, self._right_xy)
-        barrier_longitudinal, _ = _project_to_axis(
-            self._route_origin, self.barrier_start_location, self._forward_xy, self._right_xy)
-        progress_into_barrier = ego_longitudinal - barrier_longitudinal
-
-        lateral_error = self._get_lateral_error(ego_loc)
-        if lateral_error is None:
-            return new_status
-
-        self.actual_value = min(self.actual_value, lateral_error)
-        in_target_lane = lateral_error <= self.lane_tolerance
-
-        if in_target_lane:
-            current_time = GameTime.get_time()
-            if self._merge_start_time is None:
-                self._merge_start_time = current_time
-            elif current_time - self._merge_start_time >= self.min_hold_duration:
-                self._has_valid_merge = True
-        else:
-            if self._has_valid_merge and -1.0 <= progress_into_barrier <= self.barrier_length:
-                self.test_status = "FAILURE"
-                if self._terminate_on_failure:
-                    return py_trees.common.Status.FAILURE
-                return new_status
-            self._merge_start_time = None
-
-        if progress_into_barrier > self.latest_merge_distance and not self._has_valid_merge:
-            self.test_status = "FAILURE"
-            if self._terminate_on_failure:
-                return py_trees.common.Status.FAILURE
-            return new_status
-
-        if self._has_valid_merge and progress_into_barrier > self.barrier_length + self.success_buffer:
-            self.test_status = "SUCCESS"
-            return new_status
-
-        return new_status
-
-# ==========================High-speed reckless lane cutting criterion==========================
-
-# ==========================Highway accident vehicle criterion==========================
 def _normalize_vector_2d(x_value, y_value):
     """Return a normalized 2D vector, with a stable fallback."""
     magnitude = math.hypot(x_value, y_value)
     if magnitude < 1e-6:
         return 1.0, 0.0
     return x_value / magnitude, y_value / magnitude
+
 
 def _build_route_frame(route_start_location, route_end_location, fallback_transform=None):
     """Create a forward/right 2D frame aligned with the scenario route."""
@@ -2820,6 +2261,7 @@ def _build_route_frame(route_start_location, route_end_location, fallback_transf
     right_xy = (-forward_xy[1], forward_xy[0])
     return forward_xy, right_xy
 
+
 def _project_to_axis(origin_location, target_location, forward_xy, right_xy):
     """Project a world-space offset to the route-aligned frame."""
     dx = target_location.x - origin_location.x
@@ -2828,10 +2270,12 @@ def _project_to_axis(origin_location, target_location, forward_xy, right_xy):
     lateral = dx * right_xy[0] + dy * right_xy[1]
     return longitudinal, lateral
 
+
 def _get_actor_speed_mps(actor):
     """Return the actor speed in m/s."""
     velocity = actor.get_velocity()
     return math.sqrt(velocity.x ** 2 + velocity.y ** 2 + velocity.z ** 2)
+
 
 class HighSpeedBrakeCriterion(Criterion):
     """Check whether the ego reacts to the blocked vehicle with braking or a clear speed drop."""
@@ -2958,6 +2402,7 @@ class HighSpeedBrakeCriterion(Criterion):
 
         return new_status
 
+
 class HighSpeedBypassCriterion(Criterion):
     """Check whether the ego passes the stopped vehicle with enough lateral clearance."""
 
@@ -3032,6 +2477,7 @@ class HighSpeedBypassCriterion(Criterion):
 
         return new_status
 
+
 class HighSpeedResumeCriterion(Criterion):
     """Check whether the ego returns to the route lane and resumes a safe cruising speed."""
 
@@ -3102,437 +2548,8 @@ class HighSpeedResumeCriterion(Criterion):
 
         return new_status
 
-# ==========================Trucks encountered during construction criterion==========================
-class DecelerationForConstructionTest(Criterion):
-    """
-    检测自车在接近施工区域时的减速行为
 
-    Important parameters:
-    - actor: CARLA actor to be used for this test
-    - start_distance: Start distance to check for deceleration (meters)
-    - end_distance: End distance to check for deceleration (meters)
-    - initial_speed_kmh: Initial speed in km/h
-    - target_speed_reduction: Target speed reduction in km/h to consider as successful deceleration
 
-    The test will check if the vehicle decelerates by at least target_speed_reduction km/h
-    when driving through the detection zone [start_distance, end_distance].
-    """
-
-    def __init__(self, actor, start_distance=30.0, end_distance=55.0,
-                 initial_speed_kmh=130.0, target_speed_reduction=40.0,
-                 name="DecelerationForConstructionTest", optional=False):
-        super(DecelerationForConstructionTest, self).__init__(name, actor, optional)
-        self.start_distance = start_distance
-        self.end_distance = end_distance
-        self.initial_speed_kmh = initial_speed_kmh
-        self.target_speed_reduction = target_speed_reduction
-
-        self._initial_location = None
-        self._max_speed = 0.0
-        self._min_speed = float('inf')
-        self._has_entered_zone = False
-        self._has_exited_zone = False
-        self._deceleration_detected = False
-
-        self.units = "km/h"
-
-        # Only monitor for AGENT-INITIATED deceleration (not collision-induced)
-        self._agent_brake_detected = False  # Track if agent applied brake
-        self._collision_in_zone = False  # Track if collision occurred in detection zone
-        self._previous_speed = None  # Track previous speed to detect sudden drops (collision)
-        self._sudden_deceleration_threshold = 20.0  # km/h per tick threshold for collision-induced deceleration
-
-    def initialise(self):
-        self._initial_location = CarlaDataProvider.get_location(self.actor)
-        super(DecelerationForConstructionTest, self).initialise()
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if self.actor is None:
-            return new_status
-
-        current_location = CarlaDataProvider.get_location(self.actor)
-        if current_location is None or self._initial_location is None:
-            return new_status
-
-        # Calculate distance
-        distance = current_location.distance(self._initial_location)
-
-        # =======================================================
-        # Monitor for AGENT-INITIATED deceleration in detection zone (30-55m)
-        # =======================================================
-        # Get current speed
-        current_speed_ms = CarlaDataProvider.get_velocity(self.actor)
-        current_speed_kmh = current_speed_ms * 3.6
-
-        # Record max speed before entering detection zone
-        if distance < self.start_distance:
-            self._max_speed = max(self._max_speed, current_speed_kmh)
-            self._previous_speed = current_speed_kmh
-        elif self.start_distance <= distance <= self.end_distance:
-            # Inside detection zone - check for AGENT control
-            self._has_entered_zone = True
-
-            # Detect collision-induced sudden deceleration (speed drop > threshold per tick)
-            if self._previous_speed is not None:
-                speed_drop = self._previous_speed - current_speed_kmh
-                if speed_drop > self._sudden_deceleration_threshold:
-                    self._collision_in_zone = True
-                    print(f"[DecelerationForConstructionTest] Sudden deceleration detected ({speed_drop:.1f} km/h drop) - likely collision-induced", flush=True)
-
-            # Check if agent is applying brake (get actual vehicle control)
-            try:
-                vehicle_control = self.actor.get_control()
-                if vehicle_control.brake > 0.1:  # Agent is actively braking
-                    self._agent_brake_detected = True
-                    print(f"[DecelerationForConstructionTest] Agent brake detected at {distance:.1f}m - brake={vehicle_control.brake:.2f}", flush=True)
-            except Exception as e:
-                pass  # If we can't get control, skip this check
-
-            # Record minimum speed
-            self._min_speed = min(self._min_speed, current_speed_kmh)
-            self._previous_speed = current_speed_kmh
-
-            # Check if speed has reduced by target amount AND agent applied brake AND no collision
-            speed_reduction = self._max_speed - current_speed_kmh
-            if speed_reduction >= self.target_speed_reduction and self._agent_brake_detected and not self._collision_in_zone:
-                self._deceleration_detected = True
-                print(f"[DecelerationForConstructionTest] Agent-initiated deceleration confirmed: {speed_reduction:.1f} km/h reduction (no collision)", flush=True)
-            elif speed_reduction >= self.target_speed_reduction and self._collision_in_zone:
-                print(f"[DecelerationForConstructionTest] Speed reduction detected but COLLISION occurred - deceleration NOT counted", flush=True)
-        elif distance > self.end_distance:
-            # Exited detection zone
-            self._has_exited_zone = True
-
-        # Update actual_value as speed reduction
-        if self._max_speed > 0:
-            self.actual_value = round(self._max_speed - self._min_speed, 2)
-
-        # Update test status
-        if self._has_exited_zone:
-            if self._deceleration_detected:
-                self.test_status = "SUCCESS"
-            else:
-                self.test_status = "FAILURE"
-            new_status = py_trees.common.Status.SUCCESS
-
-        self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-        return new_status
-
-    def terminate(self, new_status):
-        if not self._has_exited_zone and self._has_entered_zone:
-            # If terminated while inside zone, check if deceleration was detected
-            if self._deceleration_detected:
-                self.test_status = "SUCCESS"
-            else:
-                self.test_status = "FAILURE"
-
-        if self._max_speed > 0:
-            self.actual_value = round(self._max_speed - self._min_speed, 2)
-
-        super(DecelerationForConstructionTest, self).terminate(new_status)
-
-
-class MinTTCTest(Criterion):
-    """
-    计算自车与所有障碍物之间的最小Time To Collision (TTC)
-
-    TTC计算公式:
-    TTC = distance / relative_velocity
-
-    Important parameters:
-    - actor: CARLA actor (ego vehicle)
-    - target_actors: List of target actors to calculate TTC against (optional)
-    - name: Name of the test
-    - optional: If True, result is not considered for overall pass/fail
-
-    The test continuously calculates TTC throughout the scenario and stores the minimum value.
-    """
-
-    def __init__(self, actor, target_actors=None, name="MinTTCTest", optional=False):
-        super(MinTTCTest, self).__init__(name, actor, optional)
-        self.target_actors = target_actors if target_actors else []
-        self._min_ttc = float('inf')
-        self.units = "seconds"
-
-    def initialise(self):
-        self._min_ttc = float('inf')
-        super(MinTTCTest, self).initialise()
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if self.actor is None:
-            return new_status
-
-        # Get ego vehicle location and velocity
-        ego_location = CarlaDataProvider.get_location(self.actor)
-        ego_velocity = CarlaDataProvider.get_velocity(self.actor)
-
-        if ego_location is None:
-            return new_status
-
-        # Calculate TTC with each target actor
-        world = CarlaDataProvider.get_world()
-
-        # If no specific targets provided, use all actors in the scenario
-        targets = self.target_actors
-        if not targets:
-            # Get all actors in the world
-            actor_list = world.get_actors().filter('vehicle.*')
-            targets = [actor for actor in actor_list if actor.id != self.actor.id]
-
-        for target in targets:
-            target_location = target.get_location()
-            target_velocity = target.get_velocity()
-
-            if target_location is None:
-                continue
-
-            # Calculate distance
-            distance_vector = ego_location - target_location
-            distance = distance_vector.length()
-
-            # Skip if too far (optimization)
-            if distance > 200:  # Only consider objects within 200m
-                continue
-
-            # Calculate relative velocity (approach speed)
-            # Vector from target to ego
-            direction_to_ego = distance_vector / (distance + 1e-6)
-
-            # Get velocity vectors
-            try:
-                ego_vel_vector = self.actor.get_velocity()
-                target_vel_vector = target.get_velocity()
-
-                # For simplicity, use scalar velocities and project onto direction
-                # Relative speed along the line connecting the vehicles
-                ego_vel_mag = ego_vel_vector
-                target_vel_mag = target_vel_vector
-
-                # If target is ahead and moving away, or behind and moving away, TTC is large
-                # For simplicity, calculate relative speed in 3D
-                rel_velocity = abs(ego_vel_mag - target_vel_mag)
-
-                # Calculate TTC
-                if rel_velocity > 0.1:  # Only calculate if actually approaching
-                    ttc = distance / rel_velocity
-                    self._min_ttc = min(self._min_ttc, ttc)
-            except Exception as e:
-                # Skip if velocity calculation fails
-                pass
-
-        # Update actual_value with minimum TTC
-        if self._min_ttc != float('inf'):
-            self.actual_value = round(self._min_ttc, 3)
-            self.test_status = "SUCCESS"
-        else:
-            self.actual_value = float('inf')
-            self.test_status = "RUNNING"
-
-        self.logger.debug("%s.update()[min_ttc=%.3f][%s->%s]" %
-                         (self.__class__.__name__, self._min_ttc, self.status, new_status))
-
-        return new_status
-
-    def terminate(self, new_status):
-        # Store the final minimum TTC
-        if self._min_ttc != float('inf'):
-            self.actual_value = round(self._min_ttc, 3)
-            print(f"[MinTTCTest] Final minimum TTC: {self.actual_value:.3f}s", flush=True)
-        else:
-            self.actual_value = float('inf')
-            print(f"[MinTTCTest] No TTC data collected", flush=True)
-
-        super(MinTTCTest, self).terminate(new_status)
-
-
-class RoutePassCompletionTest(Criterion):
-    """
-    检测自车是否成功通过整个施工路段
-
-    Important parameters:
-    - actor: CARLA actor to be used for this test
-    - pass_distance: Distance required to consider the route as passed (meters)
-
-    The test is a success if the actor reaches the specified distance.
-    """
-
-    def __init__(self, actor, pass_distance=125.0, name="RoutePassCompletionTest", optional=False):
-        super(RoutePassCompletionTest, self).__init__(name, actor, optional)
-        self.pass_distance = pass_distance
-        self._initial_location = None
-        self._has_passed = False
-
-        self.units = "meters"
-
-    def initialise(self):
-        self._initial_location = CarlaDataProvider.get_location(self.actor)
-        super(RoutePassCompletionTest, self).initialise()
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if self.actor is None:
-            return new_status
-
-        current_location = CarlaDataProvider.get_location(self.actor)
-        if current_location is None or self._initial_location is None:
-            return new_status
-
-        # Calculate distance traveled
-        distance = current_location.distance(self._initial_location)
-        self.actual_value = round(distance, 2)
-
-        # Check if passed
-        if distance >= self.pass_distance:
-            self._has_passed = True
-            self.test_status = "SUCCESS"
-            new_status = py_trees.common.Status.SUCCESS
-
-        self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-        return new_status
-
-    def terminate(self, new_status):
-        # Recalculate distance to ensure we have the latest value
-        if self._initial_location:
-            current_location = CarlaDataProvider.get_location(self.actor)
-            if current_location:
-                self.actual_value = round(current_location.distance(self._initial_location), 2)
-
-        # Check if distance requirement is met (even if _has_passed wasn't set in update)
-        if self.actual_value >= self.pass_distance:
-            self.test_status = "SUCCESS"
-            self._has_passed = True
-        else:
-            self.test_status = "FAILURE"
-
-        super(RoutePassCompletionTest, self).terminate(new_status)
-        
-# ==========================Drive into the roundabout criterion==========================
-class RoundaboutDecelerateCriterion(Criterion):
-    """
-    条件1：识别并减速 (55分)
-    自车在即将进入大转盘时 (Y轴 25~45 之间)，车速需降至 8 m/s 以下。
-    """
-    def __init__(self, actor, name="RoundaboutDecelerateCriterion", terminate_on_failure=False):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.test_status = "FAILURE"  # 默认失败，直到检测到有效减速动作
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-        if not self.actor or not self.actor.is_alive:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        ego_vel = self.actor.get_velocity()
-        ego_speed = math.hypot(ego_vel.x, ego_vel.y)
-
-        # 在减速预备区判断车速
-        if 25.0 < ego_loc.y < 45.0:
-            if ego_speed < 8.0:
-                self.test_status = "SUCCESS"
-                
-        return new_status
-
-class RoundaboutSafeMergeCriterion(Criterion):
-    """
-    条件2：进行安全汇入 (20分)
-    自车不与大转盘外圈快速车发生危险接近 (距离需保持在 4.9m 以上)。
-    """
-    def __init__(self, actor, adversary, name="RoundaboutSafeMergeCriterion", terminate_on_failure=False):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.adversary = adversary
-        self.test_status = "SUCCESS"  # 默认成功，一旦发生危险靠近则判定失败
-
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-        if self.test_status == "FAILURE":
-            return new_status
-
-        if self.actor and self.adversary and self.adversary.is_alive:
-            ego_loc = self.actor.get_location()
-            adv_loc = self.adversary.get_location()
-            dist_to_adv = math.hypot(ego_loc.x - adv_loc.x, ego_loc.y - adv_loc.y)
-            
-            if dist_to_adv < 4.9:
-                self.test_status = "FAILURE"
-                
-        return new_status
-
-class RoundaboutYieldConvoyCriterion(Criterion):
-    """
-    条件3：让行内圈车队 (25分)
-    修改：每0.5秒打印一次当前累计的等待时间
-    """
-    def __init__(self, actor, convoy_actors, name="RoundaboutYieldConvoyCriterion", terminate_on_failure=False):
-        super(RoundaboutYieldConvoyCriterion, self).__init__(name, actor, terminate_on_failure)
-        
-        self.actor = actor
-        self.convoy_actors = convoy_actors
-        self._center_loc = (6.7, 17.0)
-        self._entry_threshold = 4.0
-        self._required_wait = 12.0
-        
-        self.has_entered_inner = False
-        self.start_move_time = None
-        self.test_status = "SUCCESS" 
-        
-        # 新增：用于控制打印频率的变量
-        self._last_print_time = 0.0
-        self._print_interval = 0.5 
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-        if self.test_status == "FAILURE" and self.has_entered_inner:
-            return new_status
-
-        world = self.actor.get_world()
-        snapshot = world.get_snapshot()
-        current_sim_time = snapshot.timestamp.elapsed_seconds
-
-        # 1. 监测车队启动
-        if self.start_move_time is None and self.convoy_actors:
-            first_veh = self.convoy_actors[0]
-            if first_veh and first_veh.is_alive:
-                vel = first_veh.get_velocity()
-                if math.hypot(vel.x, vel.y) > 0.5:
-                    self.start_move_time = current_sim_time
-                    print(f"\033[94m[YieldConvoy] 车队已启动，开始计时...\033[0m")
-
-        # 2. 定时打印逻辑 (每 0.5 秒一次)
-        if self.start_move_time is not None and not self.has_entered_inner:
-            elapsed_so_far = current_sim_time - self.start_move_time
-            if current_sim_time - self._last_print_time >= self._print_interval:
-                print(f"[YieldConvoy] 已等待时间: {elapsed_so_far:.1f}s / {self._required_wait}s")
-                self._last_print_time = current_sim_time
-
-        # 3. 判定位置
-        ego_loc = self.actor.get_location()
-        dist_to_center = math.hypot(ego_loc.x - self._center_loc[0], 
-                                    ego_loc.y - self._center_loc[1])
-
-        # 4. 判定切入时刻
-        if dist_to_center < self._entry_threshold and not self.has_entered_inner:
-            self.has_entered_inner = True
-            
-            if self.start_move_time is None:
-                self.test_status = "FAILURE"
-                print("\033[91m[YieldConvoy] 失败：车队未动，自车抢行入圈！\033[0m")
-            else:
-                final_elapsed = current_sim_time - self.start_move_time
-                if final_elapsed < self._required_wait:
-                    self.test_status = "FAILURE"
-                    print(f"\033[91m[YieldConvoy] 失败：最终等待 {final_elapsed:.2f}s < {self._required_wait}s\033[0m")
-                else:
-                    self.test_status = "SUCCESS"
-                    print(f"\033[92m[YieldConvoy] 成功：最终等待 {final_elapsed:.2f}s >= {self._required_wait}s\033[0m")
-                                
-        return new_status
-# ==========================Four students crossing the road criterion==========================
 class ScooterDecelerateCriterion(Criterion):
     """Check whether the ego starts a stable slowdown when approaching the occluding scooter."""
 
@@ -3648,6 +2665,7 @@ class ScooterDecelerateCriterion(Criterion):
 
         return new_status
 
+
 class PedestrianStopCriterion(Criterion):
     """Check whether the ego slows to a safe low speed for the first emerging child."""
 
@@ -3698,11 +2716,6 @@ class PedestrianStopCriterion(Criterion):
 
     def terminate(self, new_status):
         if self._collision_sensor is not None:
-            try:
-                if getattr(self._collision_sensor, "is_listening", False):
-                    self._collision_sensor.stop()
-            except (RuntimeError, AttributeError):
-                pass
             try:
                 self._collision_sensor.destroy()
             except RuntimeError:
@@ -3891,732 +2904,249 @@ class PedestrianResumeCriterion(Criterion):
             self._resume_start_time = None
 
         return new_status
-# ==========================avoid a disabled vehicle criterion==========================
-class BrokenDownVehicleBrakeCriterion(Criterion):
 
-    def __init__(self, actor, hazard_actor, name="BrakeCriterion", 
-                 trigger_y=85.0, brake_threshold=0.2, 
-                 min_brake_duration=0.3, max_response_time=10.0):
-        
-        # 必须显式调用父类，且参数顺序为 (name, actor, terminate_on_failure)
-        super(BrokenDownVehicleBrakeCriterion, self).__init__(name, actor, terminate_on_failure=False)
-        
-        self.hazard_actor = hazard_actor
-        self.trigger_y = trigger_y
+
+class CrazyBikeDecelerateCriterion(Criterion):
+    """Check whether ego starts deceleration before getting too close to the cutting-in bike."""
+
+    def __init__(self, actor, bike_actor, name="CrazyBikeDecelerateCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=24.0, latest_reaction_distance=10.0,
+                 min_speed_drop=2.0, brake_threshold=0.15,
+                 min_brake_duration=0.3, pass_buffer=1.5,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.latest_reaction_distance = latest_reaction_distance
+        self.min_speed_drop = min_speed_drop
         self.brake_threshold = brake_threshold
         self.min_brake_duration = min_brake_duration
-        self.max_response_time = max_response_time
-        
-        self._activated = False
-        self._start_time = None
-        self._brake_start_time = None
-        self.test_status = "FAILURE"
-        
-        # 初始状态设为 RUNNING，确保它能被持续 Tick
-        self.status = py_trees.common.Status.RUNNING
+        self.pass_buffer = pass_buffer
 
-    def update(self):
-
-        ego_loc = self.actor.get_location()
-        current_time = GameTime.get_time()
-
-        # 触发逻辑
-        if not self._activated and ego_loc.y <= self.trigger_y:
-            self._activated = True
-
-        if self._activated and self.test_status != "SUCCESS":
-            control = self.actor.get_control()
-            if control.brake >= self.brake_threshold:
-                if self._brake_start_time is None:
-                    self._brake_start_time = current_time
-                
-                # 判定成功
-                if (current_time - self._brake_start_time) >= self.min_brake_duration:
-                    self.test_status = "SUCCESS" # 记录结果，但不 return SUCCESS
-            else:
-                self._brake_start_time = None
-
-        # 始终返回 RUNNING，确保它能一直 Tick 到底，直到 Parallel 节点整体结束
-        return py_trees.common.Status.RUNNING
-
-class BrokenDownVehicleBypassCriterion(Criterion):
-    """
-    判定自车是否成功绕行：
-    道路中心线：y = -12.0
-    行驶方向：x 轴负方向 (x 减小的方向)
-    """
-    def __init__(self, actor, hazard_actor, name="BypassCriterion", route_center_y=-12.0, lateral_threshold=1.5, pass_x_margin=3.0):
-        super(BrokenDownVehicleBypassCriterion, self).__init__(name, actor)
-        self.hazard_actor = hazard_actor
-        self.route_center_y = route_center_y  # 现在中心线是 y
-        self.lateral_threshold = lateral_threshold
-        self.pass_x_margin = pass_x_margin    # 绕过的距离判定改为 x 轴
-        self._has_departed = False
-        
-        self.test_status = "FAILURE"
-
-    def update(self):
-        ego_loc = self.actor.get_location()
-        hazard_loc = self.hazard_actor.get_location()
-        
-        # 1. 横向偏移：现在是 y 轴方向的偏离
-        lateral_offset = ego_loc.y - self.route_center_y
-        
-        # 2. 判定是否开始绕行（偏离 y = -12 中心线）
-        if not self._has_departed:
-            if abs(lateral_offset) >= self.lateral_threshold:
-                self._has_departed = True
-
-        # 3. 判定是否成功绕过
-        # 沿 x 负方向行驶，成功意味着：自车的 x < (障碍物的 x - 裕度)
-        if self._has_departed and self.test_status != "SUCCESS":
-            if ego_loc.x < (hazard_loc.x - self.pass_x_margin):
-                self.test_status = "SUCCESS" 
-
-        # 4. 失败判定：如果自车 x 已经越过障碍物但还没偏离中心线
-        # 注意：沿 x 负方向，“越过”意味着 ego.x < hazard.x
-        if not self._has_departed and ego_loc.x < hazard_loc.x:
-            self.test_status = "FAILURE"
-            return py_trees.common.Status.FAILURE
-
-        return py_trees.common.Status.RUNNING
-
-class BrokenDownVehicleResumeCriterion(Criterion):
-    """
-    判定自车是否回归中心并到达终点：
-    道路中心线：y = -12.0
-    行驶方向：沿 x 轴负方向
-    """
-    def __init__(self, actor, goal_location, name="ResumeCriterion", route_center_y=-12.0, goal_dist_threshold=5.0, 
-                 center_recover_threshold=2.0, min_resume_speed=1.0):
-        super(BrokenDownVehicleResumeCriterion, self).__init__(name, actor)
-        self.goal_location = goal_location
-        self.route_center_y = route_center_y  # 修改为 y 中心线
-        self.goal_dist_threshold = goal_dist_threshold
-        self.center_recover_threshold = center_recover_threshold
-        self.min_resume_speed = min_resume_speed
-        
-        # 初始设为失败
-        self.test_status = "FAILURE"
-
-    def update(self):
-        ego_loc = self.actor.get_location()
-        vel = self.actor.get_velocity()
-        
-        # 计算 3D 速度
-        ego_speed = math.sqrt(vel.x**2 + vel.y**2 + vel.z**2)
-        
-        # 实时监控进度
-        dist_to_goal = ego_loc.distance(self.goal_location)
-        # 横向偏移现在计算 y 轴差值
-        center_offset = abs(ego_loc.y - self.route_center_y)
-
-        # 判定逻辑：只有进入终点范围内才进行最终判定
-        if dist_to_goal <= self.goal_dist_threshold:
-            # 必须同时满足：1. 回到 y=-12 中心线附近 2. 还有速度
-            if center_offset <= self.center_recover_threshold and ego_speed >= self.min_resume_speed:
-                
-                self.test_status = "SUCCESS" 
-                return py_trees.common.Status.SUCCESS
-            else:
-                self.test_status = "FAILURE"
-                return py_trees.common.Status.FAILURE
-
-        return py_trees.common.Status.RUNNING
-    
-# ==========================Slanted motor and children criterion==========================
-def get_actor_speed(actor):
-    """获取actor的速度（m/s）"""
-    velocity = actor.get_velocity()
-    return (velocity.x**2 + velocity.y**2 + velocity.z**2) ** 0.5
-class EbikeDetectionAndDecelerateCriterion(Criterion):
-    """
-    识别电瓶车并减速：
-    当电瓶车开始移动后，ego是否输出明确减速信号（刹车或降低油门）
-    评分：25分
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        name="EbikeDetectionAndDecelerateCriterion",
-        brake_threshold=0.15,
-        throttle_reduction=0.3,
-        min_decelerate_duration=0.5,
-        max_response_time=5.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-
-        self.hazard_actor = hazard_actor
-        self.brake_threshold = brake_threshold
-        self.throttle_reduction = throttle_reduction
-        self.min_decelerate_duration = min_decelerate_duration
-        self.max_response_time = max_response_time
+        fallback_transform = bike_actor.get_transform() if bike_actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
 
         self._activated = False
-        self._start_time = None
-        self._decelerate_start_time = None
-        self._initial_throttle = None
-        self._completed = False
-        self._has_failed = False
+        self._activation_speed = None
+        self._reaction_start_time = None
+        self._has_valid_deceleration = False
 
-        # 永久性公共属性
-        self.was_activated = False
-        self.was_decelerated = False
-
-        self.test_status = "INIT"
-        self.ebick_status = 'INIT'
-        self.actual_value = 0
-        self.success_value = 1
+        self.actual_value = 0.0
+        self.success_value = min_speed_drop
+        self.units = "m/s"
+        self.test_status = "FAILURE"
 
     def update(self):
         new_status = py_trees.common.Status.RUNNING
-
-        if self._has_failed:
+        if not self.actor or not self.bike_actor:
             return new_status
 
-        if self._completed:
-            if self.ebick_status == "SUCCESS":
-                return py_trees.common.Status.SUCCESS
-            else:
-                return py_trees.common.Status.FAILURE
-
-        if not self.actor or not self.hazard_actor:
+        if self.test_status == "SUCCESS":
             return new_status
 
-        if self._initial_throttle is None:
-            control = self.actor.get_control()
-            self._initial_throttle = control.throttle
+        ego_loc = self.actor.get_location()
+        bike_loc = self.bike_actor.get_location()
+        longitudinal_dist, _ = _project_to_axis(
+            ego_loc, bike_loc, self._forward_xy, self._right_xy)
+        ego_speed = _get_actor_speed_mps(self.actor)
+        ego_control = self.actor.get_control()
 
-        hazard_velocity = self.hazard_actor.get_velocity()
-        hazard_speed = math.sqrt(hazard_velocity.x**2 + hazard_velocity.y**2 + hazard_velocity.z**2)
-
-        if not self._activated and hazard_speed > 0.5:
+        if not self._activated and 0.0 <= longitudinal_dist <= self.trigger_distance:
             self._activated = True
-            self.was_activated = True
-            self._start_time = GameTime.get_time()
-            print(f"[电瓶车检测] 电瓶车启动，开始检测")
+            self._activation_speed = ego_speed
+            self._reaction_start_time = None
 
         if not self._activated:
             return new_status
 
-        control = self.actor.get_control()
-        current_time = GameTime.get_time()
+        speed_drop = max(0.0, (self._activation_speed or ego_speed) - ego_speed)
+        self.actual_value = max(self.actual_value, speed_drop)
 
-        is_decelerating = (
-            control.brake >= self.brake_threshold or
-            (self._initial_throttle - control.throttle) >= self.throttle_reduction
+        reaction_detected = (
+            speed_drop >= self.min_speed_drop or
+            ego_control.brake >= self.brake_threshold
         )
 
-        if is_decelerating:
-            if self._decelerate_start_time is None:
-                self._decelerate_start_time = current_time
-            decelerate_duration = current_time - self._decelerate_start_time
-            if decelerate_duration >= self.min_decelerate_duration:
-                self.ebick_status = "SUCCESS"
-                self.actual_value = 1
-                self._completed = True
-                self.was_decelerated = True
-                print(f"[电瓶车检测] ✅ 成功减速")
-                return py_trees.common.Status.SUCCESS
+        if reaction_detected:
+            current_time = GameTime.get_time()
+            if self._reaction_start_time is None:
+                self._reaction_start_time = current_time
+            elif current_time - self._reaction_start_time >= self.min_brake_duration:
+                self._has_valid_deceleration = True
+                self.test_status = "SUCCESS"
         else:
-            self._decelerate_start_time = None
+            self._reaction_start_time = None
 
-        if current_time - self._start_time > self.max_response_time:
-            if not self._has_failed:
-                self._has_failed = True
-                self.ebick_status = "FAILURE"
-                self.actual_value = 0
-                self.was_decelerated = False
-                print(f"[电瓶车检测] ❌ 超时未减速（不给分，继续运行）")
+        if longitudinal_dist <= self.latest_reaction_distance and not self._has_valid_deceleration:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
             return new_status
 
-        return new_status
-
-class PedestrianDetectionAndStopCriterion(Criterion):
-    """
-    识别行人并刹车：
-    当行人距离 ≤ trigger_distance 时，ego必须刹车并完全停止
-    评分：50分
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        name="PedestrianDetectionAndStopCriterion",
-        trigger_distance=10.0,
-        brake_threshold=0.05,
-        stop_speed_threshold=0.3,
-        min_stop_duration=1.0,
-        max_response_time=5.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-
-        self.hazard_actor = hazard_actor
-        self.trigger_distance = trigger_distance
-        self.brake_threshold = brake_threshold
-        self.stop_speed_threshold = stop_speed_threshold
-        self.min_stop_duration = min_stop_duration
-        self.max_response_time = max_response_time
-
-        self._activated = False
-        self._start_time = None
-        self._stop_start_time = None
-        self._has_braked = False
-        self._is_stopped = False
-        self._completed = False
-        self._has_failed = False
-
-        # 永久性公共属性
-        self.was_activated = False
-        self.was_braked = False
-        self.was_stopped = False
-
-        self.test_status = "RUNNING"
-        self.pedestrain_status = "INIT"
-        self.actual_value = 0
-        self.success_value = 1
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if self._has_failed:
-            return new_status
-
-        if self._completed:
-            if self.pedestrain_status == "SUCCESS":
-                return py_trees.common.Status.SUCCESS
-            else:
+        if longitudinal_dist < -self.pass_buffer and not self._has_valid_deceleration:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
                 return py_trees.common.Status.FAILURE
 
-        if not self.actor or not self.hazard_actor:
-            return new_status
-
-        ego_loc = CarlaDataProvider.get_location(self.actor)
-        ped_loc = CarlaDataProvider.get_location(self.hazard_actor)
-        
-        if ego_loc is None or ped_loc is None:
-            return new_status
-            
-        distance = ego_loc.distance(ped_loc)
-        current_time = GameTime.get_time()
-
-        # 阶段1：距离触发
-        if not self._activated:
-            if distance <= self.trigger_distance:
-                self._activated = True
-                self.was_activated = True
-                self._start_time = current_time
-                print(f"[行人检测] 🚶 触发！距离={distance:.1f}m")
-            else:
-                return new_status
-
-        control = self.actor.get_control()
-        ego_speed = get_actor_speed(self.actor)
-        elapsed_time = current_time - self._start_time
-
-        print(f"[行人检测] 距离={distance:.1f}m, 已刹车={self._has_braked}, 已停止={self._is_stopped}, 已用时={elapsed_time:.1f}s")
-
-        is_braking = (control.brake >= self.brake_threshold)
-        is_slow_enough = (ego_speed <= self.stop_speed_threshold)
-
-        # 阶段2：必须踩刹车
-        if not self._has_braked:
-            if is_braking:
-                self._has_braked = True
-                self.was_braked = True
-                print(f"[行人检测] ✅ 踩了刹车！刹车={control.brake:.2f}")
-            else:
-                if elapsed_time > self.max_response_time:
-                    if not self._has_failed:
-                        self._has_failed = True
-                        self.pedestrain_status = "FAILURE"
-                        self.actual_value = 0
-                        self.was_braked = False
-                        self.was_stopped = False
-                        print(f"[行人检测] ❌ 超时 {elapsed_time:.1f}秒未刹车（不给分，继续运行）")
-                    return new_status
-            return new_status
-
-        # 阶段3：必须完全停止
-        if not self._is_stopped:
-            if is_slow_enough:
-                if self._stop_start_time is None:
-                    self._stop_start_time = current_time
-                    print(f"[行人检测] 开始停止，速度={ego_speed:.2f}m/s")
-                stop_duration = current_time - self._stop_start_time
-                if stop_duration >= self.min_stop_duration:
-                    self._is_stopped = True
-                    self.was_stopped = True
-                    self.pedestrain_status = "SUCCESS"
-                    self.actual_value = 1
-                    self._completed = True
-                    print(f"[行人检测] ✅ 已停止 {stop_duration:.1f}秒")
-                    return py_trees.common.Status.SUCCESS
-            else:
-                self._stop_start_time = None
-            return new_status
-
-        # 如果已经停止但没有返回成功，这里再返回一次
-        if self._is_stopped and not self._completed:
-            self.was_stopped = True
-            self.pedestrain_status = "SUCCESS"
-            self.actual_value = 1
-            self._completed = True
-            print(f"[行人检测] ✅ 最终成功")
-            return py_trees.common.Status.SUCCESS
-
         return new_status
 
-class ResumeAfterPedestrianCriterion(Criterion):
-    """
-    离开风险区并恢复通行：
-    自车能够安全起步离开
-    评分：25分
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        goal_location,
-        name="ResumeAfterPedestrianCriterion",
-        goal_dist_threshold=50.0,
-        min_resume_speed=0.0,
-        terminate_on_failure=False
-    ):
+
+class CrazyBikeNoCollisionCriterion(Criterion):
+    """Check whether ego avoids colliding with the cutting-in bike."""
+
+    def __init__(self, actor, bike_actor, name="CrazyBikeNoCollisionCriterion",
+                 terminate_on_failure=False):
         super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self._collision_sensor = None
 
-        self.hazard_actor = hazard_actor
-        self.goal_location = goal_location
-        self.goal_dist_threshold = goal_dist_threshold
-        self.min_resume_speed = min_resume_speed
-
-        self._completed = False
-        
-        # 永久性公共属性
-        self.was_resumed = False
-
-        self.test_status = "INIT"
-        self.resume_status = "INIT"
         self.actual_value = 0
-        self.success_value = 1
+        self.success_value = 0
+        self.units = "times"
+        self.test_status = "SUCCESS"
+
+    def initialise(self):
+        world = CarlaDataProvider.get_world()
+        if world is not None and self.actor is not None:
+            blueprint = world.get_blueprint_library().find('sensor.other.collision')
+            self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
+            self._collision_sensor.listen(lambda event: self._on_collision(event))
+        super().initialise()
+
+    def terminate(self, new_status):
+        if self._collision_sensor is not None:
+            try:
+                self._collision_sensor.destroy()
+            except RuntimeError:
+                pass
+        self._collision_sensor = None
+        super().terminate(new_status)
+
+    def _on_collision(self, event):
+        if event is None or event.other_actor is None:
+            return
+        if self.bike_actor is None:
+            return
+        if event.other_actor.id != self.bike_actor.id:
+            return
+
+        self.actual_value += 1
+        self.test_status = "FAILURE"
 
     def update(self):
         new_status = py_trees.common.Status.RUNNING
-
-        if self._completed:
-            if self.resume_status == "SUCCESS":
-                return py_trees.common.Status.SUCCESS
-            return py_trees.common.Status.FAILURE
-
-        if not self.actor:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        ego_speed = get_actor_speed(self.actor)
-        dist_to_goal = ego_loc.distance(self.goal_location)
-
-        if dist_to_goal <= self.goal_dist_threshold and ego_speed >= self.min_resume_speed:
-            self.resume_status = "SUCCESS"
-            self.actual_value = 1
-            self._completed = True
-            self.was_resumed = True
-            print(f"[恢复通行] ✅ 到达终点")
-            return py_trees.common.Status.SUCCESS
-
-        return new_status
-
-# ==========================reverse_vehicle private criterion==========================
-class ReverseVehicleBrakeCriterion(Criterion):
-    """
-    识别并减速：
-    当障碍车开始侵入风险区后，ego 是否输出明确制动信号
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        name="ReverseVehicleBrakeCriterion",
-        trigger_x=60.0,
-        brake_threshold=0.2,
-        min_brake_duration=0.3,
-        max_response_time=4.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-
-        self.hazard_actor = hazard_actor
-        self.trigger_x = trigger_x
-        self.brake_threshold = brake_threshold
-        self.min_brake_duration = min_brake_duration
-        self.max_response_time = max_response_time
-
-        self._activated = False
-        self._start_time = None
-        self._brake_start_time = None
-
-        self.brake_status = "INIT"
-        self.actual_value = 0
-        self.success_value = 1
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor or not self.hazard_actor:
-            return new_status
-
-        # 障碍车进入主车道/风险区后开始检测
-        ego_loc = self.actor.get_location()
-        if not self._activated and ego_loc.x <= self.trigger_x:
-            self._activated = True
-            self._start_time = GameTime.get_time()
-
-        if not self._activated:
-            return new_status
-
-        control = self.actor.get_control()
-        current_time = GameTime.get_time()
-
-        # brake 达到阈值，开始累计持续时间
-        # print("刹车信号{}".format(control.brake))
-        if control.brake >= self.brake_threshold:
-            if self._brake_start_time is None:
-                self._brake_start_time = current_time
-            brake_duration = current_time - self._brake_start_time
-            if brake_duration >= self.min_brake_duration:
-                # print("刹车检测通过")
-                self.brake_status = "SUCCESS"
-                self.actual_value = 1
-                return py_trees.common.Status.SUCCESS
-        else:
-            # brake 中断则重新计时
-            self._brake_start_time = None
-
-        return new_status      
-
-class ReverseVehicleBypassCriterion(Criterion):
-    """
-    进行安全绕行：
-    障碍车占道后，自车是否明确选择左/右绕行并完成通过
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        route_center_y=134.423233,
-        name="ReverseVehicleBypassCriterion",
-        lateral_threshold=2.0,
-        pass_x_margin=3.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.hazard_actor = hazard_actor
-        self.route_center_y = route_center_y
-        self.lateral_threshold = lateral_threshold
-        self.pass_x_margin = pass_x_margin
-
-        self._direction = None   # "left" / "right"
-        self._has_departed_lane_center = False
-        self.bypass_status = "INIT"
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor or not self.hazard_actor:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        hazard_loc = self.hazard_actor.get_location()
-
-        lateral_offset = ego_loc.y - self.route_center_y
-
-        # 先判断是否出现明确绕行动作
-        # print("自车向左绕行，自车位置为{}, lateral_offset为{}, lateral_threshold为{}".format(ego_loc, lateral_offset, self.lateral_threshold))
-        if not self._has_departed_lane_center:
-            if lateral_offset >= self.lateral_threshold:
-                
-                self._has_departed_lane_center = True
-                self._direction = "left"
-            elif lateral_offset <= -self.lateral_threshold:
-                self._has_departed_lane_center = True
-                self._direction = "right"
-
-        # 再判断是否已经从障碍物前方通过
-        if self._has_departed_lane_center:
-            if ego_loc.x > hazard_loc.x + self.pass_x_margin:
-                self.bypass_status = "SUCCESS"
-                return py_trees.common.Status.SUCCESS
-
-        return new_status
-
-class ReverseVehicleResumeCriterion(Criterion):
-    """
-    离开风险区并恢复通行：
-    自车绕行后回归路线，并到达终点附近
-    """
-    def __init__(
-        self,
-        actor,
-        goal_location,
-        route_center_y = 134.423233,
-        name="ReverseVehicleResumeCriterion",
-        goal_dist_threshold=5.0,
-        center_recover_threshold=2.0,
-        min_resume_speed=1.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.goal_location = goal_location
-        self.route_center_y = route_center_y
-        self.goal_dist_threshold = goal_dist_threshold
-        self.center_recover_threshold = center_recover_threshold
-        self.min_resume_speed = min_resume_speed
-
-        self.resume_status = "INIT"
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        ego_speed = get_speed(self.actor)
-
-        dist_to_goal = ego_loc.distance(self.goal_location)
-        center_offset = abs(ego_loc.y - self.route_center_y)
-        # print("横向误差：{}".format(center_offset))
-        if (
-            dist_to_goal <= self.goal_dist_threshold
-            and center_offset <= self.center_recover_threshold
-            and ego_speed >= self.min_resume_speed
-        ):
-            self.resume_status = "SUCCESS"
-            return py_trees.common.Status.SUCCESS
-
-        return new_status
-    
-# ==========================crazy motor criterion==========================
-
-# ==========================Blind spot hidden car criterion==========================
-class IntersectionCollisionLeftTurnBrakeCriterion(Criterion):
-    """
-    识别并减速：
-    当障碍车开始侵入风险区后，ego 是否输出明确制动信号
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        name="IntersectionCollisionLeftTurnBrakeCriterion",
-        trigger_x=5.0,
-        brake_threshold=0.2,
-        min_brake_duration=0.3,
-        max_response_time=5.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-
-        self.hazard_actor = hazard_actor
-        self.trigger_x = trigger_x
-        self.brake_threshold = brake_threshold
-        self.min_brake_duration = min_brake_duration
-        self.max_response_time = max_response_time
-
-        self._activated = False
-        self._start_time = None
-        self._brake_start_time = None
-
-        self.test_status = "INIT"
-        self.actual_value = 0
-        self.success_value = 1
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor:
-            return new_status
-
-        self_loc = self.actor.get_location()
-
-        # 障碍车进入主车道/风险区后开始检测
-        if not self._activated and self_loc.x >= self.trigger_x:
-            self._activated = True
-            self._start_time = GameTime.get_time()
-
-        if not self._activated:
-            return new_status
-
-        control = self.actor.get_control()
-        current_time = GameTime.get_time()
-
-        # brake 达到阈值，开始累计持续时间
-        if control.brake >= self.brake_threshold:
-            if self._brake_start_time is None:
-                self._brake_start_time = current_time
-
-            brake_duration = current_time - self._brake_start_time
-            if brake_duration >= self.min_brake_duration:
-                self.test_status = "SUCCESS"
-                self.actual_value = 1
-                return py_trees.common.Status.SUCCESS
-        else:
-            # brake 中断则重新计时
-            self._brake_start_time = None
-
-        # 响应超时还没踩刹车，则失败
-        if current_time - self._start_time > self.max_response_time:
-            self.test_status = "FAILURE"
-            self.actual_value = 0
-            return py_trees.common.Status.FAILURE
-
-        return new_status
-
-class IntersectionCollisionLeftTurnResumeCriterion(Criterion):
-    """
-    离开风险区并恢复通行：
-    自车减速后回归路线，并到达终点附近
-    """
-    def __init__(
-        self,
-        actor,
-        goal_location,
-        route_center_x=40.0,
-        name="IntersectionCollisionLeftTurnResumeCriterion",
-        goal_dist_threshold=5.0,
-        center_recover_threshold=2.0,
-        min_resume_speed=1.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.goal_location = goal_location
-        self.route_center_x = route_center_x
-        self.goal_dist_threshold = goal_dist_threshold
-        self.center_recover_threshold = center_recover_threshold
-        self.min_resume_speed = min_resume_speed
-
-        self.test_status = "INIT"
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        ego_speed = get_speed(self.actor)
-
-        dist_to_goal = ego_loc.distance(self.goal_location)
-        center_offset = abs(ego_loc.x - self.route_center_x)
-
-        if (
-            dist_to_goal <= self.goal_dist_threshold
-            and center_offset <= self.center_recover_threshold
-            and ego_speed >= self.min_resume_speed
-        ):
+        if self.test_status != "FAILURE":
             self.test_status = "SUCCESS"
-            return py_trees.common.Status.SUCCESS
+        elif self._terminate_on_failure:
+            return py_trees.common.Status.FAILURE
+        return new_status
+
+
+class CrazyBikeResumeCriterion(Criterion):
+    """Check whether ego safely resumes cruising after passing the bike."""
+
+    def __init__(self, actor, bike_actor, name="CrazyBikeResumeCriterion",
+                 route_start_location=None, route_end_location=None,
+                 escape_distance=12.0, resume_speed=5.0,
+                 min_resume_duration=1.0, lane_tolerance=1.8,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.escape_distance = escape_distance
+        self.resume_speed = resume_speed
+        self.min_resume_duration = min_resume_duration
+        self.lane_tolerance = lane_tolerance
+
+        fallback_transform = actor.get_transform() if actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            actor.get_location() if actor is not None else None)
+
+        self._has_been_behind_bike = False
+        self._resume_start_time = None
+        self._collision_sensor = None
+        self._bike_collision = False
+
+        self.actual_value = 0.0
+        self.success_value = resume_speed
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def initialise(self):
+        world = CarlaDataProvider.get_world()
+        if world is not None and self.actor is not None:
+            blueprint = world.get_blueprint_library().find('sensor.other.collision')
+            self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
+            self._collision_sensor.listen(lambda event: self._on_collision(event))
+        super().initialise()
+
+    def terminate(self, new_status):
+        if self._collision_sensor is not None:
+            try:
+                if getattr(self._collision_sensor, "is_listening", False):
+                    self._collision_sensor.stop()
+            except (RuntimeError, AttributeError):
+                pass
+            try:
+                self._collision_sensor.destroy()
+            except RuntimeError:
+                pass
+        self._collision_sensor = None
+        super().terminate(new_status)
+
+    def _on_collision(self, event):
+        if event is None or event.other_actor is None:
+            return
+        if self.bike_actor is None:
+            return
+        if event.other_actor.id != self.bike_actor.id:
+            return
+        self._bike_collision = True
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.bike_actor:
+            return new_status
+
+        if self._bike_collision:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        bike_loc = self.bike_actor.get_location()
+        ego_speed = _get_actor_speed_mps(self.actor)
+        self.actual_value = ego_speed
+
+        longitudinal_from_bike, _ = _project_to_axis(
+            bike_loc, ego_loc, self._forward_xy, self._right_xy)
+
+        if longitudinal_from_bike < 0.0:
+            self._has_been_behind_bike = True
+
+        if not self._has_been_behind_bike or longitudinal_from_bike <= self.escape_distance:
+            self._resume_start_time = None
+            return new_status
+
+        if ego_speed >= self.resume_speed:
+            current_time = GameTime.get_time()
+            if self._resume_start_time is None:
+                self._resume_start_time = current_time
+            elif current_time - self._resume_start_time >= self.min_resume_duration:
+                self.test_status = "SUCCESS"
+        else:
+            self._resume_start_time = None
 
         return new_status

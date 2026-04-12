@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <routes>
     <route id="0" town="Town06">
         <waypoints>
@@ -7975,11 +7975,7 @@
         </waypoints>
         <scenarios>
             <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
-<<<<<<< HEAD
-                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0" />
-=======
-                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0"/>
->>>>>>> dev
+                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0" />
                 <init_speed value="30.0" />
                 <difficulty value="level2" />
                 <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike" />
@@ -8021,11 +8017,7 @@
         </waypoints>
         <scenarios>
             <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
-<<<<<<< HEAD
-                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0" />
-=======
-                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0"/>
->>>>>>> dev
+                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0" />
                 <init_speed value="30.0" />
                 <difficulty value="level2" />
                 <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike" />
@@ -8067,11 +8059,7 @@
         </waypoints>
         <scenarios>
             <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
-<<<<<<< HEAD
-                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0" />
-=======
-                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0"/>
->>>>>>> dev
+                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0" />
                 <init_speed value="30.0" />
                 <difficulty value="level2" />
                 <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike" />
@@ -8113,11 +8101,7 @@
         </waypoints>
         <scenarios>
             <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
-<<<<<<< HEAD
-                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0" />
-=======
-                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0"/>
->>>>>>> dev
+                <trigger_point x="-15.0" y="-65.01" z="0.5" yaw="180.0" />
                 <init_speed value="30.0" />
                 <difficulty value="level2" />
                 <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike" />
@@ -8159,11 +8143,7 @@
         </waypoints>
         <scenarios>
             <scenario name="EbikeAndPedestrianCross" type="EbikeAndPedestrianCross">
-<<<<<<< HEAD
-                <trigger_point x="-25.0" y="-65.01" z="0.5" yaw="180.0" />
-=======
-                <trigger_point x="-5.0" y="-65.01" z="0.5" yaw="180.0"/>
->>>>>>> dev
+                <trigger_point x="-5.0" y="-65.01" z="0.5" yaw="180.0" />
                 <init_speed value="40.0" />
                 <difficulty value="level3" />
                 <other_actor x="-35.96" y="-52.51" z="0.5" yaw="217.2" model="vehicle.bh.crossbike" />
@@ -9344,4 +9324,1097 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
     </route>
+
+<route id="0" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+            <weather route_percentage="100" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level1_night_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="6.9" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="3.8" />
+                <bike_cross_speed value="4.6" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="1" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level1_night_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="6.9" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="3.8" />
+                <bike_cross_speed value="4.6" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="2" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+            <weather route_percentage="100" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level1_day_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="6.9" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="3.8" />
+                <bike_cross_speed value="4.6" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="3" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level1_day_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="6.9" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="3.8" />
+                <bike_cross_speed value="4.6" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="4" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+            <weather route_percentage="100" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level2_night_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="8.3" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="4.4" />
+                <bike_cross_speed value="5.0" />
+                <cut_in_trigger_distance value="20.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="5" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level2_night_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="8.3" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="4.4" />
+                <bike_cross_speed value="5.0" />
+                <cut_in_trigger_distance value="20.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="6" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+            <weather route_percentage="100" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level2_day_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="8.3" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="4.4" />
+                <bike_cross_speed value="5.0" />
+                <cut_in_trigger_distance value="20.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="7" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level2_day_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="8.3" />
+                <bike_speed_limit value="5.5" />
+                <bike_speed value="4.4" />
+                <bike_cross_speed value="5.0" />
+                <cut_in_trigger_distance value="20.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="8" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+            <weather route_percentage="100" cloudiness="90.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="10.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level3_night_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="9.7" />
+                <bike_speed_limit value="6.2" />
+                <bike_speed value="5.2" />
+                <bike_cross_speed value="5.8" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="9" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="15.0" sun_azimuth_angle="-1.0" sun_altitude_angle="0.5" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level3_night_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="9.7" />
+                <bike_speed_limit value="6.2" />
+                <bike_speed value="5.2" />
+                <bike_cross_speed value="5.8" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="10" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+            <weather route_percentage="100" cloudiness="85.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="60.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="4.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level3_day_rain" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="9.7" />
+                <bike_speed_limit value="6.2" />
+                <bike_speed value="5.2" />
+                <bike_cross_speed value="5.8" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
+
+    <route id="11" town="Town05">
+        <weathers>
+            <weather route_percentage="0" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+            <weather route_percentage="100" cloudiness="10.0" precipitation="0.0" precipitation_deposits="0.0" wetness="0.0" wind_intensity="10.0" sun_azimuth_angle="-1.0" sun_altitude_angle="60.0" fog_density="2.0" />
+        </weathers>
+        <waypoints>
+            <position x="-5.0" y="1.8" z="0.5" />
+            <position x="-3.0" y="1.8" z="0.5" />
+            <position x="-1.0" y="1.8" z="0.5" />
+            <position x="1.0" y="1.8" z="0.5" />
+            <position x="3.0" y="1.8" z="0.5" />
+            <position x="5.0" y="1.8" z="0.5" />
+            <position x="7.0" y="1.8" z="0.5" />
+            <position x="9.0" y="1.8" z="0.5" />
+            <position x="11.0" y="1.8" z="0.5" />
+            <position x="13.0" y="1.8" z="0.5" />
+            <position x="15.0" y="1.8" z="0.5" />
+            <position x="17.0" y="1.8" z="0.5" />
+            <position x="19.0" y="1.8" z="0.5" />
+            <position x="21.0" y="1.8" z="0.5" />
+            <position x="23.0" y="1.8" z="0.5" />
+            <position x="25.0" y="1.8" z="0.5" />
+            <position x="27.0" y="1.8" z="0.5" />
+            <position x="29.0" y="1.8" z="0.5" />
+            <position x="31.0" y="1.8" z="0.5" />
+            <position x="33.0" y="1.8" z="0.5" />
+            <position x="35.0" y="1.8" z="0.5" />
+            <position x="37.0" y="1.8" z="0.5" />
+            <position x="39.0" y="1.8" z="0.5" />
+            <position x="41.0" y="1.8" z="0.5" />
+            <position x="43.0" y="1.8" z="0.5" />
+            <position x="45.0" y="1.8" z="0.5" />
+            <position x="47.0" y="1.8" z="0.5" />
+            <position x="49.0" y="1.8" z="0.5" />
+            <position x="51.0" y="1.8" z="0.5" />
+            <position x="53.0" y="1.8" z="0.5" />
+            <position x="55.0" y="1.8" z="0.5" />
+            <position x="57.0" y="1.8" z="0.5" />
+            <position x="59.0" y="1.8" z="0.5" />
+            <position x="61.0" y="1.8" z="0.5" />
+            <position x="63.0" y="1.8" z="0.5" />
+            <position x="65.0" y="1.8" z="0.5" />
+            <position x="67.0" y="1.8" z="0.5" />
+            <position x="69.0" y="1.8" z="0.5" />
+            <position x="71.0" y="1.8" z="0.5" />
+            <position x="73.0" y="1.8" z="0.5" />
+            <position x="75.0" y="1.8" z="0.5" />
+            <position x="77.0" y="1.8" z="0.5" />
+            <position x="79.0" y="1.8" z="0.5" />
+            <position x="81.0" y="1.8" z="0.5" />
+            <position x="83.0" y="1.8" z="0.5" />
+            <position x="85.0" y="1.8" z="0.5" />
+            <position x="87.0" y="1.8" z="0.5" />
+            <position x="89.0" y="1.8" z="0.5" />
+            <position x="91.0" y="1.8" z="0.5" />
+            <position x="93.0" y="1.8" z="0.5" />
+            <position x="95.0" y="1.8" z="0.5" />
+            <position x="97.0" y="1.8" z="0.5" />
+            <position x="99.0" y="1.8" z="0.5" />
+            <position x="101.0" y="1.8" z="0.5" />
+            <position x="103.0" y="1.8" z="0.5" />
+            <position x="105.0" y="1.8" z="0.5" />
+            <position x="107.0" y="1.8" z="0.5" />
+            <position x="109.0" y="1.8" z="0.5" />
+            <position x="110.0" y="1.8" z="0.5" />
+        </waypoints>
+        <scenarios>
+            <scenario name="CrazyBike_level3_day_sunny" type="CrazyBikeScenario">
+                <trigger_point x="56.0" y="1.8" z="0.5" yaw="0.0" />
+                <init_speed value="9.7" />
+                <bike_speed_limit value="6.2" />
+                <bike_speed value="5.2" />
+                <bike_cross_speed value="5.8" />
+                <cut_in_trigger_distance value="24.0" />
+                <lane_change_direction value="left" />
+                <distance_same_lane value="3.0" />
+                <distance_other_lane value="20.0" />
+                <post_change_distance value="25.0" />
+                <ego_log_interval value="0.2" />
+                <decel_trigger_distance value="24.0" />
+                <decel_latest_reaction_distance value="10.0" />
+                <decel_min_speed_drop value="2.0" />
+                <resume_escape_distance value="12.0" />
+                <resume_speed value="5.0" />
+                <resume_min_duration value="1.0" />
+                <resume_lane_tolerance value="1.8" />
+                <other_actor x="52.0" y="5.3" z="0.5" yaw="0.0" model="vehicle.vespa.zx125" rolename="adversary" />
+            </scenario>
+        </scenarios>
+    </route>
 </routes>
+
