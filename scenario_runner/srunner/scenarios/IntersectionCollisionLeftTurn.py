@@ -13,15 +13,43 @@ from srunner.scenariomanager.scenarioatomics.atomic_criteria import (Intersectio
 
 class EgoSpeedControl(py_trees.behaviour.Behaviour):
     """
-    二合一节点：统一管理主车速度和接管检测。
-    一旦检测到刹车/油门大于阈值，立即放弃速度控制并永久返回 SUCCESS。
+    主车速度保持节点（适合有坡度）
+    - 未接管时：仅做纵向速度保持
+    - 检测到人工输入后：永久放权并返回 SUCCESS
+    - 不使用 set_target_velocity
+    - 不修改 steer，避免覆盖人工转向/route 跟踪
     """
-    def __init__(self, ego_vehicle, target_velocity=10.0, name="EgoSpeedControl"):
+    def __init__(
+        self,
+        ego_vehicle,
+        target_speed=10.0,
+        throttle_gain=0.20,
+        brake_gain=0.10,
+        max_throttle=0.75,
+        max_brake=0.50,
+        takeover_steer_threshold=0.02,
+        takeover_throttle_threshold=0.02,
+        takeover_brake_threshold=0.02,
+        name="EgoSpeedControl"
+    ):
         super(EgoSpeedControl, self).__init__(name)
         self.ego_vehicle = ego_vehicle
-        self.target_velocity = target_velocity
-        # 核心：状态锁。记录是否已经被接管
+        self.target_speed = target_speed
+
+        self.throttle_gain = throttle_gain
+        self.brake_gain = brake_gain
+        self.max_throttle = max_throttle
+        self.max_brake = max_brake
+
+        self.takeover_steer_threshold = takeover_steer_threshold
+        self.takeover_throttle_threshold = takeover_throttle_threshold
+        self.takeover_brake_threshold = takeover_brake_threshold
+
         self._taken_over = False
+
+    def _get_speed(self):
+        v = self.ego_vehicle.get_velocity()
+        return math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z)
 
     def update(self):
         if not self.ego_vehicle or not self.ego_vehicle.is_alive:
@@ -30,25 +58,42 @@ class EgoSpeedControl(py_trees.behaviour.Behaviour):
         if self._taken_over:
             return py_trees.common.Status.SUCCESS
 
-        control = self.ego_vehicle.get_control()
+        current_control = self.ego_vehicle.get_control()
 
-        if control.throttle > 0.001 or control.brake > 0.001:
+        # 接管判定：方向/油门/刹车任一超过阈值，立即放权
+        # 注意：这仍然不是最理想的“原始输入检测”，但比只看 throttle/brake 好很多
+        if (
+            abs(current_control.steer) > self.takeover_steer_threshold or
+            current_control.throttle > self.takeover_throttle_threshold or
+            current_control.brake > self.takeover_brake_threshold
+        ):
+            print("[EgoSpeedControl] Manual takeover detected, release control.")
             self._taken_over = True
             return py_trees.common.Status.SUCCESS
 
-        # 3. 如果没被接管，继续保持目标速度
-        # 使用 WaypointFollower 或 PID 控制速度
-        velocity_vector = self.ego_vehicle.get_velocity()
-        current_speed = math.sqrt(velocity_vector.x**2 + velocity_vector.y**2 + velocity_vector.z**2)
+        current_speed = self._get_speed()
+        speed_error = self.target_speed - current_speed
 
-        # 简单 PID 控制
-        # self.target_speed = self.target_speed
-        throttle = np.clip((self.target_velocity - current_speed) * 0.5, 0.0, 1.0)
-        control = carla.VehicleControl()
-        control.throttle = throttle
-        control.steer = 0.0
-        self.ego_vehicle.apply_control(control)
-        
+        new_control = carla.VehicleControl()
+
+        # 不碰方向，避免覆盖人工/上层横向控制
+        new_control.steer = current_control.steer
+        new_control.hand_brake = False
+        new_control.reverse = False
+        new_control.manual_gear_shift = False
+
+        if speed_error >= 0.0:
+            # 速度偏低：补油
+            throttle_cmd = np.clip(speed_error * self.throttle_gain, 0.0, self.max_throttle)
+            new_control.throttle = float(throttle_cmd)
+            new_control.brake = 0.0
+        else:
+            # 速度偏高：轻刹
+            brake_cmd = np.clip((-speed_error) * self.brake_gain, 0.0, self.max_brake)
+            new_control.throttle = 0.0
+            new_control.brake = float(brake_cmd)
+
+        self.ego_vehicle.apply_control(new_control)
         return py_trees.common.Status.RUNNING
 
 
@@ -127,9 +172,9 @@ class IntersectionCollisionLeftTurn(BasicScenario):
         # ————————场景调节条件——————————
         # 初始化触发点
         self._trigger_npc_point = carla.Location(
-            x=-40.0,
+            x=-35.0,
             y=205.1,
-            z=4.0
+            z=2.5
         )
 
         # NPC 速度
@@ -239,7 +284,7 @@ class IntersectionCollisionLeftTurn(BasicScenario):
                 actor=self.ego_vehicles[0],
                 hazard_actor=self.other_actors[0],
                 trigger_x=5.0,
-                brake_threshold=0.2,
+                brake_threshold=0.5,
                 min_brake_duration=0.3
             )
         )
@@ -248,7 +293,7 @@ class IntersectionCollisionLeftTurn(BasicScenario):
             IntersectionCollisionLeftTurnResumeCriterion(
                 actor=ego,
                 goal_location=goal_loc,
-                route_center_x=42,
+                route_center_x=40,
                 goal_dist_threshold=3.0,
                 center_recover_threshold=2.0,
                 min_resume_speed=1.0

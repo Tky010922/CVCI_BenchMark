@@ -63,7 +63,7 @@ class GhostProbeScenario(BasicScenario):
         self._peds = []
         self._ego_initial_speed = get_value_parameter(config, "init_speed", float, 9.0)
         self._ped_start_distance = get_value_parameter(config, "trigger_distance", float, 18.0)
-        self._bike_start_distance = max(self._ped_start_distance + 20.0, 28.0)
+        self._bike_start_distance = max(self._ped_start_distance + 26.0, 40.0)
         super(GhostProbeScenario, self).__init__(
             "GhostProbe",
             ego_vehicles,
@@ -75,13 +75,17 @@ class GhostProbeScenario(BasicScenario):
 
     def _get_route_anchor_locations(self):
         route_start_loc = self.config.trigger_points[0].location
-        route_end_loc = carla.Location(x=150.0, y=2.7, z=1.5)
+        route_end_loc = carla.Location(x=18.0, y=2.7, z=1.5)
 
         if self.config.route:
             route_start_loc = self.config.route[0][0].location
             route_end_loc = self.config.route[-1][0].location
 
         return route_start_loc, route_end_loc
+
+    def _get_route_length(self):
+        route_start_loc, route_end_loc = self._get_route_anchor_locations()
+        return route_start_loc.distance(route_end_loc)
 
     def _initialize_actors(self, config):
         ego = self.ego_vehicles[0]
@@ -172,8 +176,8 @@ class GhostProbeScenario(BasicScenario):
             "PedestrianMovementParallel",
             policy=py_trees.common.ParallelPolicy.SUCCESS_ON_ALL
         )
-        ped_speeds = [3.8, 3.7, 3.6, 3.5]
-        ped_delays = [0.25, 0.30, 0.35, 0.40]
+        ped_speeds = [3.2, 3.1, 3.0, 2.9]
+        ped_delays = [0.00, 0.05, 0.10, 0.15]
         for index, ped in enumerate(self._peds):
             ped_sequence = py_trees.composites.Sequence(f"Pedestrian{index}Sequence")
             ped_sequence.add_child(Idle(ped_delays[index]))
@@ -184,7 +188,7 @@ class GhostProbeScenario(BasicScenario):
         scenario_flow.add_child(pedestrian_sequence)
 
         root.add_child(scenario_flow)
-        root.add_child(DriveDistance(self.ego_vehicles[0], distance=150))
+        root.add_child(DriveDistance(self.ego_vehicles[0], distance=max(40.0, self._get_route_length() + 5.0)))
 
         return root
 

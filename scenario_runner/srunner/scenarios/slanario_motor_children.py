@@ -55,6 +55,9 @@ class EbikeAndPedestrianCross(BasicScenario):
             config.other_parameters.get("pedestrian_speed", {}).get("value", 1.5)
         )
         
+        trigger_transform = config.trigger_points[0]
+
+        self._trigger_location = trigger_transform.location
         print(f"📊 参数配置:")
         print(f"  自车初始速度: {self._init_speed_kmh} km/h ({self._init_speed_ms:.2f} m/s)")
         print(f"  难度等级: {self._difficulty}")
@@ -157,8 +160,8 @@ class EbikeAndPedestrianCross(BasicScenario):
             print("❌ 行人不存在！")
 
         trigger_location = carla.Location(x=-25, y=-65, z=0.5)
-        print(f"触发点位置: {trigger_location}")
-        print(f"自车到触发点距离: {ego.get_location().distance(trigger_location):.2f}米")
+        print(f"触发点位置: {self._trigger_location}")
+        print(f"自车到触发点距离: {ego.get_location().distance(self._trigger_location):.2f}米")
 
         root = py_trees.composites.Parallel(
             "CrossBehavior", 
@@ -170,7 +173,7 @@ class EbikeAndPedestrianCross(BasicScenario):
             # 1. 行人控制逻辑（使用XML配置的速度）
             # ==========================================
             ped_sequence = py_trees.composites.Sequence("PedestrianBehavior")
-            ped_trigger = InTriggerDistanceToLocation(ego, trigger_location, distance=1.5)
+            ped_trigger = InTriggerDistanceToLocation(ego, self._trigger_location, distance=1.5)
             ped_walk = KeepVelocity(pedestrian, target_velocity=self._pedestrian_speed, duration=18.0)
             ped_stop = StopVehicle(pedestrian, 1.0)
             ped_sequence.add_children([ped_trigger, ped_walk, ped_stop])
@@ -183,7 +186,7 @@ class EbikeAndPedestrianCross(BasicScenario):
             # 2. 电瓶车控制逻辑（使用XML配置的速度）
             # ==========================================
             bike_sequence = py_trees.composites.Sequence("EbikeBehavior")
-            bike_trigger = InTriggerDistanceToLocation(ego, trigger_location, distance=1.5)
+            bike_trigger = InTriggerDistanceToLocation(ego, self._trigger_location, distance=1.5)
             bike_drive = KeepVelocity(ebike, target_velocity=self._ebike_speed, duration=10.0)
             bike_stop = StopVehicle(ebike, 1.0)
             bike_sequence.add_children([bike_trigger, bike_drive, bike_stop])

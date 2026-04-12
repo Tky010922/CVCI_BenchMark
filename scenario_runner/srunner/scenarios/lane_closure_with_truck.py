@@ -1,9 +1,5 @@
-import math
 import py_trees
 import carla
-import inspect
-
-from agents.navigation.local_planner import RoadOption
 
 from srunner.scenariomanager.carla_data_provider import CarlaDataProvider
 from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
@@ -13,7 +9,6 @@ from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
     MinTTCTest
 )
 from srunner.scenariomanager.scenarioatomics.atomic_trigger_conditions import DriveDistance
-from srunner.scenariomanager.scenarioatomics.atomic_behaviors import Idle
 from srunner.scenarios.basic_scenario import BasicScenario
 from srunner.scenariomanager.traffic_events import TrafficEventType
 
@@ -317,11 +312,16 @@ class LaneClosureWithTruck(BasicScenario):
             direction.z = 0
             direction = direction / (direction.length() + 1e-6)
 
+        # 4. 初始化自车速度
         target_speed_mps = self._initial_speed_kph / 3.6
-        ego_velocity = carla.Vector3D(
-            direction.x * target_speed_mps,
-            direction.y * target_speed_mps,
-            0.0  # z方向速度设为0
+        ego_transform = self.ego_vehicles[0].get_transform()
+        direction = ego_transform.get_forward_vector()
+        direction.z = 0.0 
+        
+        # 归一化后设置速度
+        direction = direction / (direction.length() + 1e-6)
+        self.ego_vehicles[0].set_target_velocity(
+            carla.Vector3D(direction.x * target_speed_mps, direction.y * target_speed_mps, 0.0)
         )
 
         # 设置目标速度

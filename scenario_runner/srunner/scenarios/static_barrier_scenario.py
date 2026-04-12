@@ -4,10 +4,14 @@ import carla
 import py_trees
 
 from srunner.scenariomanager.carla_data_provider import CarlaDataProvider
-from srunner.scenariomanager.scenarioatomics.atomic_criteria import CollisionTest
 from srunner.scenariomanager.scenarioatomics.atomic_trigger_conditions import DriveDistance
 from srunner.scenarios.basic_scenario import BasicScenario
-
+from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
+    CollisionTest,
+    BarrierSlowDownCriterion,
+    BarrierDetourCriterion,
+    BarrierReachGoalCriterion
+)
 
 class PassiveEgoSpeedHold(py_trees.behaviour.Behaviour):
     """Keep the ego at a target speed until the driver provides manual input."""
@@ -52,7 +56,7 @@ class StaticBarrier(BasicScenario):
                  debug_mode=False, criteria_enable=True, timeout=60):
         self.timeout = timeout
 
-        self._ego_initial_speed = 9.0
+        self._ego_initial_speed =13.0
         self._barrier_obstacles = []
         self._traffic_seed = 21
         self._traffic_rng = random.Random(self._traffic_seed)
@@ -60,7 +64,7 @@ class StaticBarrier(BasicScenario):
         self._tm_port = CarlaDataProvider.get_traffic_manager_port()
         self._tm = CarlaDataProvider.get_client().get_trafficmanager(self._tm_port)
 
-        self._barrier_distance = 170.0
+        self._barrier_distance = 40.0
         self._barrier_lateral_min = -0.2
         self._barrier_lateral_max = 5.0
         self._num_barrier_cones = 6
@@ -152,7 +156,7 @@ class StaticBarrier(BasicScenario):
         return current_wp
 
     def _get_base_waypoint(self):
-        base_location = carla.Location(x=173.22, y=207.91, z=0.0)
+        base_location = carla.Location(x=264.43, y=173.68, z=0.0)
         return CarlaDataProvider.get_map().get_waypoint(base_location)
 
     def _get_barrier_waypoint(self):
@@ -165,7 +169,7 @@ class StaticBarrier(BasicScenario):
 
     def _get_route_anchor_locations(self):
         route_start_loc = self.config.trigger_points[0].location
-        route_end_loc = carla.Location(x=353.59, y=124.05, z=0.0)
+        route_end_loc = carla.Location(x=314.43, y=150.58, z=0.0)
 
         if self.config.route:
             route_start_loc = self.config.route[0][0].location
@@ -246,8 +250,25 @@ class StaticBarrier(BasicScenario):
                 (self._advance_waypoint(barrier_wp, 55.0), -6.0),
             ])
 
+        # ===================== 【新增：自车车道 + 自车后方 生成车辆】 =====================
+        # 在自车所在车道、自车后方 15米 / 35米 / 55米 各生成一辆车
+        if ego_wp is not None:
+            # 向后（自车后方）15米
+            ego_back_wp1 = self._advance_waypoint(ego_wp, -15.0)
+            # 向后 35米
+            ego_back_wp2 = self._advance_waypoint(ego_wp, -35.0)
+            # 向后 55米
+            ego_back_wp3 = self._advance_waypoint(ego_wp, -55.0)
+
+            # 速度比限速慢 10%~20%，不会超车
+            spawn_plan.append((ego_back_wp1, -10.0))
+            spawn_plan.append((ego_back_wp2, -15.0))
+            spawn_plan.append((ego_back_wp3, -20.0))
+        # ============================================================================
+
         for waypoint, speed_diff in spawn_plan:
             self._spawn_background_vehicle(waypoint, speed_diff)
+
 
     def _initialize_actors(self, config):
         ego = self.ego_vehicles[0]
@@ -319,7 +340,7 @@ class StaticBarrier(BasicScenario):
         """
         import carla
 
-        base_location = carla.Location(x=173.22, y=207.91, z=0.0)
+        base_location = carla.Location(x=264.43, y=173.68, z=0.0)
         carla_map = CarlaDataProvider.get_map()
         current_wp = carla_map.get_waypoint(base_location)
 
@@ -359,48 +380,30 @@ class StaticBarrier(BasicScenario):
     def _create_test_criteria(self):
         criteria = []
         ego = self.ego_vehicles[0]
-        criteria.append(CollisionTest(ego))
 
-        try:
-            from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
-                BarrierPassByCriterion,
-                BarrierSlowDownCriterion,
-            )
+        barrier_wp = self._get_barrier_waypoint()
+        if not barrier_wp or not self._barrier_obstacles:
+            return criteria
 
-            barrier_wp = self._get_barrier_waypoint()
-            if barrier_wp:
-                barrier_loc = barrier_wp.transform.location
-                route_start_loc, route_end_loc = self._get_route_anchor_locations()
-                target_lane_wp = self._get_target_left_lane_waypoint()
-                target_lane_loc = target_lane_wp.transform.location if target_lane_wp else None
-                criteria.append(BarrierSlowDownCriterion(
-                    ego,
-                    barrier_loc,
-                    obstacle_actors=self._barrier_obstacles,
-                    route_start_location=route_start_loc,
-                    route_end_location=route_end_loc,
-                    target_lane_location=target_lane_loc,
-                    trigger_distance=70.0,
-                    required_speed_drop=4.0,
-                    safe_speed=5.0,
-                    danger_distance=15.0,
-                    collision_buffer=1.6
-                ))
-                criteria.append(BarrierPassByCriterion(
-                    ego,
-                    barrier_loc,
-                    obstacle_actors=self._barrier_obstacles,
-                    route_start_location=route_start_loc,
-                    route_end_location=route_end_loc,
-                    target_lane_location=target_lane_loc,
-                    barrier_length=self._longitudinal_length,
-                    lane_tolerance=1.5,
-                    success_buffer=8.0,
-                    latest_merge_distance=5.0,
-                    collision_buffer=1.6
-                ))
-        except Exception:
-            pass
+        barrier_loc = barrier_wp.transform.location
+        original_lane_y = barrier_loc.y
+        goal_loc = carla.Location(x=353.59, y=124.05, z=0.0)
+
+        # 1. 减速
+        criteria.append(BarrierSlowDownCriterion(
+            ego, barrier_location=barrier_loc, trigger_dist=70.0, min_decel=4.0
+        ))
+
+        # 2. 绕行
+        criteria.append(BarrierDetourCriterion(
+            ego, obstacle_actors=self._barrier_obstacles,
+            original_lane_y=original_lane_y, lateral_threshold=1.5, collision_distance=1.6
+        ))
+
+        # 3. 到达终点
+        criteria.append(BarrierReachGoalCriterion(
+            ego, goal_location=goal_loc, distance_threshold=5.0
+        ))
 
         return criteria
 
