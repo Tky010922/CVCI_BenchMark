@@ -680,7 +680,7 @@
             <weather cloudiness="90.0" fog_density="20.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100"/>
         </weathers>
         <waypoints>
-            <position x="127.23" y="222.25" z="0.5"/>
+            <position x="133" y="220" z="0.5" />
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
@@ -696,7 +696,7 @@
             <weather cloudiness="0.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100"/>
         </weathers>
         <waypoints>
-            <position x="127.23" y="222.25" z="0.5"/>
+            <position x="133" y="220" z="0.5" />
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
@@ -713,7 +713,7 @@
             <weather cloudiness="90.0" fog_density="20.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100"/>
         </weathers>
         <waypoints>
-            <position x="127.23" y="222.25" z="0.5"/>
+            <position x="108.563385" y="228.8" z="0.5"/>
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
@@ -761,7 +761,7 @@
             <weather cloudiness="0.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100"/>
         </weathers>
         <waypoints>
-            <position x="127.23" y="222.25" z="0.5"/>
+            <position x="108.563385" y="228.8" z="0.5"/>
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
