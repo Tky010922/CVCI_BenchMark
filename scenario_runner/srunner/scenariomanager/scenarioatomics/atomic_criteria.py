@@ -4661,6 +4661,110 @@ class ReverseVehicleBrakeCriterion(Criterion):
             self._brake_start_time = None
 
         return new_status      
+
+class ReverseVehicleBypassCriterion(Criterion):
+    """
+    进行安全绕行：
+    障碍车占道后，自车是否明确选择左/右绕行并完成通过
+    """
+    def __init__(
+        self,
+        actor,
+        hazard_actor,
+        route_center_y=134.423233,
+        name="ReverseVehicleBypassCriterion",
+        lateral_threshold=2.0,
+        pass_x_margin=3.0,
+        terminate_on_failure=False
+    ):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.hazard_actor = hazard_actor
+        self.route_center_y = route_center_y
+        self.lateral_threshold = lateral_threshold
+        self.pass_x_margin = pass_x_margin
+
+        self._direction = None   # "left" / "right"
+        self._has_departed_lane_center = False
+        self.bypass_status = "INIT"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+
+        if not self.actor or not self.hazard_actor:
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        hazard_loc = self.hazard_actor.get_location()
+
+        lateral_offset = ego_loc.y - self.route_center_y
+
+        # 先判断是否出现明确绕行动作
+        # print("自车向左绕行，自车位置为{}, lateral_offset为{}, lateral_threshold为{}".format(ego_loc, lateral_offset, self.lateral_threshold))
+        if not self._has_departed_lane_center:
+            if lateral_offset >= self.lateral_threshold:
+                
+                self._has_departed_lane_center = True
+                self._direction = "left"
+            elif lateral_offset <= -self.lateral_threshold:
+                self._has_departed_lane_center = True
+                self._direction = "right"
+
+        # 再判断是否已经从障碍物前方通过
+        if self._has_departed_lane_center:
+            if ego_loc.x > hazard_loc.x + self.pass_x_margin:
+                self.bypass_status = "SUCCESS"
+                return py_trees.common.Status.SUCCESS
+
+        return new_status
+
+class ReverseVehicleResumeCriterion(Criterion):
+    """
+    离开风险区并恢复通行：
+    自车绕行后回归路线，并到达终点附近
+    """
+    def __init__(
+        self,
+        actor,
+        goal_location,
+        route_center_y = 134.423233,
+        name="ReverseVehicleResumeCriterion",
+        goal_dist_threshold=5.0,
+        center_recover_threshold=2.0,
+        min_resume_speed=1.0,
+        terminate_on_failure=False
+    ):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.goal_location = goal_location
+        self.route_center_y = route_center_y
+        self.goal_dist_threshold = goal_dist_threshold
+        self.center_recover_threshold = center_recover_threshold
+        self.min_resume_speed = min_resume_speed
+
+        self.resume_status = "INIT"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+
+        if not self.actor:
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        ego_speed = get_speed(self.actor)
+
+        dist_to_goal = ego_loc.distance(self.goal_location)
+        center_offset = abs(ego_loc.y - self.route_center_y)
+        # print("横向误差：{}".format(center_offset))
+        if (
+            dist_to_goal <= self.goal_dist_threshold
+            and center_offset <= self.center_recover_threshold
+            and ego_speed >= self.min_resume_speed
+        ):
+            self.resume_status = "SUCCESS"
+            return py_trees.common.Status.SUCCESS
+
+        return new_status
+    
+# ==========================crazy motor criterion==========================
 class CrazyBikeNoCollisionCriterion(Criterion):
     """Check whether ego avoids colliding with the cutting-in bike."""
 
@@ -4727,97 +4831,6 @@ class CrazyBikeNoCollisionCriterion(Criterion):
             return py_trees.common.Status.SUCCESS
 
         return new_status
-class ReverseVehicleResumeCriterion(Criterion):
-    """
-    离开风险区并恢复通行：
-    自车绕行后回归路线，并到达终点附近
-    """
-    def __init__(
-        self,
-        actor,
-        goal_location,
-        route_center_y = 134.423233,
-        name="ReverseVehicleResumeCriterion",
-        goal_dist_threshold=5.0,
-        center_recover_threshold=2.0,
-        min_resume_speed=1.0,
-        terminate_on_failure=False
-    ):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.goal_location = goal_location
-        self.route_center_y = route_center_y
-        self.goal_dist_threshold = goal_dist_threshold
-        self.center_recover_threshold = center_recover_threshold
-        self.min_resume_speed = min_resume_speed
-
-        self.resume_status = "INIT"
-
-    def update(self):
-        new_status = py_trees.common.Status.RUNNING
-
-        if not self.actor:
-            return new_status
-
-        ego_loc = self.actor.get_location()
-        ego_speed = get_speed(self.actor)
-
-        dist_to_goal = ego_loc.distance(self.goal_location)
-        center_offset = abs(ego_loc.y - self.route_center_y)
-        # print("横向误差：{}".format(center_offset))
-        if (
-            dist_to_goal <= self.goal_dist_threshold
-            and center_offset <= self.center_recover_threshold
-            and ego_speed >= self.min_resume_speed
-        ):
-            self.resume_status = "SUCCESS"
-            return py_trees.common.Status.SUCCESS
-
-        return new_status
-    
-# ==========================crazy motor criterion==========================
-class CrazyBikeDecelerateCriterion(Criterion):
-    """Check whether ego starts deceleration before getting too close to the cutting-in bike."""
-
-    def __init__(self, actor, bike_actor, name="CrazyBikeDecelerateCriterion",
-                 route_start_location=None, route_end_location=None,
-                 trigger_distance=24.0, latest_reaction_distance=10.0,
-                 min_speed_drop=2.0, brake_threshold=0.15,
-                 min_brake_duration=0.3, pass_buffer=1.5,
-                 terminate_on_failure=False):
-        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.bike_actor = bike_actor
-        self.route_start_location = route_start_location
-        self.route_end_location = route_end_location
-        self.trigger_distance = trigger_distance
-        self.latest_reaction_distance = latest_reaction_distance
-        self.min_speed_drop = min_speed_drop
-        self.brake_threshold = brake_threshold
-        self.min_brake_duration = min_brake_duration
-        self.pass_buffer = pass_buffer
-
-    def update(self):
-
-        ego_loc = self.actor.get_location()
-        current_time = GameTime.get_time()
-
-        # 触发逻辑
-        if not self._activated and ego_loc.y <= self.trigger_y:
-            self._activated = True
-
-        if self._activated and self.test_status != "SUCCESS":
-            control = self.actor.get_control()
-            if control.brake >= self.brake_threshold:
-                if self._brake_start_time is None:
-                    self._brake_start_time = current_time
-                
-                # 判定成功
-                if (current_time - self._brake_start_time) >= self.min_brake_duration:
-                    self.test_status = "SUCCESS" # 记录结果，但不 return SUCCESS
-            else:
-                self._brake_start_time = None
-
-        # 始终返回 RUNNING，确保它能一直 Tick 到底，直到 Parallel 节点整体结束
-        return py_trees.common.Status.RUNNING
 class CrazyBikeDecelerateCriterion(Criterion):
     """Check whether ego starts deceleration before getting too close to the cutting-in bike."""
 
