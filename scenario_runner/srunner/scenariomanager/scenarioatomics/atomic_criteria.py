@@ -4661,62 +4661,72 @@ class ReverseVehicleBrakeCriterion(Criterion):
             self._brake_start_time = None
 
         return new_status      
+class CrazyBikeNoCollisionCriterion(Criterion):
+    """Check whether ego avoids colliding with the cutting-in bike."""
 
-class ReverseVehicleBypassCriterion(Criterion):
-    """
-    进行安全绕行：
-    障碍车占道后，自车是否明确选择左/右绕行并完成通过
-    """
-    def __init__(
-        self,
-        actor,
-        hazard_actor,
-        route_center_y=134.423233,
-        name="ReverseVehicleBypassCriterion",
-        lateral_threshold=2.0,
-        pass_x_margin=3.0,
-        terminate_on_failure=False
-    ):
+    def __init__(self, actor, bike_actor, name="CrazyBikeNoCollisionCriterion",
+                 terminate_on_failure=False):
         super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
-        self.hazard_actor = hazard_actor
-        self.route_center_y = route_center_y
-        self.lateral_threshold = lateral_threshold
-        self.pass_x_margin = pass_x_margin
+        self.bike_actor = bike_actor
+        self._collision_sensor = None
 
-        self._direction = None   # "left" / "right"
-        self._has_departed_lane_center = False
-        self.bypass_status = "INIT"
+        self.actual_value = 0
+        self.success_value = 0
+        self.units = "times"
+        self.test_status = "SUCCESS"
+
+    def initialise(self):
+        world = CarlaDataProvider.get_world()
+        if world is not None and self.actor is not None:
+            blueprint = world.get_blueprint_library().find('sensor.other.collision')
+            self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
+            self._collision_sensor.listen(lambda event: self._on_collision(event))
+        super().initialise()
+
+    def terminate(self, new_status):
+        if self._collision_sensor is not None:
+            try:
+                self._collision_sensor.destroy()
+            except RuntimeError:
+                pass
+        self._collision_sensor = None
+        super().terminate(new_status)
+
+    def _on_collision(self, event):
+        if event is None or event.other_actor is None:
+            return
+        if self.bike_actor is None:
+            return
+        if event.other_actor.id != self.bike_actor.id:
+            return
+
+        self.actual_value += 1
+        self.test_status = "FAILURE"
 
     def update(self):
         new_status = py_trees.common.Status.RUNNING
 
-        if not self.actor or not self.hazard_actor:
+        if self._completed:
+            if self.resume_status == "SUCCESS":
+                return py_trees.common.Status.SUCCESS
+            return py_trees.common.Status.FAILURE
+
+        if not self.actor:
             return new_status
 
         ego_loc = self.actor.get_location()
-        hazard_loc = self.hazard_actor.get_location()
+        ego_speed = get_actor_speed(self.actor)
+        dist_to_goal = ego_loc.distance(self.goal_location)
 
-        lateral_offset = ego_loc.y - self.route_center_y
-
-        # 先判断是否出现明确绕行动作
-        # print("自车向左绕行，自车位置为{}, lateral_offset为{}, lateral_threshold为{}".format(ego_loc, lateral_offset, self.lateral_threshold))
-        if not self._has_departed_lane_center:
-            if lateral_offset >= self.lateral_threshold:
-                
-                self._has_departed_lane_center = True
-                self._direction = "left"
-            elif lateral_offset <= -self.lateral_threshold:
-                self._has_departed_lane_center = True
-                self._direction = "right"
-
-        # 再判断是否已经从障碍物前方通过
-        if self._has_departed_lane_center:
-            if ego_loc.x > hazard_loc.x + self.pass_x_margin:
-                self.bypass_status = "SUCCESS"
-                return py_trees.common.Status.SUCCESS
+        if dist_to_goal <= self.goal_dist_threshold and ego_speed >= self.min_resume_speed:
+            self.resume_status = "SUCCESS"
+            self.actual_value = 1
+            self._completed = True
+            self.was_resumed = True
+            print(f"[恢复通行] ✅ 到达终点")
+            return py_trees.common.Status.SUCCESS
 
         return new_status
-
 class ReverseVehicleResumeCriterion(Criterion):
     """
     离开风险区并恢复通行：
@@ -4765,7 +4775,196 @@ class ReverseVehicleResumeCriterion(Criterion):
         return new_status
     
 # ==========================crazy motor criterion==========================
+class CrazyBikeDecelerateCriterion(Criterion):
+    """Check whether ego starts deceleration before getting too close to the cutting-in bike."""
 
+    def __init__(self, actor, bike_actor, name="CrazyBikeDecelerateCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=24.0, latest_reaction_distance=10.0,
+                 min_speed_drop=2.0, brake_threshold=0.15,
+                 min_brake_duration=0.3, pass_buffer=1.5,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.latest_reaction_distance = latest_reaction_distance
+        self.min_speed_drop = min_speed_drop
+        self.brake_threshold = brake_threshold
+        self.min_brake_duration = min_brake_duration
+        self.pass_buffer = pass_buffer
+
+    def update(self):
+
+        ego_loc = self.actor.get_location()
+        current_time = GameTime.get_time()
+
+        # 触发逻辑
+        if not self._activated and ego_loc.y <= self.trigger_y:
+            self._activated = True
+
+        if self._activated and self.test_status != "SUCCESS":
+            control = self.actor.get_control()
+            if control.brake >= self.brake_threshold:
+                if self._brake_start_time is None:
+                    self._brake_start_time = current_time
+                
+                # 判定成功
+                if (current_time - self._brake_start_time) >= self.min_brake_duration:
+                    self.test_status = "SUCCESS" # 记录结果，但不 return SUCCESS
+            else:
+                self._brake_start_time = None
+
+        # 始终返回 RUNNING，确保它能一直 Tick 到底，直到 Parallel 节点整体结束
+        return py_trees.common.Status.RUNNING
+class CrazyBikeDecelerateCriterion(Criterion):
+    """Check whether ego starts deceleration before getting too close to the cutting-in bike."""
+
+    def __init__(self, actor, bike_actor, name="CrazyBikeDecelerateCriterion",
+                 route_start_location=None, route_end_location=None,
+                 trigger_distance=24.0, latest_reaction_distance=10.0,
+                 min_speed_drop=2.0, brake_threshold=0.15,
+                 min_brake_duration=0.3, pass_buffer=1.5,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.trigger_distance = trigger_distance
+        self.latest_reaction_distance = latest_reaction_distance
+        self.min_speed_drop = min_speed_drop
+        self.brake_threshold = brake_threshold
+        self.min_brake_duration = min_brake_duration
+        self.pass_buffer = pass_buffer
+
+    def update(self):
+
+        ego_loc = self.actor.get_location()
+        current_time = GameTime.get_time()
+
+        # 触发逻辑
+        if not self._activated and ego_loc.y <= self.trigger_y:
+            self._activated = True
+
+        if self._activated and self.test_status != "SUCCESS":
+            control = self.actor.get_control()
+            if control.brake >= self.brake_threshold:
+                if self._brake_start_time is None:
+                    self._brake_start_time = current_time
+                
+                # 判定成功
+                if (current_time - self._brake_start_time) >= self.min_brake_duration:
+                    self.test_status = "SUCCESS" # 记录结果，但不 return SUCCESS
+            else:
+                self._brake_start_time = None
+
+        # 始终返回 RUNNING，确保它能一直 Tick 到底，直到 Parallel 节点整体结束
+        return py_trees.common.Status.RUNNING
+class CrazyBikeResumeCriterion(Criterion):
+    """Check whether ego safely resumes cruising after passing the bike."""
+
+    def __init__(self, actor, bike_actor, name="CrazyBikeResumeCriterion",
+                 route_start_location=None, route_end_location=None,
+                 escape_distance=12.0, resume_speed=5.0,
+                 min_resume_duration=1.0, lane_tolerance=1.8,
+                 terminate_on_failure=False):
+        super().__init__(name, actor, terminate_on_failure=terminate_on_failure)
+        self.bike_actor = bike_actor
+        self.route_start_location = route_start_location
+        self.route_end_location = route_end_location
+        self.escape_distance = escape_distance
+        self.resume_speed = resume_speed
+        self.min_resume_duration = min_resume_duration
+        self.lane_tolerance = lane_tolerance
+
+        fallback_transform = actor.get_transform() if actor is not None else None
+        self._forward_xy, self._right_xy = _build_route_frame(
+            route_start_location, route_end_location, fallback_transform=fallback_transform)
+        self._route_origin = route_start_location or (
+            actor.get_location() if actor is not None else None)
+
+        self._has_been_behind_bike = False
+        self._resume_start_time = None
+        self._collision_sensor = None
+        self._bike_collision = False
+
+        self.actual_value = 0.0
+        self.success_value = resume_speed
+        self.units = "m/s"
+        self.test_status = "FAILURE"
+
+    def initialise(self):
+        world = CarlaDataProvider.get_world()
+        if world is not None and self.actor is not None:
+            blueprint = world.get_blueprint_library().find('sensor.other.collision')
+            self._collision_sensor = world.spawn_actor(blueprint, carla.Transform(), attach_to=self.actor)
+            self._collision_sensor.listen(lambda event: self._on_collision(event))
+        super().initialise()
+
+    def terminate(self, new_status):
+        if self._collision_sensor is not None:
+            try:
+                if getattr(self._collision_sensor, "is_listening", False):
+                    self._collision_sensor.stop()
+            except (RuntimeError, AttributeError):
+                pass
+            try:
+                self._collision_sensor.destroy()
+            except RuntimeError:
+                pass
+        self._collision_sensor = None
+        super().terminate(new_status)
+
+    def _on_collision(self, event):
+        if event is None or event.other_actor is None:
+            return
+        if self.bike_actor is None:
+            return
+        if event.other_actor.id != self.bike_actor.id:
+            return
+        self._bike_collision = True
+        self.test_status = "FAILURE"
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor or not self.bike_actor:
+            return new_status
+
+        if self._bike_collision:
+            self.test_status = "FAILURE"
+            if self._terminate_on_failure:
+                return py_trees.common.Status.FAILURE
+            return new_status
+
+        if self.test_status == "SUCCESS":
+            return new_status
+
+        ego_loc = self.actor.get_location()
+        bike_loc = self.bike_actor.get_location()
+        ego_speed = _get_actor_speed_mps(self.actor)
+        self.actual_value = ego_speed
+
+        longitudinal_from_bike, _ = _project_to_axis(
+            bike_loc, ego_loc, self._forward_xy, self._right_xy)
+
+        if longitudinal_from_bike < 0.0:
+            self._has_been_behind_bike = True
+
+        if not self._has_been_behind_bike or longitudinal_from_bike <= self.escape_distance:
+            self._resume_start_time = None
+            return new_status
+
+        if ego_speed >= self.resume_speed:
+            current_time = GameTime.get_time()
+            if self._resume_start_time is None:
+                self._resume_start_time = current_time
+            elif current_time - self._resume_start_time >= self.min_resume_duration:
+                self.test_status = "SUCCESS"
+        else:
+            self._resume_start_time = None
+
+        return new_status
 # ==========================Blind spot hidden car criterion==========================
 class IntersectionCollisionLeftTurnBrakeCriterion(Criterion):
     """
