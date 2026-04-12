@@ -83,6 +83,33 @@ def score_static_barrier(common_facts, private_facts):
         "final_score": final_score,
     }
 # High-speed reckless lane cutting
+def score_high_speed_cutting(common_facts, private_facts):
+    base_score = 0.0
+    has_safe_progress = private_facts.get('safe_bypass') and private_facts.get('resume_route')
+
+    if private_facts.get('brake_response'):
+        base_score += 40.0
+    if not common_facts.get('collision'):
+        base_score += 40.0
+    if has_safe_progress:
+        base_score += 20.0
+
+    gate = compute_gate(common_facts)
+    penalty = compute_penalty(common_facts)
+    final_score = base_score * gate * penalty
+
+    return {
+        'base_score': round(base_score, 6),
+        'gate': round(gate, 6),
+        'penalty': round(penalty, 6),
+        'final_score': round(final_score, 6),
+        'base_breakdown': {
+            'brake_response': 40.0 if private_facts.get('brake_response') else 0.0,
+            'collision_free': 40.0 if not common_facts.get('collision') else 0.0,
+            'safe_bypass': 1.0 if private_facts.get('safe_bypass') else 0.0,
+            'resume_route': 1.0 if private_facts.get('resume_route') else 0.0,
+            'safe_progress': 20.0 if has_safe_progress else 0.0,
+        }}
 
 # Highway accident vehicle
 def score_high_speed_accident(common_facts, private_facts):
@@ -109,18 +136,37 @@ def score_high_speed_accident(common_facts, private_facts):
     }
 # Trucks encountered during construction
 def compute_lane_closure_score(common_facts, private_facts):
+    """计算车道封闭场景得分"""
     base_score = 0.0
 
+    # 1. 减速得分 (90分)
     if private_facts.get("deceleration_detected", False) and not common_facts.get("collision", False):
-        base_score += 90.0  
+        base_score += 90.0  # 识别障碍并减速避撞
+        # print(f"[DEBUG Score] Added 90 for deceleration & collision free", flush=True)
 
-    if common_facts.get("route_completed", False):
-        base_score += 10.0 
+    # 2. 路段通过得分 (10分) - 按完成度比例给分
+    distance_traveled = private_facts.get("distance_traveled", 0.0)
+    target_distance = 95.0  # 目标距离 95m (过卡车40m)
+    completion_ratio = min(distance_traveled / target_distance, 1.0)
 
+    if completion_ratio >= 1.0:
+        base_score += 10.0  # 完成整个路段
+        # print(f"[DEBUG Score] Added 10 for full route completion ({distance_traveled:.1f}m)", flush=True)
+    elif completion_ratio >= 0.5:
+        partial_score = 10.0 * completion_ratio
+        base_score += partial_score
+        # print(f"[DEBUG Score] Added {partial_score:.1f} for partial route completion ({distance_traveled:.1f}m, {completion_ratio*100:.1f}%)", flush=True)
+    else:
+        # print(f"[DEBUG Score] No route completion score ({distance_traveled:.1f}m, {completion_ratio*100:.1f}%)", flush=True)
+        pass
+
+    # 计算门控因子和惩罚因子
     gate = compute_gate(common_facts)
     penalty = compute_penalty(common_facts)
 
+    # 计算最终得分
     final_score = base_score * gate * penalty
+    # print(f"[DEBUG Score] base={base_score}, gate={gate}, penalty={penalty}, final={final_score}", flush=True)
 
     return {
         "base_score": base_score,
@@ -132,17 +178,17 @@ def compute_lane_closure_score(common_facts, private_facts):
 def score_roundabout_merge_conflict(common_facts, private_facts):
     """
     计算大转盘交互场景得分:
-    识别并减速: 55
-    安全汇入: 20
-    让行内圈车队: 25
+    识别并减速: 35
+    让行内圈车队: 35
+    安全到达终点: 30
     """
     base_score = 0.0
 
     if private_facts["decelerate_response"]:
         base_score += 55.0
-    if private_facts["safe_merge"]:
-        base_score += 20.0
     if private_facts["yield_convoy"]:
+        base_score += 20.0
+    if private_facts["safe_pass"]:
         base_score += 25.0
 
     # 获取通用的碰撞拦截(Gate)和惩罚(Penalty)

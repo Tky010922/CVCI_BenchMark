@@ -2,15 +2,23 @@ import py_trees
 import carla
 
 from srunner.scenariomanager.carla_data_provider import CarlaDataProvider
+<<<<<<< HEAD
+=======
+from srunner.scenariomanager.timer import GameTime
+>>>>>>> dev
 from srunner.scenariomanager.scenarioatomics.atomic_behaviors import (
     WaypointFollower,
     LaneChange,
 )
+<<<<<<< HEAD
 from srunner.scenariomanager.scenarioatomics.atomic_criteria import (
     CrazyBikeDecelerateCriterion,
     CrazyBikeNoCollisionCriterion,
     CrazyBikeResumeCriterion,
 )
+=======
+from srunner.scenariomanager.scenarioatomics.atomic_criteria import CollisionTest
+>>>>>>> dev
 from srunner.scenariomanager.scenarioatomics.atomic_trigger_conditions import (
     InTriggerDistanceToVehicle,
     DriveDistance,
@@ -25,6 +33,40 @@ def get_value_parameter(config, name, p_type, default):
     return p_type(parameter["value"])
 
 
+<<<<<<< HEAD
+=======
+class EgoStateLogger(py_trees.behaviour.Behaviour):
+    """Print ego state to terminal at a fixed interval."""
+
+    def __init__(self, actor, interval=0.2, name="EgoStateLogger"):
+        super(EgoStateLogger, self).__init__(name)
+        self.actor = actor
+        self.interval = max(0.05, interval)
+        self._last_print_time = -1.0
+
+    def update(self):
+        new_status = py_trees.common.Status.RUNNING
+        if not self.actor:
+            return new_status
+
+        sim_time = GameTime.get_time()
+        if self._last_print_time < 0.0 or (sim_time - self._last_print_time) >= self.interval:
+            transform = self.actor.get_transform()
+            location = transform.location
+            yaw = transform.rotation.yaw
+            vel = self.actor.get_velocity()
+            speed = (vel.x ** 2 + vel.y ** 2 + vel.z ** 2) ** 0.5
+            print(
+                "[CrazyBike][Ego] t={:.2f}s x={:.2f}, y={:.2f}, z={:.2f}, yaw={:.1f}, v={:.2f}m/s".format(
+                    sim_time, location.x, location.y, location.z, yaw, speed
+                )
+            )
+            self._last_print_time = sim_time
+
+        return new_status
+
+
+>>>>>>> dev
 class PassiveEgoSpeedHold(py_trees.behaviour.Behaviour):
     """Keep ego speed only when the driver has not provided active control input."""
 
@@ -79,6 +121,7 @@ class CrazyBikeScenario(BasicScenario):
         self._distance_same_lane = get_value_parameter(config, "distance_same_lane", float, 3.0)
         self._distance_other_lane = get_value_parameter(config, "distance_other_lane", float, 20.0)
         self._post_change_distance = get_value_parameter(config, "post_change_distance", float, 25.0)
+<<<<<<< HEAD
         self._decel_trigger_distance = get_value_parameter(config, "decel_trigger_distance", float, 24.0)
         self._decel_latest_reaction_distance = get_value_parameter(
             config, "decel_latest_reaction_distance", float, 10.0)
@@ -87,6 +130,9 @@ class CrazyBikeScenario(BasicScenario):
         self._resume_speed = get_value_parameter(config, "resume_speed", float, 5.0)
         self._resume_min_duration = get_value_parameter(config, "resume_min_duration", float, 1.0)
         self._resume_lane_tolerance = get_value_parameter(config, "resume_lane_tolerance", float, 1.8)
+=======
+        self._ego_log_interval = get_value_parameter(config, "ego_log_interval", float, 0.2)
+>>>>>>> dev
 
         lane_change_direction = get_value_parameter(config, "lane_change_direction", str, "left").lower()
         self._lane_change_direction = lane_change_direction if lane_change_direction in ("left", "right") else "left"
@@ -105,7 +151,11 @@ class CrazyBikeScenario(BasicScenario):
 
     def _get_route_anchor_locations(self):
         route_start_loc = self.config.trigger_points[0].location
+<<<<<<< HEAD
         route_end_loc = carla.Location(x=110.0, y=1.8, z=0.5)
+=======
+        route_end_loc = carla.Location(x=95.0, y=1.8, z=0.5)
+>>>>>>> dev
 
         if self.config.route:
             route_start_loc = self.config.route[0][0].location
@@ -141,12 +191,40 @@ class CrazyBikeScenario(BasicScenario):
                 bike_forward.y * self._bike_speed,
                 bike_forward.z * self._bike_speed
             ))
+<<<<<<< HEAD
 
     def _spawn_actor_with_debug(self, actor_config):
+=======
+            print(
+                "[CrazyBike] Bike speed setup: cruise={:.2f}m/s, cross={:.2f}m/s, limit={:.2f}m/s".format(
+                    self._bike_speed, self._bike_cross_speed, self._bike_speed_limit
+                )
+            )
+
+    def _spawn_actor_with_debug(self, actor_config):
+        world = CarlaDataProvider.get_world()
+>>>>>>> dev
         spawn_transform = actor_config.transform
         spawn_loc = spawn_transform.location
         spawn_rot = spawn_transform.rotation
 
+<<<<<<< HEAD
+=======
+        print(
+            "[CrazyBike] Try spawn adversary model={} at x={:.2f}, y={:.2f}, z={:.2f}, yaw={:.2f}".format(
+                actor_config.model, spawn_loc.x, spawn_loc.y, spawn_loc.z, spawn_rot.yaw
+            )
+        )
+        if world:
+            world.debug.draw_point(
+                spawn_loc + carla.Location(z=0.4), size=0.12, color=carla.Color(255, 255, 0), life_time=20.0
+            )
+            world.debug.draw_string(
+                spawn_loc + carla.Location(z=1.2), "Bike spawn try", draw_shadow=False,
+                color=carla.Color(255, 255, 0), life_time=20.0, persistent_lines=False
+            )
+
+>>>>>>> dev
         candidate_models = []
         for model_name in [actor_config.model, "vehicle.vespa.zx125", "vehicle.gazelle.omafiets"]:
             if model_name not in candidate_models:
@@ -161,8 +239,40 @@ class CrazyBikeScenario(BasicScenario):
                 )
                 actor = CarlaDataProvider.request_new_actor(model_name, transform)
                 if actor:
+<<<<<<< HEAD
                     return actor
 
+=======
+                    actor_loc = actor.get_location()
+                    print(
+                        "[CrazyBike] Spawn success model={} id={} at x={:.2f}, y={:.2f}, z={:.2f}".format(
+                            model_name, actor.id, actor_loc.x, actor_loc.y, actor_loc.z
+                        )
+                    )
+                    if world:
+                        world.debug.draw_point(
+                            actor_loc + carla.Location(z=0.4), size=0.14, color=carla.Color(0, 255, 0), life_time=20.0
+                        )
+                        world.debug.draw_string(
+                            actor_loc + carla.Location(z=1.2), "Bike spawn success", draw_shadow=False,
+                            color=carla.Color(0, 255, 0), life_time=20.0, persistent_lines=False
+                        )
+                    return actor
+
+        print(
+            "[CrazyBike] Spawn failed for adversary near x={:.2f}, y={:.2f}, z={:.2f}".format(
+                spawn_loc.x, spawn_loc.y, spawn_loc.z
+            )
+        )
+        if world:
+            world.debug.draw_point(
+                spawn_loc + carla.Location(z=0.4), size=0.14, color=carla.Color(255, 0, 0), life_time=20.0
+            )
+            world.debug.draw_string(
+                spawn_loc + carla.Location(z=1.2), "Bike spawn failed", draw_shadow=False,
+                color=carla.Color(255, 0, 0), life_time=20.0, persistent_lines=False
+            )
+>>>>>>> dev
         return None
 
     def _resolve_lane_change_direction(self):
@@ -174,6 +284,12 @@ class CrazyBikeScenario(BasicScenario):
             resolved = "left"
         else:
             resolved = "right"
+<<<<<<< HEAD
+=======
+        print("[CrazyBike] LaneChange direction resolved by y: bike_y={:.2f}, ego_y={:.2f}, direction={}".format(
+            bike_y, ego_y, resolved
+        ))
+>>>>>>> dev
         return resolved
 
     def _create_behavior(self):
@@ -187,6 +303,11 @@ class CrazyBikeScenario(BasicScenario):
             policy=py_trees.common.ParallelPolicy.SUCCESS_ON_ALL
         )
 
+<<<<<<< HEAD
+=======
+        scenario_flow.add_child(EgoStateLogger(self.ego_vehicles[0], interval=self._ego_log_interval))
+
+>>>>>>> dev
         if self._ego_initial_speed > 0.1:
             scenario_flow.add_child(
                 PassiveEgoSpeedHold(self.ego_vehicles[0], self._ego_initial_speed)
@@ -247,6 +368,7 @@ class CrazyBikeScenario(BasicScenario):
 
     def _create_test_criteria(self):
         criteria = []
+<<<<<<< HEAD
         route_start_loc, route_end_loc = self._get_route_anchor_locations()
         if self._bike_actor is None:
             return criteria
@@ -274,6 +396,9 @@ class CrazyBikeScenario(BasicScenario):
             min_resume_duration=self._resume_min_duration,
             lane_tolerance=self._resume_lane_tolerance
         ))
+=======
+        criteria.append(CollisionTest(self.ego_vehicles[0]))
+>>>>>>> dev
         return criteria
 
     def __del__(self):
