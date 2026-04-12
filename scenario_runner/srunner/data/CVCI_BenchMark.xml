@@ -4569,138 +4569,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level1_night_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="90"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="90.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -4710,138 +4618,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level2_night_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="110"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="110.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -4851,138 +4667,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60.0" precipitation_deposits="50.0" wetness="70.0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level3_night_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="130"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="1300.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -4992,279 +4716,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
-        <scenarios>
-            <scenario name="LaneClosureWithTruck_level1_night_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="90"/>
-            </scenario>
-        </scenarios>
-    </route>
-    <route id="0" town="Town04">
-        <weathers>
-            <!-- night&sunny -->
-            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
-        </weathers>
-        <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
-        </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level2_night_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="110"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="90.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5274,138 +4765,95 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
+        <scenarios>
+            <scenario name="LaneClosureWithTruck_level2_night_sunny" type="LaneClosureWithTruck">
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="110.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
 
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
+            </scenario>
+        </scenarios>
+    </route>
+    <route id="0" town="Town04">
+        <weathers>
+            <!-- night&sunny -->
+            <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="0.5" sun_azimuth_angle="-1.0" route_percentage="100" />
+        </weathers>
+        <waypoints>
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
+        </waypoints>
         <scenarios>
             <scenario name="LaneClosureWithTruck_level3_night_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="130"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="130.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5415,138 +4863,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level1_day_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="90"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="90.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5556,138 +4912,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level2_day_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="110"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="110.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5697,138 +4961,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="0" precipitation_deposits="0" wetness="0" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level3_day_sunny" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="130"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="70.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5838,138 +5010,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level1_day_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="90"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="90.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -5979,138 +5059,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level1_day_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="110"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="110.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
@@ -6120,138 +5108,46 @@
             <weather cloudiness="90.0" fog_density="10.0" precipitation="60" precipitation_deposits="50" wetness="70" wind_intensity="80.0" sun_altitude_angle="90" sun_azimuth_angle="0" route_percentage="100" />
         </weathers>
         <waypoints>
-            <position x="100.22" y="244.91" z="0.0" />
-            <position x="102.03" y="244.05" z="0.0" />
-            <position x="103.83" y="243.19" z="0.0" />
-            <position x="105.64" y="242.33" z="0.0" />
-            <position x="107.44" y="241.47" z="0.0" />
-            <position x="109.25" y="240.60" z="0.0" />
-            <position x="111.05" y="239.74" z="0.0" />
-            <position x="112.86" y="238.88" z="0.0" />
-            <position x="114.66" y="238.02" z="0.0" />
-            <position x="116.47" y="237.16" z="0.0" />
-            <position x="118.27" y="236.30" z="0.0" />
-            <position x="120.08" y="235.44" z="0.0" />
-            <position x="121.88" y="234.58" z="0.0" />
-            <position x="123.69" y="233.72" z="0.0" />
-            <position x="125.49" y="232.85" z="0.0" />
-            <position x="127.30" y="231.99" z="0.0" />
-            <position x="129.10" y="231.13" z="0.0" />
-            <position x="130.91" y="230.27" z="0.0" />
-            <position x="132.71" y="229.41" z="0.0" />
-            <position x="134.52" y="228.55" z="0.0" />
-            <position x="136.32" y="227.69" z="0.0" />
-            <position x="138.13" y="226.83" z="0.0" />
-            <position x="139.93" y="225.97" z="0.0" />
-            <position x="141.74" y="225.11" z="0.0" />
-            <position x="143.54" y="224.24" z="0.0" />
-            <position x="145.35" y="223.38" z="0.0" />
-            <position x="147.15" y="222.52" z="0.0" />
-            <position x="148.96" y="221.66" z="0.0" />
-            <position x="150.76" y="220.80" z="0.0" />
-            <position x="152.57" y="219.94" z="0.0" />
-            <position x="154.37" y="219.08" z="0.0" />
-            <position x="156.18" y="218.22" z="0.0" />
-            <position x="157.98" y="217.36" z="0.0" />
-            <position x="159.79" y="216.49" z="0.0" />
-            <position x="161.59" y="215.63" z="0.0" />
-            <position x="163.40" y="214.77" z="0.0" />
-            <position x="165.21" y="213.91" z="0.0" />
-            <position x="167.01" y="213.05" z="0.0" />
-            <position x="168.82" y="212.19" z="0.0" />
-            <position x="170.62" y="211.33" z="0.0" />
-            <position x="172.43" y="210.47" z="0.0" />
-            <position x="174.23" y="209.61" z="0.0" />
-            <position x="176.04" y="208.74" z="0.0" />
-            <position x="177.84" y="207.88" z="0.0" />
-            <position x="179.65" y="207.02" z="0.0" />
-            <position x="181.45" y="206.16" z="0.0" />
-            <position x="183.26" y="205.30" z="0.0" />
-            <position x="185.06" y="204.44" z="0.0" />
-            <position x="186.87" y="203.58" z="0.0" />
-            <position x="188.67" y="202.72" z="0.0" />
-            <position x="190.48" y="201.86" z="0.0" />
-            <position x="192.28" y="201.00" z="0.0" />
-            <position x="194.09" y="200.13" z="0.0" />
-            <position x="195.89" y="199.27" z="0.0" />
-            <position x="197.70" y="198.41" z="0.0" />
-            <position x="199.50" y="197.55" z="0.0" />
-            <position x="201.31" y="196.69" z="0.0" />
-            <position x="203.11" y="195.83" z="0.0" />
-            <position x="204.92" y="194.97" z="0.0" />
-            <position x="206.72" y="194.11" z="0.0" />
-            <position x="208.53" y="193.25" z="0.0" />
-            <position x="210.33" y="192.38" z="0.0" />
-            <position x="212.14" y="191.52" z="0.0" />
-            <position x="213.94" y="190.66" z="0.0" />
-            <position x="215.75" y="189.80" z="0.0" />
-            <position x="217.55" y="188.94" z="0.0" />
-            <position x="219.36" y="188.08" z="0.0" />
-            <position x="221.16" y="187.22" z="0.0" />
-            <position x="222.97" y="186.36" z="0.0" />
-            <position x="224.78" y="185.50" z="0.0" />
-            <position x="226.58" y="184.63" z="0.0" />
-            <position x="228.39" y="183.77" z="0.0" />
-            <position x="230.19" y="182.91" z="0.0" />
-            <position x="232.00" y="182.05" z="0.0" />
-            <position x="233.80" y="181.19" z="0.0" />
-            <position x="235.61" y="180.33" z="0.0" />
-            <position x="237.41" y="179.47" z="0.0" />
-            <position x="239.22" y="178.61" z="0.0" />
-            <position x="241.02" y="177.75" z="0.0" />
-            <position x="242.83" y="176.91" z="0.0" />
-            <position x="244.64" y="176.07" z="0.0" />
-            <position x="246.46" y="175.23" z="0.0" />
-            <position x="248.28" y="174.39" z="0.0" />
-            <position x="250.11" y="173.54" z="0.0" />
-            <position x="251.94" y="172.70" z="0.0" />
-            <position x="253.77" y="171.85" z="0.0" />
-            <position x="255.60" y="170.99" z="0.0" />
-            <position x="257.44" y="170.14" z="0.0" />
-            <position x="259.28" y="169.27" z="0.0" />
-            <position x="261.12" y="168.41" z="0.0" />
-            <position x="262.95" y="167.54" z="0.0" />
-            <position x="264.79" y="166.66" z="0.0" />
-            <position x="266.63" y="165.78" z="0.0" />
-            <position x="268.47" y="164.90" z="0.0" />
-            <position x="270.30" y="164.01" z="0.0" />
-            <position x="272.13" y="163.12" z="0.0" />
-            <position x="273.96" y="162.22" z="0.0" />
-            <position x="275.78" y="161.32" z="0.0" />
-            <position x="277.60" y="160.42" z="0.0" />
-            <position x="279.41" y="159.52" z="0.0" />
-            <position x="281.22" y="158.61" z="0.0" />
-            <position x="283.02" y="157.70" z="0.0" />
-            <position x="284.82" y="156.79" z="0.0" />
-            <position x="286.61" y="155.88" z="0.0" />
-            <position x="288.39" y="154.97" z="0.0" />
-            <position x="290.17" y="154.07" z="0.0" />
-            <position x="291.94" y="153.16" z="0.0" />
-            <position x="293.70" y="152.26" z="0.0" />
-            <position x="295.46" y="151.37" z="0.0" />
-            <position x="297.22" y="150.48" z="0.0" />
-            <position x="298.97" y="149.59" z="0.0" />
-            <position x="300.71" y="148.71" z="0.0" />
-            <position x="302.45" y="147.84" z="0.0" />
-            <position x="304.19" y="146.97" z="0.0" />
-            <position x="305.93" y="146.12" z="0.0" />
-            <position x="307.66" y="145.27" z="0.0" />
-            <position x="309.40" y="144.43" z="0.0" />
-            <position x="311.13" y="143.59" z="0.0" />
-            <position x="312.87" y="142.77" z="0.0" />
-            <position x="314.61" y="141.95" z="0.0" />
-            <position x="316.35" y="141.15" z="0.0" />
-            <position x="318.10" y="140.35" z="0.0" />
-            <position x="319.85" y="139.56" z="0.0" />
-            <position x="321.61" y="138.77" z="0.0" />
-            <position x="323.38" y="138.00" z="0.0" />
-            <position x="325.16" y="137.22" z="0.0" />
+            <position x="108.563385" y="228.8" z="0.5"/>
+            <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
-
         <scenarios>
             <scenario name="LaneClosureWithTruck_level1_day_rain" type="LaneClosureWithTruck">
-                <trigger_point x="173.22" y="207.91" z="0.0" pitch="0.0" yaw="-17.81" roll="0.0"/>
-                <init_speed value="130"/>
+                <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
+                
+                <init_speed value="130.0"/>
+                
+                <truck_distance value="55.0"/>
+                <truck_lateral_offset value="0.5"/>
+                
+                <cone_start_distance value="30.0"/>
+                <cone_end_distance value="45.0"/>
+                <cone_start_offset value="-7.0"/>
+                <cone_end_offset value="-3.3"/>
+
+                <other_actors>
+                    <other_actor model="vehicle.carlamotors.carlacola" x="225.629944" y="190.613144" z="0.200000" pitch="0.000000" yaw="-21.298054" roll="0.000000"/>
+                    
+                    <other_actor model="static.prop.constructioncone" x="199.478256" y="192.090149" z="0.200000" pitch="0.000000" yaw="-18.433266" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="201.671875" y="191.911362" z="0.200000" pitch="0.000000" yaw="-18.678818" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="203.866867" y="191.722443" z="0.200000" pitch="0.000000" yaw="-18.924372" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="206.063141" y="191.523331" z="0.200000" pitch="0.000000" yaw="-19.169926" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="208.260712" y="191.314087" z="0.200000" pitch="0.000000" yaw="-19.415480" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="210.459488" y="191.094681" z="0.200000" pitch="0.000000" yaw="-19.661032" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="212.659454" y="190.865097" z="0.200000" pitch="0.000000" yaw="-19.906586" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="214.860504" y="190.625275" z="0.200000" pitch="0.000000" yaw="-20.152140" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="217.855667" y="189.515274" z="0.200000" pitch="0.000000" yaw="-20.516748" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="220.843689" y="188.386261" z="0.200000" pitch="0.000000" yaw="-20.881357" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="223.824493" y="187.238235" z="0.200000" pitch="0.000000" yaw="-21.245966" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="226.797928" y="186.071259" z="0.200000" pitch="0.000000" yaw="-21.610575" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="229.763855" y="184.885422" z="0.200000" pitch="0.000000" yaw="-21.975187" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="232.722183" y="183.680695" z="0.200000" pitch="0.000000" yaw="-22.339796" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="235.672791" y="182.457184" z="0.200000" pitch="0.000000" yaw="-22.704405" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="238.615540" y="181.214905" z="0.200000" pitch="0.000000" yaw="-23.069014" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="241.547745" y="179.955750" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="244.469147" y="178.695038" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                    <other_actor model="static.prop.constructioncone" x="247.390533" y="177.434311" z="0.200000" pitch="0.000000" yaw="-23.342484" roll="0.000000"/>
+                </other_actors>
             </scenario>
         </scenarios>
     </route>
