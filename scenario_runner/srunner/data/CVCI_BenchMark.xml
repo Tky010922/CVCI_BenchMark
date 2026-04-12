@@ -4720,7 +4720,7 @@
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
-            <scenario name="LaneClosureWithTruck_level2_night_sunny" type="LaneClosureWithTruck">
+            <scenario name="LaneClosureWithTruck_level1_night_sunny" type="LaneClosureWithTruck">
                 <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 
                 <init_speed value="90.0"/>
@@ -5063,7 +5063,7 @@
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
-            <scenario name="LaneClosureWithTruck_level1_day_rain" type="LaneClosureWithTruck">
+            <scenario name="LaneClosureWithTruck_level2_day_rain" type="LaneClosureWithTruck">
                 <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 
                 <init_speed value="110.0"/>
@@ -5112,7 +5112,7 @@
             <position x="257.60" y="171.16" z="0.5"/>
         </waypoints>
         <scenarios>
-            <scenario name="LaneClosureWithTruck_level1_day_rain" type="LaneClosureWithTruck">
+            <scenario name="LaneClosureWithTruck_level3_day_rain" type="LaneClosureWithTruck">
                 <trigger_point x="127.23" y="222.25" z="0.5" pitch="0.0" yaw="-17.81" roll="0.0"/>
                 
                 <init_speed value="130.0"/>
