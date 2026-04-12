@@ -234,7 +234,6 @@ def score_broken_down_vehicle(common_facts, private_facts):
         "penalty": penalty,
         "final_score": final_score,
     }
-
 # Slanted motor and children
 def score_ebike_pedestrian_cross(common_facts, private_facts):
     """
@@ -265,8 +264,6 @@ def score_ebike_pedestrian_cross(common_facts, private_facts):
         "penalty": penalty,
         "final_score": final_score,
     }
-
-
 # reverse vehicle
 def score_reverse_vehicle(common_facts, private_facts):
     base_score = 0.0
@@ -289,7 +286,6 @@ def score_reverse_vehicle(common_facts, private_facts):
         "penalty": penalty,
         "final_score": final_score,
     }
-
 # crazy motor
 def score_crazy_bike(common_facts, private_facts):
     base_score = 0.0
@@ -311,7 +307,6 @@ def score_crazy_bike(common_facts, private_facts):
         "penalty": penalty,
         "final_score": final_score,
     }
-
 # Blind spot hidden car
 def score_left_turn(common_facts, private_facts):
     base_score = 0.0
