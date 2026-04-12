@@ -37,47 +37,47 @@ def extract_common_facts(criteria_list):
 # missing car_private_facats extracts
 def extract_private_facts_frontcar_disappearance(criteria_list):
     facts = {
-        "slow_down": False,       # 条件1：自车成功减速
-        "no_collision": False,    # 条件2：无碰撞
-        "safe_bypass": False     # 条件3：安全变道通过故障车
+        "slow_down": False,          # 条件1：刹车减速成功
+        "safe_bypass": False,        # 条件2：安全绕行成功
+        "reach_end_point": False     # 条件3：到达终点
     }
 
     for criterion in criteria_list:
-        # 减速成功
+        # 减速成功（新规则）
         if criterion.name == "StaticObstacleSlowDownCriterion":
             facts["slow_down"] = (criterion.test_status == "SUCCESS")
 
-        # 无碰撞成功
-        if criterion.name == "StaticObstacleNoCollisionCriterion":
-            facts["no_collision"] = (criterion.test_status == "SUCCESS")
-
-        # 安全变道通过
+        # 安全绕行成功（新规则）
         if criterion.name == "StaticObstacleSafePassCriterion":
             facts["safe_bypass"] = (criterion.test_status == "SUCCESS")
 
-    return facts
+        # 到达终点成功（新规则）
+        if criterion.name == "ReachEndPointCriterion":
+            facts["reach_end_point"] = (criterion.test_status == "SUCCESS")
 
+    return facts
 # High speed temporary construction_private_facats extracts
 def extract_private_facts_static_barrier(criteria_list):
     facts = {
-        "slow_down": False,       # 成功减速
-        "safe_bypass": False,     # 成功绕行
-        "pass_barrier": False     # 成功通过路障
+        "barrier_slow_down": False,
+        "detour": False,
+        "reach_goal": False
     }
 
     for criterion in criteria_list:
+        # 1. 减速
         if criterion.name == "BarrierSlowDownCriterion":
-            facts["slow_down"] = (criterion.test_status == "SUCCESS")
+            facts["barrier_slow_down"] = (criterion.test_status == "SUCCESS")
 
-        elif criterion.name == "BarrierPassByCriterion":
-            facts["pass_barrier"] = (criterion.test_status == "SUCCESS")
+        # 2. 绕行（变道无碰撞）
+        if criterion.name == "BarrierDetourCriterion":
+            facts["detour"] = (criterion.test_status == "SUCCESS")
 
-        # 安全绕行 = 不碰撞 + 成功通过
-        # 这里用 BarrierPassByCriterion 代表安全绕行完成
-        if criterion.name == "BarrierPassByCriterion":
-            facts["safe_bypass"] = (criterion.test_status == "SUCCESS")
+        # 3. 到达终点
+        if criterion.name == "BarrierReachGoalCriterion":
+            facts["reach_goal"] = (criterion.test_status == "SUCCESS")
+
     return facts
-
 # High-speed reckless lane cutting_private_facats extracts
 def extract_private_facts_high_speed_cutting(criteria_list):
     """提取高速切入场景的私有事实"""

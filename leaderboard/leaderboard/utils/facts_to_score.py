@@ -31,19 +31,19 @@ def compute_penalty(common_facts):
 def score_frontcar_disappear_accident(common_facts, private_facts):
     base_score = 0.0
 
-    # 条件1：自车减速 —— 50分
+    # 条件1：刹车减速 —— 50分
     if private_facts["slow_down"]:
         base_score += 50.0
 
-    # 条件2：无碰撞 —— 20分
-    if private_facts["no_collision"]:
-        base_score += 20.0
-
-    # 条件3：安全变道通过路段 —— 30分
+    # 条件2：安全绕行 —— 30分
     if private_facts["safe_bypass"]:
         base_score += 30.0
 
-    # 碰撞门限（撞了直接 0 分）
+    # 条件3：到达终点 —— 20分
+    if private_facts["reach_end_point"]:
+        base_score += 20.0
+
+    # 碰撞门限（如果你不需要可以删掉，但我保留兼容）
     gate = compute_gate(common_facts)
     # 违规 penalty
     penalty = compute_penalty(common_facts)
@@ -61,15 +61,15 @@ def score_static_barrier(common_facts, private_facts):
     base_score = 0.0
 
     # 减速：55分
-    if private_facts["slow_down"]:
+    if private_facts["barrier_slow_down"]:
         base_score += 55.0
 
     # 安全绕行：20分
-    if private_facts["safe_bypass"]:
+    if private_facts["detour"]:
         base_score += 20.0
 
     # 成功通过路障：25分
-    if private_facts["pass_barrier"]:
+    if private_facts["reach_goal"]:
         base_score += 25.0
 
     gate = compute_gate(common_facts)
